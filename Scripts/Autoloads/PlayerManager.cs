@@ -8,13 +8,11 @@ public partial class PlayerManager : Node
 
     public override void _Ready()
     {
-
         Aliados.Add(
-            GD.Load<PackedScene>("res://Assets/Pokemones/Entidad.tscn")
+            GD.Load<PackedScene>("res://Assets/Pokemones/ElPicachu/Picachu.tscn")
         );
 
-        Aliados.Add(
-            GD.Load<PackedScene>("res://Assets/Pokemones/Entidad.tscn")
-        );
+        //PUEDE SER Que tener mas de una entidad en un equipo sea un problema...
+
     }
 }

@@ -5,17 +5,32 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_d5f6i"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ty5po"]
+albedo_color = Color(0.7665214, 0, 0.1559698, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_avo70"]
 
-[node name="Entidad" type="Node3D" unique_id=1318041342]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ty5po"]
+
+[node name="Entidad" type="CharacterBody3D" unique_id=1145482933]
 script = ExtResource("1_d5f6i")
 Data = ExtResource("2_ty5po")
 
 [node name="Cuerpo" type="Node3D" parent="." unique_id=251734799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cuerpo" unique_id=457049041]
 mesh = SubResource("CapsuleMesh_d5f6i")
+surface_material_override/0 = SubResource("StandardMaterial3D_ty5po")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Cuerpo" unique_id=981562295]
 transform = Transform3D(0.7594137, 0, 0, 0, -8.742276e-09, -0.3, 0, 0.19999997, -1.3113417e-08, 0, 0.37840366, -0.37547374)
 mesh = SubResource("CylinderMesh_avo70")
+surface_material_override/0 = SubResource("StandardMaterial3D_ty5po")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1263889198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_ty5po")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1051388730]
+path_height_offset = 0.1

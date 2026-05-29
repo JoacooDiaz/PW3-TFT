@@ -9,6 +9,9 @@ public partial class NodoRaizScript : Node
 	[Export]
 	public Node3D Enemigos;
 
+	[Export]
+	public Ui Ui; 
+
 	private CombateManager _combateManager;
 	
 	private PlayerManager _playerManager; 
@@ -20,6 +23,8 @@ public partial class NodoRaizScript : Node
 		_combateManager = GetNode<CombateManager>("/root/CombateManager");
 		_playerManager = GetNode<PlayerManager>("/root/PlayerManager"); 
 		_levelManager = GetNode<LevelManager>("/root/LevelManager");
+
+		_levelManager.RegistrarUI(Ui);
 
 		SpawnNode aliadosSpawn = Aliados as SpawnNode;
 		SpawnNode enemigosSpawn = Enemigos as SpawnNode;
