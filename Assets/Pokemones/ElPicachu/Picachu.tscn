@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dn7akxhunesdn"]
+
+[ext_resource type="Script" uid="uid://ccijh7ayh6tia" path="res://Scripts/Entidad.cs" id="1_07e7e"]
+[ext_resource type="Resource" uid="uid://d1p5xhqrneojq" path="res://Assets/Pokemones/ElPicachu/PicachuData.tres" id="2_yody7"]
+[ext_resource type="PackedScene" uid="uid://4b2qwq0lgkww" path="res://Scenes/UI/barra_de_vida.tscn" id="3_yody7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x4bpy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_07e7e"]
+albedo_color = Color(0.7227768, 0.66976726, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_iws4l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkixr"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yody7"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Picachu" type="CharacterBody3D" unique_id=1156186729 node_paths=PackedStringArray("barraDeVida")]
+script = ExtResource("1_07e7e")
+Data = ExtResource("2_yody7")
+barraDeVida = NodePath("BarraDeVida")
+
+[node name="Cuerpo" type="Node3D" parent="." unique_id=1006194888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cuerpo" unique_id=109421673]
+mesh = SubResource("CapsuleMesh_x4bpy")
+surface_material_override/0 = SubResource("StandardMaterial3D_07e7e")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cuerpo" unique_id=1753599569]
+transform = Transform3D(0.7594137, 0, 0, 0, -8.742276e-09, -0.3, 0, 0.19999997, -1.3113417e-08, 0, 0.37840366, -0.37547374)
+mesh = SubResource("CylinderMesh_iws4l")
+surface_material_override/0 = SubResource("StandardMaterial3D_07e7e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1789168935]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_rkixr")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1365079441]
+
+[node name="BarraDeVida" parent="." unique_id=1814894225 instance=ExtResource("3_yody7")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 2.2, 0)
+texture = SubResource("ViewportTexture_yody7")

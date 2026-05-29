@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://4b2qwq0lgkww"]
+
+[ext_resource type="Script" uid="uid://dfllqw36j65u" path="res://Scripts/UI/BarraDeVida.cs" id="1_32ltt"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ngp60"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32ltt"]
+bg_color = Color(0.15155819, 0.1382119, 0.25990587, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plrk5"]
+bg_color = Color(1.1070073e-06, 0.72630936, 0.16841164, 1)
+
+[sub_resource type="Theme" id="Theme_6je8n"]
+ProgressBar/font_sizes/font_size = 64
+ProgressBar/styles/background = SubResource("StyleBoxFlat_32ltt")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_plrk5")
+
+[node name="BarraDeVida" type="Sprite3D" unique_id=1814894225]
+billboard = 1
+texture = SubResource("ViewportTexture_ngp60")
+script = ExtResource("1_32ltt")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=969522257]
+size = Vector2i(666, 85)
+
+[node name="Panel" type="Panel" parent="SubViewport" unique_id=1708327403]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport/Panel" unique_id=1067118906]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -44.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_6je8n")
+step = 1.0
+value = 50.0
+show_percentage = false
