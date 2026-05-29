@@ -1,50 +1,60 @@
 using Godot;
-using System.Collections.Generic;
 
 public partial class NodoRaizScript : Node
 {
-	[Export]
-	public Node3D Aliados;
+    [Export]
+    public Node3D Aliados;
 
-	[Export]
-	public Node3D Enemigos;
+    [Export]
+    public Node3D Enemigos;
 
-	[Export]
-	public Ui Ui; 
+    [Export]
+    public Ui Ui;
 
-	private CombateManager _combateManager;
-	
-	private PlayerManager _playerManager; 
+    private CombateManager _combateManager;
 
-	private LevelManager _levelManager;
+    private PlayerManager _playerManager;
 
-	public override void _Ready()
-	{
-		_combateManager = GetNode<CombateManager>("/root/CombateManager");
-		_playerManager = GetNode<PlayerManager>("/root/PlayerManager"); 
-		_levelManager = GetNode<LevelManager>("/root/LevelManager");
+    private LevelManager _levelManager;
 
-		_levelManager.RegistrarUI(Ui);
+    public override void _Ready()
+    {
+        _combateManager =
+            GetNode<CombateManager>(
+                "/root/CombateManager"
+            );
 
-		SpawnNode aliadosSpawn = Aliados as SpawnNode;
-		SpawnNode enemigosSpawn = Enemigos as SpawnNode;
+        _playerManager =
+            GetNode<PlayerManager>(
+                "/root/PlayerManager"
+            );
 
-		foreach (PackedScene aliadoScene in _playerManager.Aliados)
-		{
-			Entidad entidad = aliadoScene.Instantiate<Entidad>();
+        _levelManager =
+            GetNode<LevelManager>(
+                "/root/LevelManager"
+            );
 
-			aliadosSpawn.AgregarEntidad(entidad);
-		}
+        _levelManager.RegistrarUI(Ui);
 
-		foreach (PackedScene enemigoScene in _levelManager.GetEnemigos())
-		{
-			Entidad entidad = enemigoScene.Instantiate<Entidad>();
+        SpawnNode aliadosSpawn =
+            Aliados as SpawnNode;
 
-			enemigosSpawn.AgregarEntidad(entidad);
-		}
+        SpawnNode enemigosSpawn =
+            Enemigos as SpawnNode;
 
-		_combateManager.SetupPelea(Aliados, Enemigos);
+        aliadosSpawn.SpawnearEntidades(
+            _playerManager.Aliados
+        );
 
-		_combateManager.ComenzarPelea();
-	}
+        enemigosSpawn.SpawnearEntidades(
+            _levelManager.GetEnemigos()
+        );
+
+        _combateManager.SetupPelea(
+            Aliados,
+            Enemigos
+        );
+
+        _combateManager.ComenzarPelea();
+    }
 }

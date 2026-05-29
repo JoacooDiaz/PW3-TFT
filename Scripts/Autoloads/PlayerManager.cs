@@ -12,6 +12,10 @@ public partial class PlayerManager : Node
             GD.Load<PackedScene>("res://Assets/Pokemones/ElPicachu/Picachu.tscn")
         );
 
+        Aliados.Add(
+            GD.Load<PackedScene>("res://Assets/Pokemones/ElPicachu/Picachu.tscn")
+        );
+
         //PUEDE SER Que tener mas de una entidad en un equipo sea un problema...
 
     }
