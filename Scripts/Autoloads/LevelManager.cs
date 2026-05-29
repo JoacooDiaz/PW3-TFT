@@ -33,6 +33,14 @@ public partial class LevelManager : Node
             GD.Load<PackedScene>("res://Assets/Pokemones/Entidad.tscn")
         );
 
+        enemigos.Add(
+            GD.Load<PackedScene>("res://Assets/Pokemones/Entidad.tscn")
+        );
+
+        enemigos.Add(
+            GD.Load<PackedScene>("res://Assets/Pokemones/Entidad.tscn")
+        );
+
         return enemigos;
     }
 

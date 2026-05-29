@@ -17,6 +17,10 @@ public partial class Entidad : CharacterBody3D
 
     private float _cooldownAtaque;
 
+    private float _multiplicadorDaño = 1.0f;
+
+    private float _tiempoBuffActual = 0.0f;
+
     public Entidad ObjetivoActual;
 
     public SpawnNode Equipo;
@@ -63,6 +67,8 @@ public partial class Entidad : CharacterBody3D
         {
             return;
         }
+
+        ActualizarBuffs(delta);
 
         if (ObjetivoActual == null)
         {
@@ -194,10 +200,13 @@ public partial class Entidad : CharacterBody3D
         if (ObjetivoActual == null)
             return;
 
-        int dañoFinal = CalcularDañoFinal(
-            Data.Daño,
-            Data.Elemento,
-            ObjetivoActual.Data.Elemento
+        int dañoFinal =
+            Mathf.RoundToInt(
+                CalcularDañoFinal(
+                    Data.Daño,
+                    Data.Elemento,
+                    ObjetivoActual.Data.Elemento
+                ) * _multiplicadorDaño
         );
 
         ObjetivoActual.RecibirDaño(dañoFinal);
@@ -222,7 +231,7 @@ public partial class Entidad : CharacterBody3D
             return;
         }
 
-        aliado.Curar(Data.Daño);
+        aliado.Curar(Data.Curacion);
 
         GD.Print(
             Data.Nombre +
@@ -233,7 +242,8 @@ public partial class Entidad : CharacterBody3D
 
     private void EjecutarAsistencia()
     {
-        Entidad aliado = BuscarAliado();
+        Entidad aliado =
+            BuscarAliadoParaAsistir();
 
         if (aliado == null)
         {
@@ -241,6 +251,11 @@ public partial class Entidad : CharacterBody3D
 
             return;
         }
+
+        aliado.RecibirBuffDaño(
+            Data.MultiplicadorAsistencia,
+            Data.DuracionAsistencia
+        );
 
         GD.Print(
             Data.Nombre +
@@ -319,17 +334,28 @@ public partial class Entidad : CharacterBody3D
         return null;
     }
 
-    private Entidad BuscarAliado()
+    private Entidad BuscarAliadoParaAsistir()
     {
         foreach (Entidad entidad in Equipo.Entidades)
         {
             if (entidad == this)
                 continue;
 
-            if (entidad.EstadoActual == EstadoEntidad.Muerto)
+            if (
+                entidad.EstadoActual ==
+                EstadoEntidad.Muerto
+            )
+            {
                 continue;
+            }
 
-            return entidad;
+            if (
+                entidad.Data.Rol ==
+                TipoRol.Atacante
+            )
+            {
+                return entidad;
+            }
         }
 
         return null;
@@ -389,5 +415,39 @@ public partial class Entidad : CharacterBody3D
             salto * _alturaFestejo;
 
         GlobalPosition = posicionObjetivo;
+    }
+
+    //Los buffs estan atados al _PhysicsProcess, funciona pero si alguien tiene tiempo de cambiarlo...
+    public void RecibirBuffDaño(
+        float multiplicador,
+        float duracion
+    )
+    {
+        _multiplicadorDaño = multiplicador;
+
+        _tiempoBuffActual = duracion;
+
+        GD.Print(
+            Data.Nombre +
+            " recibe buff de daño."
+        );
+    }
+
+    private void ActualizarBuffs(double delta)
+    {
+        if (_tiempoBuffActual <= 0)
+            return;
+
+        _tiempoBuffActual -= (float)delta;
+
+        if (_tiempoBuffActual <= 0)
+        {
+            _multiplicadorDaño = 1.0f;
+
+            GD.Print(
+                Data.Nombre +
+                " perdió su buff."
+            );
+        }
     }
 }
