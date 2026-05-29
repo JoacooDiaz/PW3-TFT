@@ -6,6 +6,9 @@ public partial class Entidad : CharacterBody3D
     [Export]
     public EntidadData Data;
 
+    [Export]
+    public BarraDeVida barraDeVida;
+
     private NavigationAgent3D _navigation;
 
     public EstadoEntidad EstadoActual = EstadoEntidad.Idle;
@@ -44,6 +47,7 @@ public partial class Entidad : CharacterBody3D
         }
 
         VidaActual = Data.Vida;
+        barraDeVida.setUpBarra(VidaActual); 
     }
 
     public override void _PhysicsProcess(double delta)
@@ -249,6 +253,8 @@ public partial class Entidad : CharacterBody3D
     {
         VidaActual -= daño;
 
+        barraDeVida.ActualizarBarra(VidaActual); 
+
         GD.Print(
             Data.Nombre +
             " recibe " +
@@ -270,6 +276,8 @@ public partial class Entidad : CharacterBody3D
         {
             VidaActual = Data.Vida;
         }
+        
+        barraDeVida.ActualizarBarra(VidaActual); 
     }
 
     private void Morir()
@@ -284,7 +292,7 @@ public partial class Entidad : CharacterBody3D
             RotationDegrees.Z
         );
 
-        GD.Print(Data.Nombre + " murió.");
+        barraDeVida.OcultarBarra(); 
 
         EmitSignal(
             SignalName.EntidadMurio,
