@@ -15,7 +15,7 @@ albedo_color = Color(0.712126, 0.3275082, 0.5574483, 1)
 radius = 0.53515625
 height = 1.0703125
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ypq7l"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_4gyln"]
 viewport_path = NodePath("SubViewport")
 
 [node name="Audino" type="CharacterBody3D" unique_id=1636602526 node_paths=PackedStringArray("barraDeVida")]
@@ -44,4 +44,4 @@ shape = SubResource("CapsuleShape3D_c2cdy")
 
 [node name="BarraDeVida" parent="." unique_id=1814894225 instance=ExtResource("3_osogu")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 2.2, 0)
-texture = SubResource("ViewportTexture_ypq7l")
+texture = SubResource("ViewportTexture_4gyln")

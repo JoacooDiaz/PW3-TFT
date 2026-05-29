@@ -80,6 +80,11 @@ public partial class CombateManager : Node
         }
         else
         {
+
+            _enemigos.CambiarEstadoEntidades(
+                EstadoEntidad.Festejo
+            ); 
+
             EmitSignal(
                 SignalName.Derrota
             );

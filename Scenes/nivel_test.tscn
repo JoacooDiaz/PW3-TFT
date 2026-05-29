@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bijpml1sy3gd6" path="res://Scripts/NodoRaizScript.cs" id="1_a4025"]
 [ext_resource type="Script" uid="uid://du08ojmmg8jps" path="res://Scripts/SpawnNode.cs" id="2_7fknf"]
+[ext_resource type="Script" uid="uid://dsw6qow5j87v0" path="res://Scripts/CameraPelea.cs" id="2_lv5gi"]
 [ext_resource type="PackedScene" uid="uid://c5echom83h5ji" path="res://Scenes/UI/Ui.tscn" id="2_uaqnl"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_7fknf"]
@@ -11,6 +12,9 @@ cell_height = 0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fknf"]
 albedo_color = Color(8.904189e-07, 0.63166535, 0.1636002, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lv5gi"]
+albedo_color = Color(0.2568108, 0.5293294, 0.8405895, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7fknf"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -41,6 +45,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 size = Vector3(15, 1, 15)
 material = SubResource("StandardMaterial3D_7fknf")
 
+[node name="CSGBox3D2" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=1111806465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -8)
+size = Vector3(30, 1, 30)
+material = SubResource("StandardMaterial3D_lv5gi")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=120398208]
+transform = Transform3D(1, 0, 0, 0, 0.7071067, -0.7071068, 0, 0.7071068, 0.7071067, 0, 4.5977955, -25.196589)
+size = Vector3(37.8584, 1, 21)
+material = SubResource("StandardMaterial3D_lv5gi")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=1513542347]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -14.785986, 1.401207, -16.123543)
+size = Vector3(46, 1, 15.753906)
+material = SubResource("StandardMaterial3D_lv5gi")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=688232582]
+transform = Transform3D(-4.0696907e-08, 0.9310367, -0.36492556, 1.5951402e-08, -0.36492556, -0.9310367, -1, -4.371139e-08, 1.9106855e-15, 15.937821, 2.3173788, -16.623543)
+size = Vector3(47, 1, 19.870117)
+material = SubResource("StandardMaterial3D_lv5gi")
+
 [node name="GlobalIlumination" type="Node3D" parent="." unique_id=1715214156]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="GlobalIlumination" unique_id=1905070742]
@@ -58,18 +82,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
-stretch_shrink = 4
+stretch_shrink = 3
 
 [node name="SubViewport" type="SubViewport" parent="Vista" unique_id=1976620429]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(288, 162)
+size = Vector2i(384, 216)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Vista/SubViewport" unique_id=951747910]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 4, 7)
+transform = Transform3D(1, 0, 0, 0, 0.81079835, 0.58532566, 0, -0.58532566, 0.81079835, 0, 3.360402, 7)
 current = true
 fov = 90.0
+script = ExtResource("2_lv5gi")
 
 [node name="UI" parent="Vista/SubViewport" unique_id=434444583 instance=ExtResource("2_uaqnl")]
 

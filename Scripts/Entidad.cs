@@ -156,13 +156,35 @@ public partial class Entidad : CharacterBody3D
 
     private void MoverHaciaObjetivo(double delta)
     {
-        _navigation.TargetPosition = ObjetivoActual.GlobalPosition;
+        _navigation.TargetPosition =
+            ObjetivoActual.GlobalPosition;
 
         Vector3 siguientePunto =
             _navigation.GetNextPathPosition();
 
         Vector3 direccion =
-            (siguientePunto - GlobalPosition).Normalized();
+            (siguientePunto - GlobalPosition)
+            .Normalized();
+
+        direccion.Y = 0;
+
+        if (direccion != Vector3.Zero)
+        {
+            Vector3 objetivoRotacion =
+                new Vector3(
+                    Rotation.X,
+                    Mathf.Atan2(
+                        -direccion.X,
+                        -direccion.Z
+                    ),
+                    Rotation.Z
+                );
+
+            Rotation = Rotation.Lerp(
+                objetivoRotacion,
+                8.0f * (float)delta
+            );
+        }
 
         Velocity =
             direccion * Data.VelocidadMovimiento;
@@ -301,13 +323,12 @@ public partial class Entidad : CharacterBody3D
 
         Velocity = Vector3.Zero;
 
-        RotationDegrees = new Vector3(
-            90,
-            RotationDegrees.Y,
-            RotationDegrees.Z
+        RotateObjectLocal(
+            Vector3.Right,
+            Mathf.DegToRad(90)
         );
 
-        barraDeVida.OcultarBarra(); 
+        barraDeVida.OcultarBarra();
 
         EmitSignal(
             SignalName.EntidadMurio,
