@@ -1,0 +1,40 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="PW3-JuegoTFT"
+config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://c2nhrmhjbtfwg"
+CombateManager="*uid://biaxwi4v6i86h"
+PlayerManager="*uid://c3hxe02onpitd"
+LevelManager="*uid://bkv7qpubom0yt"
+
+[display]
+
+window/size/mode=4
+
+[dotnet]
+
+project/assembly_name="PW3-JuegoTFT"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
