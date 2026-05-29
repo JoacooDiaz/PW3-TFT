@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c5y6drv86woc7"]
+
+[ext_resource type="Script" uid="uid://ccijh7ayh6tia" path="res://Scripts/Entidad.cs" id="1_d5f6i"]
+[ext_resource type="Resource" uid="uid://de1kk4sa37wxw" path="res://Assets/Pokemones/EntidadTestData.tres" id="2_ty5po"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_d5f6i"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_avo70"]
+
+[node name="Entidad" type="Node3D" unique_id=1318041342]
+script = ExtResource("1_d5f6i")
+Data = ExtResource("2_ty5po")
+
+[node name="Cuerpo" type="Node3D" parent="." unique_id=251734799]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cuerpo" unique_id=457049041]
+mesh = SubResource("CapsuleMesh_d5f6i")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cuerpo" unique_id=981562295]
+transform = Transform3D(0.7594137, 0, 0, 0, -8.742276e-09, -0.3, 0, 0.19999997, -1.3113417e-08, 0, 0.37840366, -0.37547374)
+mesh = SubResource("CylinderMesh_avo70")

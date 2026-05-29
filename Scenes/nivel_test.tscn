@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://comdeedlf5j4o"]
+
+[ext_resource type="Script" uid="uid://bijpml1sy3gd6" path="res://Scripts/NodoRaizScript.cs" id="1_a4025"]
+[ext_resource type="Script" uid="uid://du08ojmmg8jps" path="res://Scripts/SpawnNode.cs" id="2_7fknf"]
+[ext_resource type="PackedScene" uid="uid://c5y6drv86woc7" path="res://Assets/Pokemones/Entidad.tscn" id="3_uaqnl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7fknf"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_uaqnl"]
+sky_material = SubResource("ProceduralSkyMaterial_7fknf")
+
+[sub_resource type="Environment" id="Environment_lv5gi"]
+background_mode = 2
+sky = SubResource("Sky_uaqnl")
+tonemap_mode = 2
+
+[node name="NivelTest" type="Node" unique_id=970657847 node_paths=PackedStringArray("Aliados", "Enemigos")]
+script = ExtResource("1_a4025")
+Aliados = NodePath("Aliados")
+Enemigos = NodePath("Enemigos")
+
+[node name="Mapa" type="CSGCombiner3D" parent="." unique_id=196442379]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mapa" unique_id=977527740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+size = Vector3(10, 1, 10)
+
+[node name="GlobalIlumination" type="Node3D" parent="." unique_id=1715214156]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="GlobalIlumination" unique_id=1905070742]
+environment = SubResource("Environment_lv5gi")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GlobalIlumination" unique_id=318499202]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Vista" type="SubViewportContainer" parent="." unique_id=1652569318]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 4
+
+[node name="SubViewport" type="SubViewport" parent="Vista" unique_id=1976620429]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(288, 162)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Vista/SubViewport" unique_id=951747910]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 4, 7)
+current = true
+fov = 55.0
+
+[node name="Aliados" type="Node3D" parent="." unique_id=1847414498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+script = ExtResource("2_7fknf")
+
+[node name="Entidad" parent="Aliados" unique_id=1318041342 instance=ExtResource("3_uaqnl")]
+
+[node name="Enemigos" type="Node3D" parent="." unique_id=1482567127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+script = ExtResource("2_7fknf")
+
+[node name="Entidad" parent="Enemigos" unique_id=1733133856 instance=ExtResource("3_uaqnl")]
