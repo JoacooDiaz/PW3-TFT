@@ -17,6 +17,8 @@ public partial class Ui : Control
 		labelTest.Text = ""; 
 
         DineroLabel.Text = "$ " + _playerManager.Dinero; 
+
+        _playerManager.DineroCambiado += OnDineroCambiado;
 	}
 
 	public void MostrarVictoria()
@@ -40,5 +42,12 @@ public partial class Ui : Control
         DineroLabel.Text = "$ " + _playerManager.Dinero;
     }
 
+    private void OnDineroCambiado(
+        int nuevoDinero
+    )
+    {
+        DineroLabel.Text =
+            "$ " + nuevoDinero;
+    }
 
 }
