@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://4b2qwq0lgkww"]
 
 [ext_resource type="Script" uid="uid://dfllqw36j65u" path="res://Scripts/UI/BarraDeVida.cs" id="1_32ltt"]
-[ext_resource type="Theme" uid="uid://bqihnpmilrm7y" path="res://Scripts/UI/UI_Theme.tres" id="2_plrk5"]
+[ext_resource type="Theme" uid="uid://bqihnpmilrm7y" path="res://Scripts/UI/Themes/UI_Theme.tres" id="2_plrk5"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ngp60"]
 viewport_path = NodePath("SubViewport")

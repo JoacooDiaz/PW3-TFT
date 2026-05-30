@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c5echom83h5ji"]
 
 [ext_resource type="Script" uid="uid://cr62jk86tvijm" path="res://Scripts/UI/Ui.cs" id="1_vmxoy"]
-[ext_resource type="Theme" uid="uid://bqihnpmilrm7y" path="res://Scripts/UI/UI_Theme.tres" id="2_rjm2b"]
+[ext_resource type="Theme" uid="uid://bqihnpmilrm7y" path="res://Scripts/UI/Themes/UI_Theme.tres" id="2_rjm2b"]
 
 [node name="UI" type="Control" unique_id=434444583]
 texture_filter = 1

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5vaqdwg2el3a"]
 
-[ext_resource type="Theme" uid="uid://bqihnpmilrm7y" path="res://Scripts/UI/UI_Theme.tres" id="1_2wma7"]
+[ext_resource type="Theme" uid="uid://bqihnpmilrm7y" path="res://Scripts/UI/Themes/UI_Theme.tres" id="1_2wma7"]
 [ext_resource type="Script" uid="uid://5htdpn4tn8b8" path="res://Scripts/UI/TiendaUi.cs" id="1_22dhi"]
 
 [node name="TiendaUi" type="Control" unique_id=364080961]
