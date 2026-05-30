@@ -31,3 +31,9 @@ theme_type_variation = &"Texto_Fin_Partida"
 text = "vicTORIa"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DineroLabel" type="Label" parent="." unique_id=1752589032]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "$: Dinero no cargado"

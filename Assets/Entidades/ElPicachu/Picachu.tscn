@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dn7akxhunesdn"]
 
 [ext_resource type="Script" uid="uid://ccijh7ayh6tia" path="res://Scripts/Entidad.cs" id="1_07e7e"]
-[ext_resource type="Resource" uid="uid://d1p5xhqrneojq" path="res://Assets/Pokemones/ElPicachu/PicachuData.tres" id="2_yody7"]
+[ext_resource type="Resource" uid="uid://d1p5xhqrneojq" path="res://Assets/Entidades/ElPicachu/PicachuData.tres" id="2_yody7"]
 [ext_resource type="PackedScene" uid="uid://4b2qwq0lgkww" path="res://Scenes/UI/barra_de_vida.tscn" id="3_yody7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_x4bpy"]
@@ -13,7 +13,7 @@ albedo_color = Color(0.7227768, 0.66976726, 0, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkixr"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_yody7"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_8uc7h"]
 viewport_path = NodePath("SubViewport")
 
 [node name="Picachu" type="CharacterBody3D" unique_id=1156186729 node_paths=PackedStringArray("barraDeVida")]
@@ -41,4 +41,4 @@ shape = SubResource("CapsuleShape3D_rkixr")
 
 [node name="BarraDeVida" parent="." unique_id=1814894225 instance=ExtResource("3_yody7")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 2.2, 0)
-texture = SubResource("ViewportTexture_yody7")
+texture = SubResource("ViewportTexture_8uc7h")

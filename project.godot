@@ -20,6 +20,8 @@ GameManager="*uid://c2nhrmhjbtfwg"
 CombateManager="*uid://biaxwi4v6i86h"
 PlayerManager="*uid://c3hxe02onpitd"
 LevelManager="*uid://bkv7qpubom0yt"
+TiendaManager="*uid://bkwgbq6nbup1a"
+BDDEntidades="*uid://7nm7rdb3xxmt"
 
 [display]
 

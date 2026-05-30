@@ -95,10 +95,14 @@ public partial class CombateManager : Node
         Entidad entidad
     )
     {
-        GD.Print(
-            entidad.Data.Nombre +
-            " notificó su muerte."
-        );
+        GD.Print(entidad.Data.Nombre + " notificó su muerte.");
+
+        if (entidad.Equipo == _enemigos)
+        {
+            //_playerManager.Dinero += entidad.Data.Recompensa;
+
+            GD.Print("Ganaste $" + entidad.Data.Recompensa);
+        }
 
         VerificarFinPelea();
     }

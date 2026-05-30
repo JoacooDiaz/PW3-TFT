@@ -26,19 +26,19 @@ public partial class LevelManager : Node
         List<PackedScene> enemigos = new();
 
         enemigos.Add(
-            GD.Load<PackedScene>("res://Assets/Pokemones/Entidad.tscn")
+            GD.Load<PackedScene>("res://Assets/Entidades/Entidad.tscn")
         );
 
         enemigos.Add(
-            GD.Load<PackedScene>("res://Assets/Pokemones/Entidad.tscn")
+            GD.Load<PackedScene>("res://Assets/Entidades/Entidad.tscn")
         );
 
         enemigos.Add(
-            GD.Load<PackedScene>("res://Assets/Pokemones/Entidad.tscn")
+            GD.Load<PackedScene>("res://Assets/Entidades/Entidad.tscn")
         );
 
         enemigos.Add(
-            GD.Load<PackedScene>("res://Assets/Pokemones/Entidad.tscn")
+            GD.Load<PackedScene>("res://Assets/Entidades/Entidad.tscn")
         );
 
         return enemigos;

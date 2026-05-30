@@ -5,6 +5,7 @@ public partial class PlayerManager : Node
 {
 
     public List<PackedScene> Aliados = new();
+    public int Dinero = 50; 
 
     public override void _Ready()
     {
@@ -21,17 +22,12 @@ public partial class PlayerManager : Node
 
         */
 
-        Aliados.Add(
-            GD.Load<PackedScene>("res://Assets/Pokemones/Blissey/Blissey.tscn")
-        );
+        Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Blissey/Blissey.tscn"));
 
-        Aliados.Add(
-            GD.Load<PackedScene>("res://Assets/Pokemones/Audino/Audino.tscn")
-        );
+        Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Audino/Audino.tscn"));
 
-        Aliados.Add(
-            GD.Load<PackedScene>("res://Assets/Pokemones/ElPicachu/Picachu.tscn")
-        );
-
+        Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/ElPicachu/Picachu.tscn"));
     }
+
+    
 }

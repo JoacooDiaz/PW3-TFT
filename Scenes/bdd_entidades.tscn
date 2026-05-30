@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://7nm7rdb3xxmt"]
+
+[ext_resource type="Script" uid="uid://col721ia16j70" path="res://Scripts/Autoloads/BDDEntidades.cs" id="1_pd1dh"]
+[ext_resource type="PackedScene" uid="uid://bhv08wjwmolyy" path="res://Assets/Entidades/Audino/Audino.tscn" id="2_dmjb0"]
+[ext_resource type="PackedScene" uid="uid://boqgok60w6mf5" path="res://Assets/Entidades/Blissey/Blissey.tscn" id="3_uex7r"]
+[ext_resource type="PackedScene" uid="uid://dn7akxhunesdn" path="res://Assets/Entidades/ElPicachu/Picachu.tscn" id="4_1r6pr"]
+[ext_resource type="PackedScene" uid="uid://c5y6drv86woc7" path="res://Assets/Entidades/Entidad.tscn" id="5_l11gy"]
+
+[node name="BDDEntidades" type="Node" unique_id=584457621]
+script = ExtResource("1_pd1dh")
+Entidades = Array[PackedScene]([ExtResource("2_dmjb0"), ExtResource("3_uex7r"), ExtResource("4_1r6pr"), ExtResource("5_l11gy")])
