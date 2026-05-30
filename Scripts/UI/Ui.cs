@@ -19,6 +19,8 @@ public partial class Ui : Control
         DineroLabel.Text = "$ " + _playerManager.Dinero; 
 
         _playerManager.DineroCambiado += OnDineroCambiado;
+
+        OcultarMensaje();
 	}
 
 	public void MostrarVictoria()
@@ -35,6 +37,12 @@ public partial class Ui : Control
         labelTest.Visible = true;
 
         labelTest.Text = "deRota";
+    }
+
+    public void OcultarMensaje()
+    {
+        labelTest.Visible = false;
+        labelTest.Text = "";
     }
 
     public void ActualizarDinero()

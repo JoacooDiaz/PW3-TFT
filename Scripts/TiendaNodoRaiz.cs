@@ -4,21 +4,34 @@ using System.Collections.Generic;
 public partial class TiendaNodoRaiz : Node
 {
     [Export]
+    public Ui _Ui; 
+
+    [Export]
     public Node3D SP_Comprables;
+    
+    [Export]
+    public PackedScene UITiendaScene;
+
+    private TiendaUi _uiTienda;
 
     private TiendaManager _tiendaManager;
 
-    private List<PackedScene> _ofertasActuales =
-        new();
+    private List<PackedScene> _ofertasActuales = new();
+
+    //Const path de scena de uitienda
 
     public override void _Ready()
     {
+        GD.Print("TIENDA READY");
+
         _tiendaManager =
             GetNode<TiendaManager>(
                 "/root/TiendaManager"
             );
 
         CargarTienda();
+
+        CargarUiTienda(); 
     }
 
     public void CargarTienda()
@@ -61,5 +74,26 @@ public partial class TiendaNodoRaiz : Node
 
             indice++;
         }
+    }
+
+    private void CargarUiTienda()
+    {
+        if (UITiendaScene == null)
+        {
+            GD.PrintErr("UITiendaScene no asignada.");
+            return;
+        }
+
+        _uiTienda = UITiendaScene.Instantiate<TiendaUi>();
+
+        _Ui.AddChild(_uiTienda);
+
+        _uiTienda.ContinuarPressed += OnContinuarPressed;
+    }
+
+    private void OnContinuarPressed()
+    {
+        LevelManager _levelManager = GetNode<LevelManager>("/root/LevelManager");
+        _levelManager.IrAlSiguienteNivel(); 
     }
 }

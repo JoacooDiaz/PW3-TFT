@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://qgfdgk56t5ss" path="res://Scripts/TiendaNodoRaiz.cs" id="1_2bbwx"]
 [ext_resource type="Script" uid="uid://dsw6qow5j87v0" path="res://Scripts/CameraPelea.cs" id="1_yc8px"]
 [ext_resource type="PackedScene" uid="uid://c5echom83h5ji" path="res://Scenes/UI/Ui.tscn" id="2_2bbwx"]
-[ext_resource type="PackedScene" uid="uid://7nm7rdb3xxmt" path="res://Scenes/bdd_entidades.tscn" id="4_o5wvw"]
+[ext_resource type="PackedScene" uid="uid://b5vaqdwg2el3a" path="res://Scenes/UI/tienda_ui.tscn" id="2_mlssu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4j8xc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -17,9 +17,11 @@ background_mode = 2
 sky = SubResource("Sky_uaqnl")
 tonemap_mode = 2
 
-[node name="Tienda" type="Node" unique_id=1630975717 node_paths=PackedStringArray("SP_Comprables")]
+[node name="Tienda" type="Node" unique_id=1630975717 node_paths=PackedStringArray("_Ui", "SP_Comprables")]
 script = ExtResource("1_2bbwx")
+_Ui = NodePath("Vista/SubViewport/UI")
 SP_Comprables = NodePath("SP_Comprables")
+UITiendaScene = ExtResource("2_mlssu")
 
 [node name="GlobalIlumination" type="Node3D" parent="." unique_id=1407732488]
 
@@ -73,7 +75,7 @@ size = Vector2i(384, 216)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Vista/SubViewport" unique_id=1091341562]
-transform = Transform3D(-1, 5.017176e-09, 8.72787e-08, 1.4635049e-08, 0.99387056, 0.11054961, -8.618908e-08, 0.11054961, -0.99387056, -0.023569748, 0.91590834, -4.369928)
+transform = Transform3D(-1, 5.0171742e-09, 8.72787e-08, 8.761754e-09, 0.99907696, 0.04295677, -8.698262e-08, 0.04295677, -0.99907696, -0.86574, 0.3046329, -4.369928)
 current = true
 fov = 90.0
 script = ExtResource("1_yc8px")
@@ -90,5 +92,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5115277, 0.0604524, -1.3635
 
 [node name="Node3D3" type="Node3D" parent="SP_Comprables" unique_id=262934078]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5369364, 0.0604524, -1.3635648)
-
-[node name="BDDEntidades" parent="." unique_id=584457621 instance=ExtResource("4_o5wvw")]

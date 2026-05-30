@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b5vaqdwg2el3a"]
+
+[ext_resource type="Theme" uid="uid://bqihnpmilrm7y" path="res://Scripts/UI/UI_Theme.tres" id="1_2wma7"]
+[ext_resource type="Script" uid="uid://5htdpn4tn8b8" path="res://Scripts/UI/TiendaUi.cs" id="1_22dhi"]
+
+[node name="TiendaUi" type="Control" unique_id=364080961]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_22dhi")
+
+[node name="ContinuarButton" type="Button" parent="." unique_id=1730213821]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_right = 8.0
+grow_vertical = 0
+theme = ExtResource("1_2wma7")
+text = "CONTINUAR"
