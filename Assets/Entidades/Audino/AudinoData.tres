@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EntidadData" format=3 uid="uid://uqtn055fsau2"]
+
+[ext_resource type="Script" uid="uid://cprb44o6jey2a" path="res://Resources/EntidadData.cs" id="1_3lpcg"]
+
+[resource]
+script = ExtResource("1_3lpcg")
+Nombre = "Audino"
+Vida = 50
+VelocidadMovimiento = 1.0
+DistanciaAtaque = 3.0
+Rol = 2
+metadata/_custom_type_script = "uid://cprb44o6jey2a"

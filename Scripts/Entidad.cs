@@ -317,7 +317,7 @@ public partial class Entidad : CharacterBody3D
         barraDeVida.ActualizarBarra(VidaActual); 
     }
 
-    private void Morir()
+    public void Morir()
     {
         EstadoActual = EstadoEntidad.Muerto;
 

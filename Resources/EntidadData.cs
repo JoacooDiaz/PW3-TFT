@@ -38,6 +38,12 @@ public partial class EntidadData : Resource
     public TipoElemento Elemento =
         TipoElemento.Neutral;
 
+    [Export]
+    public int Precio = 3;
+
+    [Export]
+    public int Recompensa = 1;
+
     /*
         Recomendacion: No hacer la distancia de ataque menor a 2.0, sino la distancia puede ser menor al
         tamaño de la entidad perse 

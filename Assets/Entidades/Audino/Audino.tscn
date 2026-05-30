@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bhv08wjwmolyy"]
+
+[ext_resource type="Script" uid="uid://ccijh7ayh6tia" path="res://Scripts/Entidad.cs" id="1_4gyln"]
+[ext_resource type="Resource" uid="uid://uqtn055fsau2" path="res://Assets/Entidades/Audino/AudinoData.tres" id="2_4gyln"]
+[ext_resource type="PackedScene" uid="uid://4b2qwq0lgkww" path="res://Scenes/UI/barra_de_vida.tscn" id="3_osogu"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0py3c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2rvq"]
+albedo_color = Color(0.712126, 0.3275082, 0.5574483, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_25ypp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c2cdy"]
+radius = 0.53515625
+height = 1.0703125
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_aau02"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Audino" type="CharacterBody3D" unique_id=1636602526 node_paths=PackedStringArray("barraDeVida")]
+script = ExtResource("1_4gyln")
+Data = ExtResource("2_4gyln")
+barraDeVida = NodePath("BarraDeVida")
+
+[node name="Cuerpo" type="Node3D" parent="." unique_id=532352232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cuerpo" unique_id=1156741077]
+transform = Transform3D(1, 0, 0, 0, 0.39705092, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("CapsuleMesh_0py3c")
+surface_material_override/0 = SubResource("StandardMaterial3D_t2rvq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cuerpo" unique_id=1234396381]
+transform = Transform3D(0.7594137, 0, 0, 0, -8.742276e-09, -0.3, 0, 0.19999997, -1.3113417e-08, 0, -0.422, -0.375)
+mesh = SubResource("CylinderMesh_25ypp")
+surface_material_override/0 = SubResource("StandardMaterial3D_t2rvq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=255570542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5498047, 0)
+shape = SubResource("CapsuleShape3D_c2cdy")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1668330155]
+
+[node name="BarraDeVida" parent="." unique_id=1814894225 instance=ExtResource("3_osogu")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 2.2, 0)
+texture = SubResource("ViewportTexture_aau02")

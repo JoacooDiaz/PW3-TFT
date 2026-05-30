@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EntidadData" format=3 uid="uid://c5t63xye04t6"]
+
+[ext_resource type="Script" uid="uid://cprb44o6jey2a" path="res://Resources/EntidadData.cs" id="1_cap48"]
+
+[resource]
+script = ExtResource("1_cap48")
+Nombre = "Blissey"
+"Daño" = 20
+TiempoEntreAtaques = 2.5
+VelocidadMovimiento = 1.0
+DistanciaAtaque = 5.0
+Rol = 1
+metadata/_custom_type_script = "uid://cprb44o6jey2a"

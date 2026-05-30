@@ -20,12 +20,12 @@ albedo_color = Color(0.2568108, 0.5293294, 0.8405895, 1)
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_uaqnl"]
+[sub_resource type="Sky" id="Sky_lv5gi"]
 sky_material = SubResource("ProceduralSkyMaterial_7fknf")
 
 [sub_resource type="Environment" id="Environment_lv5gi"]
 background_mode = 2
-sky = SubResource("Sky_uaqnl")
+sky = SubResource("Sky_lv5gi")
 tonemap_mode = 2
 
 [node name="NivelTest" type="Node" unique_id=970657847 node_paths=PackedStringArray("Aliados", "Enemigos", "Ui")]

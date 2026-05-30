@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EntidadData" format=3 uid="uid://d1p5xhqrneojq"]
+
+[ext_resource type="Script" uid="uid://cprb44o6jey2a" path="res://Resources/EntidadData.cs" id="1_7dv6c"]
+
+[resource]
+script = ExtResource("1_7dv6c")
+Nombre = "Picachu"
+"Daño" = 50
+VelocidadMovimiento = 3.0
+DistanciaAtaque = 3.0
+Elemento = 4
+metadata/_custom_type_script = "uid://cprb44o6jey2a"

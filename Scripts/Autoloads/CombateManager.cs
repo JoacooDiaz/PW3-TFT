@@ -12,11 +12,15 @@ public partial class CombateManager : Node
     [Signal]
     public delegate void DerrotaEventHandler();
 
+    private PlayerManager _playerManager; 
+
     public void SetupPelea(
         Node3D aliados,
         Node3D enemigos
     )
     {
+        _playerManager = GetNode<PlayerManager>("/root/PlayerManager"); 
+
         _aliados = aliados as SpawnNode;
 
         _enemigos = enemigos as SpawnNode;
@@ -95,10 +99,10 @@ public partial class CombateManager : Node
         Entidad entidad
     )
     {
-        GD.Print(
-            entidad.Data.Nombre +
-            " notificó su muerte."
-        );
+        if (entidad.Equipo == _enemigos)
+        {
+            _playerManager.Dinero += entidad.Data.Recompensa;
+        }
 
         VerificarFinPelea();
     }

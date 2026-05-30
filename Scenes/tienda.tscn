@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://cx7cbqh8a0tab"]
+
+[ext_resource type="Script" uid="uid://qgfdgk56t5ss" path="res://Scripts/TiendaNodoRaiz.cs" id="1_2bbwx"]
+[ext_resource type="Script" uid="uid://dsw6qow5j87v0" path="res://Scripts/CameraPelea.cs" id="1_yc8px"]
+[ext_resource type="PackedScene" uid="uid://c5echom83h5ji" path="res://Scenes/UI/Ui.tscn" id="2_2bbwx"]
+[ext_resource type="PackedScene" uid="uid://b5vaqdwg2el3a" path="res://Scenes/UI/tienda_ui.tscn" id="2_mlssu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4j8xc"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_uaqnl"]
+sky_material = SubResource("ProceduralSkyMaterial_4j8xc")
+
+[sub_resource type="Environment" id="Environment_ar8g2"]
+background_mode = 2
+sky = SubResource("Sky_uaqnl")
+tonemap_mode = 2
+
+[node name="Tienda" type="Node" unique_id=1630975717 node_paths=PackedStringArray("_Ui", "SP_Comprables")]
+script = ExtResource("1_2bbwx")
+_Ui = NodePath("Vista/SubViewport/UI")
+SP_Comprables = NodePath("SP_Comprables")
+UITiendaScene = ExtResource("2_mlssu")
+
+[node name="GlobalIlumination" type="Node3D" parent="." unique_id=1407732488]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="GlobalIlumination" unique_id=464997572]
+environment = SubResource("Environment_ar8g2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GlobalIlumination" unique_id=1719957065]
+transform = Transform3D(0.8660253, 0.43301284, -0.25000006, 2.780595e-08, 0.49999994, 0.86602545, 0.5000001, -0.75, 0.4330126, -0.023569807, 0, -2.691281)
+shadow_enabled = true
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=2075051237]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=5105362]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.023569807, -1, -2.691281)
+size = Vector3(28, 1, 20)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=274057932]
+transform = Transform3D(-1, 8.742278e-08, -3.821371e-15, 0, -4.371139e-08, -1, -8.742278e-08, -1, 4.371139e-08, -0.023570333, 3.5861816, 6.9697523)
+size = Vector3(28, 1, 9.172363)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=699792167]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.5176775, -0.3216746, -1.3229791)
+radius = 0.5488281
+height = 0.4755249
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=607206897]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.4823225, -0.3216746, -1.3229793)
+radius = 0.5488281
+height = 0.4755249
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=1696793984]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.023569927, -0.322, -1.323281)
+radius = 0.5488281
+height = 0.4755249
+
+[node name="Vista" type="SubViewportContainer" parent="." unique_id=817238329]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 3
+
+[node name="SubViewport" type="SubViewport" parent="Vista" unique_id=108062994]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(384, 216)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Vista/SubViewport" unique_id=1091341562]
+transform = Transform3D(-1, 5.0171742e-09, 8.72787e-08, 8.761754e-09, 0.99907696, 0.04295677, -8.698262e-08, 0.04295677, -0.99907696, -0.86574, 0.3046329, -4.369928)
+current = true
+fov = 90.0
+script = ExtResource("1_yc8px")
+
+[node name="UI" parent="Vista/SubViewport" unique_id=434444583 instance=ExtResource("2_2bbwx")]
+
+[node name="SP_Comprables" type="Node3D" parent="." unique_id=167879968]
+
+[node name="Node3D" type="Node3D" parent="SP_Comprables" unique_id=1516323635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0604524, -1.3635648)
+
+[node name="Node3D2" type="Node3D" parent="SP_Comprables" unique_id=1188643915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5115277, 0.0604524, -1.3635648)
+
+[node name="Node3D3" type="Node3D" parent="SP_Comprables" unique_id=262934078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5369364, 0.0604524, -1.3635648)
