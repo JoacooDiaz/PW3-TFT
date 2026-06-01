@@ -163,28 +163,11 @@ public partial class Entidad : CharacterBody3D
             _navigation.GetNextPathPosition();
 
         Vector3 direccion =
-            (siguientePunto - GlobalPosition)
-            .Normalized();
+            (siguientePunto - GlobalPosition).Normalized();
 
         direccion.Y = 0;
 
-        if (direccion != Vector3.Zero)
-        {
-            Vector3 objetivoRotacion =
-                new Vector3(
-                    Rotation.X,
-                    Mathf.Atan2(
-                        -direccion.X,
-                        -direccion.Z
-                    ),
-                    Rotation.Z
-                );
-
-            Rotation = Rotation.Lerp(
-                objetivoRotacion,
-                8.0f * (float)delta
-            );
-        }
+        MirarObjetivo(delta);
 
         Velocity =
             direccion * Data.VelocidadMovimiento;
@@ -222,6 +205,8 @@ public partial class Entidad : CharacterBody3D
         if (ObjetivoActual == null)
             return;
 
+        MirarObjetivo(0.1);
+
         int dañoFinal =
             Mathf.RoundToInt(
                 CalcularDañoFinal(
@@ -253,6 +238,8 @@ public partial class Entidad : CharacterBody3D
             return;
         }
 
+        MirarObjetivo(0.1);
+
         aliado.Curar(Data.Curacion);
 
         GD.Print(
@@ -273,6 +260,8 @@ public partial class Entidad : CharacterBody3D
 
             return;
         }
+
+        MirarObjetivo(0.1);
 
         aliado.RecibirBuffDaño(
             Data.MultiplicadorAsistencia,
@@ -470,5 +459,31 @@ public partial class Entidad : CharacterBody3D
                 " perdió su buff."
             );
         }
+    }
+
+    private void MirarObjetivo(double delta)
+    {
+        if (ObjetivoActual == null)
+            return;
+
+        Vector3 direccion =
+            ObjetivoActual.GlobalPosition - GlobalPosition;
+
+        direccion.Y = 0;
+
+        if (direccion == Vector3.Zero)
+            return;
+
+        Vector3 objetivoRotacion =
+            new Vector3(
+                Rotation.X,
+                Mathf.Atan2(-direccion.X, -direccion.Z),
+                Rotation.Z
+            );
+
+        Rotation = Rotation.Lerp(
+            objetivoRotacion,
+            8.0f * (float)delta
+        );
     }
 }
