@@ -13,7 +13,6 @@ public partial class LevelManager : Node
 
     private int NivelActual;
 
-    //CREO que cargar escenas asi es malo para el performance, despues vemos 
     private readonly PackedScene _nivelScene = GD.Load<PackedScene>("res://Scenes/nivel_test.tscn");
     private readonly PackedScene _tiendaScene = GD.Load<PackedScene>("res://Scenes/tienda.tscn");
 
@@ -32,30 +31,6 @@ public partial class LevelManager : Node
     public void RegistrarUI(Ui ui)
     {
         _ui = ui;
-    }
-
-    //Quiza cada nivel tenga su lista de enemigos, veremos 
-    public List<PackedScene> GetEnemigos()
-    {
-        List<PackedScene> enemigos = new();
-
-        enemigos.Add(
-            GD.Load<PackedScene>("res://Assets/Entidades/Entidad.tscn")
-        );
-
-        enemigos.Add(
-            GD.Load<PackedScene>("res://Assets/Entidades/Entidad.tscn")
-        );
-
-        enemigos.Add(
-            GD.Load<PackedScene>("res://Assets/Entidades/Entidad.tscn")
-        );
-
-        enemigos.Add(
-            GD.Load<PackedScene>("res://Assets/Entidades/Entidad.tscn")
-        );
-
-        return enemigos;
     }
 
     private async void OnVictoria()
