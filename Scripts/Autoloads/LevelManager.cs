@@ -13,7 +13,8 @@ public partial class LevelManager : Node
 
     private int NivelActual;
 
-    private readonly PackedScene _nivelScene = GD.Load<PackedScene>("res://Scenes/nivel_test.tscn");
+    private List<PackedScene> _niveles = new();
+
     private readonly PackedScene _tiendaScene = GD.Load<PackedScene>("res://Scenes/tienda.tscn");
 
     public override void _Ready() 
@@ -24,6 +25,8 @@ public partial class LevelManager : Node
         _combateManager.Derrota += OnDerrota;
     
         _gameManager = GetNode<GameManager>("/root/GameManager"); 
+
+        CargarNiveles(); 
 
         NivelActual = 0; 
     }
@@ -56,6 +59,17 @@ public partial class LevelManager : Node
 
     public void IrAlSiguienteNivel()
     {
-        _gameManager.IrAEscena(_nivelScene);
+        if (NivelActual >= _niveles.Count)
+        {
+           NivelActual = 0; 
+        }
+
+        _gameManager.IrAEscena(_niveles[NivelActual]);
+    }
+
+    private void CargarNiveles()
+    {
+        _niveles.Add(GD.Load<PackedScene>("res://Scenes/nivel_test.tscn")); 
+        _niveles.Add(GD.Load<PackedScene>("res://Scenes/Niveles/nivel_1.tscn")); 
     }
 }

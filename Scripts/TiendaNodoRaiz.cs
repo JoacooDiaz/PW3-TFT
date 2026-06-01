@@ -18,8 +18,6 @@ public partial class TiendaNodoRaiz : Node
 
     private List<PackedScene> _ofertasActuales = new();
 
-    //Const path de scena de uitienda
-
     public override void _Ready()
     {
         _tiendaManager =

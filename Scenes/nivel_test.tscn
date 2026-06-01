@@ -22,12 +22,12 @@ albedo_color = Color(0.2568108, 0.5293294, 0.8405895, 1)
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_lv5gi"]
+[sub_resource type="Sky" id="Sky_c0bpi"]
 sky_material = SubResource("ProceduralSkyMaterial_7fknf")
 
 [sub_resource type="Environment" id="Environment_lv5gi"]
 background_mode = 2
-sky = SubResource("Sky_lv5gi")
+sky = SubResource("Sky_c0bpi")
 tonemap_mode = 2
 
 [node name="NivelTest" type="Node" unique_id=970657847 node_paths=PackedStringArray("Aliados", "Enemigos", "Ui")]
@@ -108,8 +108,8 @@ _entidadesPorFila = 1
 [node name="Enemigos" type="Node3D" parent="." unique_id=1482567127]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
 script = ExtResource("5_ff72a")
-CantidadMinima = 3
-CantidadMaxima = 5
+CantidadMinima = 2
+CantidadMaxima = 4
 EnemigosPosibles = Array[PackedScene]([ExtResource("7_6glv2")])
 _distanciaEntreEntidades = 3.0
 _entidadesPorFila = 2
