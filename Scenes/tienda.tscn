@@ -69,7 +69,6 @@ stretch = true
 stretch_shrink = 3
 
 [node name="SubViewport" type="SubViewport" parent="Vista" unique_id=108062994]
-handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(384, 216)
 render_target_update_mode = 4

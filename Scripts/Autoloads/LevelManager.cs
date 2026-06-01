@@ -64,7 +64,6 @@ public partial class LevelManager : Node
 
         NivelActual++; 
 
-        //Se podra poner en otro hilo? 
         await Task.Delay(2000);
 
         IrATienda();
@@ -72,8 +71,6 @@ public partial class LevelManager : Node
 
     private void OnDerrota()
     {
-        GD.Print("Jugador perdió.");
-
         _ui.MostrarDerrota();
     }
 

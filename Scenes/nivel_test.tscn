@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c5echom83h5ji" path="res://Scenes/UI/Ui.tscn" id="2_uaqnl"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_7fknf"]
-vertices = PackedVector3Array(-7, -0.48000002, -7, -7, -0.48000002, 7, 7, -0.48000002, 7, 7, -0.48000002, -7)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+vertices = PackedVector3Array(-14.679199, 10.245012, -29.873543, -14.679199, 9.495012, -29.123543, -13.429199, 9.745012, -29.373543, -13.679199, -1.4849882, -22.623543, -13.679199, -1.4849882, -21.873543, 13.320801, -1.4849882, -21.873543, 13.320801, -1.4849882, -22.623543, 7.820801, -1.4849882, -8.123543, 8.070801, -1.4849882, -6.373543, 13.320801, -1.4849882, -6.623543, 13.320801, -1.2549882, -18.373543, 11.045801, -1.4849882, -11.648542, -13.679199, -1.4849882, -5.873543, -8.179199, -1.4849882, -5.873543, -7.929199, -1.4849882, -8.123543, -13.679199, -1.4849882, -18.123543, 9.58597, -1.4849882, -16.144724, 11.070982, -1.4849882, -16.133736, -7.179199, -0.4849882, -7.123543, -7.179199, -0.4849882, 6.876457, 7.070801, -0.4849882, 6.876457, 7.070801, -0.4849882, -7.123543, 8.070801, -1.4849882, 6.626457, 13.320801, -1.4849882, 6.626457, -13.679199, -1.4849882, 6.626457, -8.179199, -1.4849882, 6.626457)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(6, 5, 3), PackedInt32Array(3, 5, 4), PackedInt32Array(9, 11, 10), PackedInt32Array(10, 11, 7), PackedInt32Array(7, 9, 8), PackedInt32Array(9, 7, 11), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(10, 16, 15), PackedInt32Array(15, 16, 14), PackedInt32Array(14, 16, 7), PackedInt32Array(7, 17, 10), PackedInt32Array(10, 17, 16), PackedInt32Array(16, 17, 7), PackedInt32Array(21, 20, 18), PackedInt32Array(18, 20, 19), PackedInt32Array(22, 8, 23), PackedInt32Array(23, 8, 9), PackedInt32Array(25, 24, 13), PackedInt32Array(13, 24, 12)]
 cell_height = 0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fknf"]

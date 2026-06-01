@@ -12,7 +12,7 @@ public partial class CombateManager : Node
     [Signal]
     public delegate void DerrotaEventHandler();
 
-    private PlayerManager _playerManager; 
+    private PlayerManager _playerManager;
 
     public void SetupPelea(
         Node3D aliados,
@@ -101,7 +101,7 @@ public partial class CombateManager : Node
     {
         if (entidad.Equipo == _enemigos)
         {
-            _playerManager.Dinero += entidad.Data.Recompensa;
+            _playerManager.SumarDinero(entidad.Data.Recompensa); 
         }
 
         VerificarFinPelea();
@@ -141,15 +141,11 @@ public partial class CombateManager : Node
 
         if (!aliadosVivos)
         {
-            GD.Print("Derrota.");
-
             TerminarPelea(false);
         }
 
         if (!enemigosVivos)
         {
-            GD.Print("Victoria.");
-
             TerminarPelea(true);
         }
     }

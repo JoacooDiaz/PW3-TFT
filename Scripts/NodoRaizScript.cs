@@ -50,6 +50,8 @@ public partial class NodoRaizScript : Node
             _levelManager.GetEnemigos()
         );
 
+        _playerManager.SetUpUi(Ui); 
+
         _combateManager.SetupPelea(
             Aliados,
             Enemigos
