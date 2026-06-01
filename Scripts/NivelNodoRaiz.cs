@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class NodoRaizScript : Node
+public partial class NivelNodoRaiz : Node
 {
     [Export]
     public Node3D Aliados;
@@ -39,16 +39,14 @@ public partial class NodoRaizScript : Node
         SpawnNode aliadosSpawn =
             Aliados as SpawnNode;
 
-        SpawnNode enemigosSpawn =
-            Enemigos as SpawnNode;
+        EnemigosSpawnNode enemigosSpawn =
+            Enemigos as EnemigosSpawnNode;
 
         aliadosSpawn.SpawnearEntidades(
             _playerManager.Aliados
         );
 
-        enemigosSpawn.SpawnearEntidades(
-            _levelManager.GetEnemigos()
-        );
+        enemigosSpawn.SpawnearEnemigosAleatorios();
 
         _playerManager.SetUpUi(Ui); 
 

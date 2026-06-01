@@ -1,82 +1,84 @@
-[gd_scene format=3 uid="uid://comdeedlf5j4o"]
+[gd_scene format=3 uid="uid://ba3ytlvxc43a7"]
 
-[ext_resource type="Script" uid="uid://ddd0udsr4uoqd" path="res://Scripts/NivelNodoRaiz.cs" id="1_lv5gi"]
-[ext_resource type="Script" uid="uid://du08ojmmg8jps" path="res://Scripts/SpawnNode.cs" id="2_7fknf"]
-[ext_resource type="Script" uid="uid://dsw6qow5j87v0" path="res://Scripts/CameraPelea.cs" id="2_lv5gi"]
-[ext_resource type="PackedScene" uid="uid://c5echom83h5ji" path="res://Scenes/UI/Ui.tscn" id="2_uaqnl"]
-[ext_resource type="Script" uid="uid://cp6vrnxxl4owv" path="res://Scripts/EnemigosSpawnNode.cs" id="5_ff72a"]
-[ext_resource type="PackedScene" uid="uid://boqgok60w6mf5" path="res://Assets/Entidades/Blissey/Blissey.tscn" id="7_6glv2"]
+[ext_resource type="Script" uid="uid://ddd0udsr4uoqd" path="res://Scripts/NivelNodoRaiz.cs" id="1_1vc5s"]
+[ext_resource type="Script" uid="uid://dsw6qow5j87v0" path="res://Scripts/CameraPelea.cs" id="2_81wkf"]
+[ext_resource type="PackedScene" uid="uid://c5echom83h5ji" path="res://Scenes/UI/Ui.tscn" id="3_31k04"]
+[ext_resource type="Script" uid="uid://du08ojmmg8jps" path="res://Scripts/SpawnNode.cs" id="4_fvw0e"]
+[ext_resource type="Script" uid="uid://cp6vrnxxl4owv" path="res://Scripts/EnemigosSpawnNode.cs" id="5_sddnt"]
+[ext_resource type="PackedScene" uid="uid://55yeu8jn1jv" path="res://Assets/Entidades/Jefe/Jefe.tscn" id="6_1vc5s"]
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_7fknf"]
+[sub_resource type="NavigationMesh" id="NavigationMesh_4tssb"]
 vertices = PackedVector3Array(-14.679199, 10.245012, -29.873543, -14.679199, 9.495012, -29.123543, -13.429199, 9.745012, -29.373543, -13.679199, -1.4849882, -22.623543, -13.679199, -1.4849882, -21.873543, 13.320801, -1.4849882, -21.873543, 13.320801, -1.4849882, -22.623543, 7.820801, -1.4849882, -8.123543, 8.070801, -1.4849882, -6.373543, 13.320801, -1.4849882, -6.623543, 13.320801, -1.2549882, -18.373543, 11.045801, -1.4849882, -11.648542, -13.679199, -1.4849882, -5.873543, -8.179199, -1.4849882, -5.873543, -7.929199, -1.4849882, -8.123543, -13.679199, -1.4849882, -18.123543, 9.58597, -1.4849882, -16.144724, 11.070982, -1.4849882, -16.133736, -7.179199, -0.4849882, -7.123543, -7.179199, -0.4849882, 6.876457, 7.070801, -0.4849882, 6.876457, 7.070801, -0.4849882, -7.123543, 8.070801, -1.4849882, 6.626457, 13.320801, -1.4849882, 6.626457, -13.679199, -1.4849882, 6.626457, -8.179199, -1.4849882, 6.626457)
 polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(6, 5, 3), PackedInt32Array(3, 5, 4), PackedInt32Array(9, 11, 10), PackedInt32Array(10, 11, 7), PackedInt32Array(7, 9, 8), PackedInt32Array(9, 7, 11), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(10, 16, 15), PackedInt32Array(15, 16, 14), PackedInt32Array(14, 16, 7), PackedInt32Array(7, 17, 10), PackedInt32Array(10, 17, 16), PackedInt32Array(16, 17, 7), PackedInt32Array(21, 20, 18), PackedInt32Array(18, 20, 19), PackedInt32Array(22, 8, 23), PackedInt32Array(23, 8, 9), PackedInt32Array(25, 24, 13), PackedInt32Array(13, 24, 12)]
 cell_height = 0.01
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fknf"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3s6e8"]
 albedo_color = Color(8.904189e-07, 0.63166535, 0.1636002, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lv5gi"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_78s11"]
 albedo_color = Color(0.2568108, 0.5293294, 0.8405895, 1)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7fknf"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xjwas"]
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_c0bpi"]
-sky_material = SubResource("ProceduralSkyMaterial_7fknf")
+[sub_resource type="Sky" id="Sky_lv5gi"]
+sky_material = SubResource("ProceduralSkyMaterial_xjwas")
 
-[sub_resource type="Environment" id="Environment_lv5gi"]
+[sub_resource type="Environment" id="Environment_bij32"]
 background_mode = 2
-sky = SubResource("Sky_c0bpi")
+sky = SubResource("Sky_lv5gi")
 tonemap_mode = 2
 
-[node name="NivelTest" type="Node" unique_id=970657847 node_paths=PackedStringArray("Aliados", "Enemigos", "Ui")]
-script = ExtResource("1_lv5gi")
+[node name="Nivel2" type="Node" unique_id=1103045667 node_paths=PackedStringArray("Aliados", "Enemigos", "Ui")]
+script = ExtResource("1_1vc5s")
 Aliados = NodePath("Aliados")
 Enemigos = NodePath("Enemigos")
 Ui = NodePath("Vista/SubViewport/UI")
 
-[node name="NM_Mapa" type="NavigationRegion3D" parent="." unique_id=17405865]
-navigation_mesh = SubResource("NavigationMesh_7fknf")
+[node name="NM_Mapa" type="NavigationRegion3D" parent="." unique_id=2028702740]
+navigation_mesh = SubResource("NavigationMesh_4tssb")
 
-[node name="Mapa_Mesh" type="CSGCombiner3D" parent="NM_Mapa" unique_id=196442379]
+[node name="Mapa_Mesh" type="CSGCombiner3D" parent="NM_Mapa" unique_id=1856029391]
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=977527740]
+[node name="CSGBox3D" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=573050692]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 size = Vector3(15, 1, 15)
-material = SubResource("StandardMaterial3D_7fknf")
+material = SubResource("StandardMaterial3D_3s6e8")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=1111806465]
+[node name="CSGBox3D2" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=1627907816]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -8)
 size = Vector3(30, 1, 30)
-material = SubResource("StandardMaterial3D_lv5gi")
+material = SubResource("StandardMaterial3D_78s11")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=120398208]
+[node name="CSGBox3D3" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=2117388291]
 transform = Transform3D(1, 0, 0, 0, 0.7071067, -0.7071068, 0, 0.7071068, 0.7071067, 0, 4.5977955, -25.196589)
 size = Vector3(37.8584, 1, 21)
-material = SubResource("StandardMaterial3D_lv5gi")
+material = SubResource("StandardMaterial3D_78s11")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=1513542347]
+[node name="CSGBox3D4" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=775293796]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -14.785986, 1.401207, -16.123543)
 size = Vector3(46, 1, 15.753906)
-material = SubResource("StandardMaterial3D_lv5gi")
+material = SubResource("StandardMaterial3D_78s11")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=688232582]
+[node name="CSGBox3D5" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=1322483695]
 transform = Transform3D(-4.0696907e-08, 0.9310367, -0.36492556, 1.5951402e-08, -0.36492556, -0.9310367, -1, -4.371139e-08, 1.9106855e-15, 15.937821, 2.3173788, -16.623543)
 size = Vector3(47, 1, 19.870117)
-material = SubResource("StandardMaterial3D_lv5gi")
+material = SubResource("StandardMaterial3D_78s11")
 
-[node name="GlobalIlumination" type="Node3D" parent="." unique_id=1715214156]
+[node name="GlobalIlumination" type="Node3D" parent="." unique_id=1922864660]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="GlobalIlumination" unique_id=1905070742]
-environment = SubResource("Environment_lv5gi")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="GlobalIlumination" unique_id=897660422]
+environment = SubResource("Environment_bij32")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GlobalIlumination" unique_id=318499202]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GlobalIlumination" unique_id=781185432]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.27395454, 0.14263341, 0.059825785, 1)
+light_energy = 2.589
+light_angular_distance = 43.64
 shadow_enabled = true
 
-[node name="Vista" type="SubViewportContainer" parent="." unique_id=1652569318]
+[node name="Vista" type="SubViewportContainer" parent="." unique_id=408241760]
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,31 +87,31 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 stretch_shrink = 3
+metadata/_edit_use_anchors_ = true
 
-[node name="SubViewport" type="SubViewport" parent="Vista" unique_id=1976620429]
+[node name="SubViewport" type="SubViewport" parent="Vista" unique_id=83235663]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(384, 216)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="Vista/SubViewport" unique_id=951747910]
+[node name="Camera3D" type="Camera3D" parent="Vista/SubViewport" unique_id=1755437125]
 transform = Transform3D(1, 0, 0, 0, 0.81079835, 0.58532566, 0, -0.58532566, 0.81079835, 0, 3.360402, 7)
 current = true
 fov = 90.0
-script = ExtResource("2_lv5gi")
+script = ExtResource("2_81wkf")
 
-[node name="UI" parent="Vista/SubViewport" unique_id=434444583 instance=ExtResource("2_uaqnl")]
+[node name="UI" parent="Vista/SubViewport" unique_id=434444583 instance=ExtResource("3_31k04")]
 
-[node name="Aliados" type="Node3D" parent="." unique_id=1847414498]
+[node name="Aliados" type="Node3D" parent="." unique_id=242155482]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
-script = ExtResource("2_7fknf")
+script = ExtResource("4_fvw0e")
 _entidadesPorFila = 1
 
-[node name="Enemigos" type="Node3D" parent="." unique_id=1482567127]
+[node name="Enemigos" type="Node3D" parent="." unique_id=2002000349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
-script = ExtResource("5_ff72a")
-CantidadMinima = 2
-CantidadMaxima = 4
-EnemigosPosibles = Array[PackedScene]([ExtResource("7_6glv2")])
+script = ExtResource("5_sddnt")
+CantidadMaxima = 1
+EnemigosPosibles = Array[PackedScene]([ExtResource("6_1vc5s")])
 _distanciaEntreEntidades = 3.0
 _entidadesPorFila = 2

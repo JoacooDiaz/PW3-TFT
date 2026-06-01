@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EntidadData" format=3 uid="uid://bct01yauicr0c"]
+
+[ext_resource type="Script" uid="uid://cprb44o6jey2a" path="res://Resources/EntidadData.cs" id="1_2n2nf"]
+
+[resource]
+script = ExtResource("1_2n2nf")
+Nombre = "Jefe"
+Vida = 400
+"Daño" = 55
+Curacion = 0
+TiempoEntreAtaques = 3.0
+VelocidadMovimiento = 2.0
+DistanciaAtaque = 5.0
+Elemento = 1
+Precio = 50
+Recompensa = 30
+metadata/_custom_type_script = "uid://cprb44o6jey2a"

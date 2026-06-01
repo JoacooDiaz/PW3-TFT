@@ -13,8 +13,8 @@ public partial class LevelManager : Node
 
     private int NivelActual;
 
-    //CREO que cargar escenas asi es malo para el performance, despues vemos 
-    private readonly PackedScene _nivelScene = GD.Load<PackedScene>("res://Scenes/nivel_test.tscn");
+    private List<PackedScene> _niveles = new();
+
     private readonly PackedScene _tiendaScene = GD.Load<PackedScene>("res://Scenes/tienda.tscn");
 
     public override void _Ready() 
@@ -26,36 +26,14 @@ public partial class LevelManager : Node
     
         _gameManager = GetNode<GameManager>("/root/GameManager"); 
 
+        CargarNiveles(); 
+
         NivelActual = 0; 
     }
 
     public void RegistrarUI(Ui ui)
     {
         _ui = ui;
-    }
-
-    //Quiza cada nivel tenga su lista de enemigos, veremos 
-    public List<PackedScene> GetEnemigos()
-    {
-        List<PackedScene> enemigos = new();
-
-        enemigos.Add(
-            GD.Load<PackedScene>("res://Assets/Entidades/Entidad.tscn")
-        );
-
-        enemigos.Add(
-            GD.Load<PackedScene>("res://Assets/Entidades/Entidad.tscn")
-        );
-
-        enemigos.Add(
-            GD.Load<PackedScene>("res://Assets/Entidades/Entidad.tscn")
-        );
-
-        enemigos.Add(
-            GD.Load<PackedScene>("res://Assets/Entidades/Entidad.tscn")
-        );
-
-        return enemigos;
     }
 
     private async void OnVictoria()
@@ -81,6 +59,18 @@ public partial class LevelManager : Node
 
     public void IrAlSiguienteNivel()
     {
-        _gameManager.IrAEscena(_nivelScene);
+        if (NivelActual >= _niveles.Count)
+        {
+           NivelActual = 0; 
+        }
+
+        _gameManager.IrAEscena(_niveles[NivelActual]);
+    }
+
+    private void CargarNiveles()
+    {
+        _niveles.Add(GD.Load<PackedScene>("res://Scenes/nivel_test.tscn")); 
+        _niveles.Add(GD.Load<PackedScene>("res://Scenes/Niveles/nivel_1.tscn")); 
+        _niveles.Add(GD.Load<PackedScene>("res://Scenes/Niveles/nivel_2.tscn")); 
     }
 }

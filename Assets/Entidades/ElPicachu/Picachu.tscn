@@ -12,8 +12,10 @@ albedo_color = Color(0.7227768, 0.66976726, 0, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_iws4l"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkixr"]
+radius = 0.49658203
+height = 1.9987793
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_8uc7h"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_okfp8"]
 viewport_path = NodePath("SubViewport")
 
 [node name="Picachu" type="CharacterBody3D" unique_id=1156186729 node_paths=PackedStringArray("barraDeVida")]
@@ -34,11 +36,11 @@ mesh = SubResource("CylinderMesh_iws4l")
 surface_material_override/0 = SubResource("StandardMaterial3D_07e7e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1789168935]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99938965, 0)
 shape = SubResource("CapsuleShape3D_rkixr")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1365079441]
 
 [node name="BarraDeVida" parent="." unique_id=1814894225 instance=ExtResource("3_yody7")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 2.2, 0)
-texture = SubResource("ViewportTexture_8uc7h")
+texture = SubResource("ViewportTexture_okfp8")
