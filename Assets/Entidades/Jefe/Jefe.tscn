@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://55yeu8jn1jv"]
+
+[ext_resource type="Script" uid="uid://ccijh7ayh6tia" path="res://Scripts/Entidad.cs" id="1_on5hv"]
+[ext_resource type="Resource" uid="uid://bct01yauicr0c" path="res://Assets/Entidades/Jefe/JefeData.tres" id="2_on5hv"]
+[ext_resource type="PackedScene" uid="uid://4b2qwq0lgkww" path="res://Scenes/UI/barra_de_vida.tscn" id="3_b41o2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_on5hv"]
+albedo_color = Color(0.18193081, 0.6606462, 0.19521376, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_on5hv"]
+radius = 1.0380859
+height = 2.8245354
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_okfp8"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Jefe" type="CharacterBody3D" unique_id=1156186729 node_paths=PackedStringArray("barraDeVida")]
+script = ExtResource("1_on5hv")
+Data = ExtResource("2_on5hv")
+barraDeVida = NodePath("BarraDeVida")
+
+[node name="Cuerpo" type="Node3D" parent="." unique_id=1006194888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Cuerpo" unique_id=80589843]
+transform = Transform3D(1.8544457, 0, 0, 0, -0.4527439, 1.7983303, 0, -1.7983303, -0.4527439, -0.012451533, 1.9534569, 0.3946297)
+inner_radius = 0.26540077
+outer_radius = 0.9750773
+material = SubResource("StandardMaterial3D_on5hv")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Cuerpo" unique_id=1361487652]
+transform = Transform3D(1.8544457, 0, 0, 0, 1.8544457, 0, 0, 0, 1.8544457, -0.88751715, -0.40148938, -0.14677083)
+radius = 0.2734375
+height = 0.6449585
+material = SubResource("StandardMaterial3D_on5hv")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Cuerpo" unique_id=1802116232]
+transform = Transform3D(1.6034828, 0.5590958, 0.74513316, 0, 1.4833214, -1.1129807, -0.93156403, 0.96236056, 1.282583, -0.7801642, 0.3456347, 0.16550243)
+radius = 0.2734375
+height = 0.48425293
+material = SubResource("StandardMaterial3D_on5hv")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Cuerpo" unique_id=259792264]
+transform = Transform3D(1.8544457, 0, 0, 0, 1.8544457, 0, 0, 0, 1.8544457, 0.9088523, -0.40148938, -0.14677083)
+radius = 0.2734375
+height = 0.6449585
+material = SubResource("StandardMaterial3D_on5hv")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Cuerpo" unique_id=1958835893]
+transform = Transform3D(1.7975295, -0.27362502, -0.36467272, -2.3893756e-08, 1.4833214, -1.1129807, 0.4559133, 1.0788215, 1.4377956, 0.8943483, 0.3456347, 0.16550243)
+radius = 0.2734375
+height = 0.48425293
+material = SubResource("StandardMaterial3D_on5hv")
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Cuerpo" unique_id=581341371]
+transform = Transform3D(1.8541198, 0.020861387, 0.02780301, 0.01851409, 0.66268325, -1.7318999, -0.029418154, 1.731873, 0.6623586, -0.07228565, 3.0851526, -0.41533318)
+radius = 0.35498047
+height = 0.66207886
+material = SubResource("StandardMaterial3D_on5hv")
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Cuerpo" unique_id=903185361]
+transform = Transform3D(1.5081713, -1.013094, -0.37152138, 0.01851409, 0.6626832, -1.7318997, 1.0789088, 1.404799, 0.5490571, 1.5856084, 1.8299367, -0.28244087)
+radius = 0.22851563
+height = 0.9433441
+material = SubResource("StandardMaterial3D_on5hv")
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Cuerpo" unique_id=2035069040]
+transform = Transform3D(1.7541662, 0.5553334, 0.23124155, 0.018514069, 0.66268325, -1.7319, -0.60126966, 1.6405559, 0.62130445, -1.5015137, 1.8299367, -0.28244087)
+radius = 0.22851563
+height = 0.9433441
+material = SubResource("StandardMaterial3D_on5hv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1789168935]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, -0.008429797, 2.2274513, 0.03425763)
+shape = SubResource("CapsuleShape3D_on5hv")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1365079441]
+
+[node name="BarraDeVida" parent="." unique_id=1814894225 instance=ExtResource("3_b41o2")]
+transform = Transform3D(1.735, 0, 0, 0, 1.145, 0, 0, 0, 1.145, 0, 4.7206297, 0)
+texture = SubResource("ViewportTexture_okfp8")

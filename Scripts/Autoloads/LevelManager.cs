@@ -71,5 +71,6 @@ public partial class LevelManager : Node
     {
         _niveles.Add(GD.Load<PackedScene>("res://Scenes/nivel_test.tscn")); 
         _niveles.Add(GD.Load<PackedScene>("res://Scenes/Niveles/nivel_1.tscn")); 
+        _niveles.Add(GD.Load<PackedScene>("res://Scenes/Niveles/nivel_2.tscn")); 
     }
 }
