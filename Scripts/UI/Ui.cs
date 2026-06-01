@@ -16,26 +16,20 @@ public partial class Ui : Control
 		labelTest.Visible = false; 
 		labelTest.Text = ""; 
 
-        DineroLabel.Text = "$ " + _playerManager.Dinero; 
-
-        _playerManager.DineroCambiado += OnDineroCambiado;
+        ActualizarDinero(); 
 
         OcultarMensaje();
 	}
 
 	public void MostrarVictoria()
     {
-		GD.Print("DEBERIA MOSTRAR LA VICTORIA"); 
-
         labelTest.Visible = true;
-
         labelTest.Text = "vicTORIa";
     }
 
     public void MostrarDerrota()
     {
         labelTest.Visible = true;
-
         labelTest.Text = "deRota";
     }
 
@@ -50,12 +44,9 @@ public partial class Ui : Control
         DineroLabel.Text = "$ " + _playerManager.Dinero;
     }
 
-    private void OnDineroCambiado(
-        int nuevoDinero
-    )
+    public override void _ExitTree()
     {
-        DineroLabel.Text =
-            "$ " + nuevoDinero;
+        if (_playerManager != null)
+            _playerManager.SetUpUi(null);
     }
-
 }

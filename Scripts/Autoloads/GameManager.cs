@@ -4,13 +4,12 @@ using System;
 public partial class GameManager : Node
 {
 
-    public void IrAEscena(PackedScene scene)
+    public async void IrAEscena(PackedScene scene)
     {
-        if (scene == null)
-        {
-            GD.PrintErr("Escena nula.");
-            return;
-        }
+        await ToSignal(
+            GetTree(),
+            SceneTree.SignalName.ProcessFrame
+        );
 
         GetTree().ChangeSceneToPacked(scene);
     }

@@ -6,10 +6,9 @@ public partial class PlayerManager : Node
 
     public List<PackedScene> Aliados = new();
 
-    private int _dinero = 50;
+    public int Dinero = 50;
 
-    [Signal]
-    public delegate void DineroCambiadoEventHandler(int nuevoDinero);
+    private Ui _ui; 
 
     public override void _Ready()
     {
@@ -33,18 +32,20 @@ public partial class PlayerManager : Node
         Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/ElPicachu/Picachu.tscn"));
     }
 
-    public int Dinero
+    public void SetUpUi(Ui ui)
     {
-        get => _dinero;
+        _ui = ui;
 
-        set
-        {
-            _dinero = value;
-
-            EmitSignal(
-                SignalName.DineroCambiado,
-                _dinero
-            );
-        }
+        if (IsInstanceValid(_ui))
+            _ui.ActualizarDinero();
     }
+
+    public void SumarDinero(int suma)
+    {
+        Dinero += suma;
+
+        if (IsInstanceValid(_ui))
+            _ui.ActualizarDinero();
+    }
+
 }

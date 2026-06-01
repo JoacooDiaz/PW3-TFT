@@ -22,8 +22,6 @@ public partial class TiendaNodoRaiz : Node
 
     public override void _Ready()
     {
-        GD.Print("TIENDA READY");
-
         _tiendaManager =
             GetNode<TiendaManager>(
                 "/root/TiendaManager"
