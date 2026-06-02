@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://byce8a2d54kwx"]
+
+[ext_resource type="Script" uid="uid://cy3le350rxfj2" path="res://Scripts/UI/InfoAccion.cs" id="1_2irke"]
+[ext_resource type="Texture2D" uid="uid://e15puc8o5uhp" path="res://icon.svg" id="1_lhnuk"]
+[ext_resource type="Theme" uid="uid://bqihnpmilrm7y" path="res://Scripts/UI/Themes/UI_Theme.tres" id="2_2irke"]
+[ext_resource type="Texture2D" uid="uid://bo06wf1ixy0t4" path="res://Assets/Img/Elementos/Fuego.jpg" id="3_s2lu1"]
+[ext_resource type="Texture2D" uid="uid://dqc8l87g1nn16" path="res://Assets/Img/Elementos/Agua.jpg" id="4_wvwse"]
+[ext_resource type="Texture2D" uid="uid://dlmggn6btvqj0" path="res://Assets/Img/Elementos/Planta.png" id="5_eft3w"]
+[ext_resource type="Texture2D" uid="uid://kgguyuciomqg" path="res://Assets/Img/Elementos/Electrio.jpg" id="6_pyyr0"]
+[ext_resource type="Texture2D" uid="uid://b8pd5h42mv8pv" path="res://Assets/Img/Elementos/Oscurida.jpg" id="7_6wp84"]
+[ext_resource type="Texture2D" uid="uid://db4kyc5kevpe1" path="res://Assets/Img/Elementos/Sol.jpg" id="8_1x0yr"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_44ffh"]
+viewport_path = NodePath("SubViewport")
+
+[node name="InfoAccion" type="Sprite3D" unique_id=2008531708]
+billboard = 1
+texture = SubResource("ViewportTexture_44ffh")
+script = ExtResource("1_2irke")
+NeutralTexture = ExtResource("1_lhnuk")
+FuegoTexture = ExtResource("3_s2lu1")
+AguaTexture = ExtResource("4_wvwse")
+PlantaTexture = ExtResource("5_eft3w")
+ElectricoTexture = ExtResource("6_pyyr0")
+OscuridadTexture = ExtResource("7_6wp84")
+LuzTexture = ExtResource("8_1x0yr")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1194447972]
+transparent_bg = true
+size = Vector2i(207, 137)
+
+[node name="Panel" type="Panel" parent="SubViewport" unique_id=1419698769]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InfoAction" type="TextureRect" parent="SubViewport/Panel" unique_id=259314605]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -64.0
+offset_right = 128.0
+offset_bottom = 64.0
+grow_vertical = 2
+texture = ExtResource("1_lhnuk")
+expand_mode = 4
+
+[node name="InfoNum" type="Label" parent="SubViewport/Panel" unique_id=1521116045]
+process_priority = 1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_2irke")
+theme_type_variation = &"InfoNumLabel"
+text = "-35"

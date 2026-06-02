@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c5echom83h5ji" path="res://Scenes/UI/Ui.tscn" id="2_uaqnl"]
 [ext_resource type="Script" uid="uid://cp6vrnxxl4owv" path="res://Scripts/EnemigosSpawnNode.cs" id="5_ff72a"]
 [ext_resource type="PackedScene" uid="uid://boqgok60w6mf5" path="res://Assets/Entidades/Blissey/Blissey.tscn" id="7_6glv2"]
+[ext_resource type="PackedScene" uid="uid://bhv08wjwmolyy" path="res://Assets/Entidades/Audino/Audino.tscn" id="7_eonep"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_7fknf"]
 vertices = PackedVector3Array(-14.679199, 10.245012, -29.873543, -14.679199, 9.495012, -29.123543, -13.429199, 9.745012, -29.373543, -13.679199, -1.4849882, -22.623543, -13.679199, -1.4849882, -21.873543, 13.320801, -1.4849882, -21.873543, 13.320801, -1.4849882, -22.623543, 7.820801, -1.4849882, -8.123543, 8.070801, -1.4849882, -6.373543, 13.320801, -1.4849882, -6.623543, 13.320801, -1.2549882, -18.373543, 11.045801, -1.4849882, -11.648542, -13.679199, -1.4849882, -5.873543, -8.179199, -1.4849882, -5.873543, -7.929199, -1.4849882, -8.123543, -13.679199, -1.4849882, -18.123543, 9.58597, -1.4849882, -16.144724, 11.070982, -1.4849882, -16.133736, -7.179199, -0.4849882, -7.123543, -7.179199, -0.4849882, 6.876457, 7.070801, -0.4849882, 6.876457, 7.070801, -0.4849882, -7.123543, 8.070801, -1.4849882, 6.626457, 13.320801, -1.4849882, 6.626457, -13.679199, -1.4849882, 6.626457, -8.179199, -1.4849882, 6.626457)
@@ -110,6 +111,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
 script = ExtResource("5_ff72a")
 CantidadMinima = 2
 CantidadMaxima = 4
-EnemigosPosibles = Array[PackedScene]([ExtResource("7_6glv2")])
+EnemigosPosibles = Array[PackedScene]([ExtResource("7_6glv2"), ExtResource("7_eonep")])
 _distanciaEntreEntidades = 3.0
 _entidadesPorFila = 2

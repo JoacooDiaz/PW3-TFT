@@ -9,6 +9,9 @@ public partial class Entidad : CharacterBody3D
     [Export]
     public BarraDeVida barraDeVida;
 
+    [Export]
+    private InfoAccion InfoAccion; 
+
     private NavigationAgent3D _navigation;
 
     public EstadoEntidad EstadoActual = EstadoEntidad.Idle;
@@ -44,6 +47,8 @@ public partial class Entidad : CharacterBody3D
     {
         _navigation = GetNode<NavigationAgent3D>("NavigationAgent3D");
 
+        InfoAccion = GetNode<InfoAccion>("InfoAccion"); 
+
         if (Data == null)
         {
             GD.Print(Name + " no tiene EntidadData.");
@@ -52,6 +57,7 @@ public partial class Entidad : CharacterBody3D
 
         VidaActual = Data.Vida;
         barraDeVida.setUpBarra(VidaActual); 
+        InfoAccion.OcultarInfo(); 
     }
 
     public override void _PhysicsProcess(double delta)
@@ -216,7 +222,7 @@ public partial class Entidad : CharacterBody3D
                 ) * _multiplicadorDaño
         );
 
-        ObjetivoActual.RecibirDaño(dañoFinal);
+        ObjetivoActual.RecibirDaño(dañoFinal, Data.Elemento);
 
         GD.Print(
             Data.Nombre +
@@ -275,11 +281,14 @@ public partial class Entidad : CharacterBody3D
         );
     }
 
-    public void RecibirDaño(int daño)
+    //???
+    public void RecibirDaño(int daño, TipoElemento elemento)
     {
         VidaActual -= daño;
 
         barraDeVida.ActualizarBarra(VidaActual); 
+
+        InfoAccion.MostrarInfo(daño, elemento); 
 
         GD.Print(
             Data.Nombre +
@@ -309,6 +318,8 @@ public partial class Entidad : CharacterBody3D
     public void Morir()
     {
         EstadoActual = EstadoEntidad.Muerto;
+
+        InfoAccion.OcultarInfo(); 
 
         Velocity = Vector3.Zero;
 
