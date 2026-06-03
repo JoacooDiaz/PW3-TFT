@@ -109,8 +109,8 @@ _entidadesPorFila = 1
 [node name="Enemigos" type="Node3D" parent="." unique_id=1482567127]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
 script = ExtResource("5_ff72a")
-CantidadMinima = 2
-CantidadMaxima = 4
+CantidadMinima = 3
+CantidadMaxima = 6
 EnemigosPosibles = Array[PackedScene]([ExtResource("7_6glv2"), ExtResource("7_eonep")])
 _distanciaEntreEntidades = 3.0
 _entidadesPorFila = 2

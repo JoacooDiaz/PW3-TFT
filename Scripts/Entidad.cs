@@ -12,6 +12,9 @@ public partial class Entidad : CharacterBody3D
     [Export]
     private InfoAccion InfoAccion; 
 
+    [Export]
+    private IconCuracion InfoCuracion; 
+
     private NavigationAgent3D _navigation;
 
     public EstadoEntidad EstadoActual = EstadoEntidad.Idle;
@@ -306,6 +309,8 @@ public partial class Entidad : CharacterBody3D
     public void Curar(int cantidad)
     {
         VidaActual += cantidad;
+
+        InfoCuracion.MostrarInfo(); 
 
         if (VidaActual > Data.Vida)
         {
