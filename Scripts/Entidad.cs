@@ -57,7 +57,7 @@ public partial class Entidad : CharacterBody3D
 
         VidaActual = Data.Vida;
         barraDeVida.setUpBarra(VidaActual); 
-        InfoAccion.OcultarInfo(); 
+        InfoAccion.Limpiar(); 
     }
 
     public override void _PhysicsProcess(double delta)
@@ -319,7 +319,7 @@ public partial class Entidad : CharacterBody3D
     {
         EstadoActual = EstadoEntidad.Muerto;
 
-        InfoAccion.OcultarInfo(); 
+        InfoAccion.Limpiar(); 
 
         Velocity = Vector3.Zero;
 

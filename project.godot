@@ -22,6 +22,7 @@ PlayerManager="*uid://c3hxe02onpitd"
 LevelManager="*uid://bkv7qpubom0yt"
 TiendaManager="*uid://bkwgbq6nbup1a"
 BDDEntidades="*uid://7nm7rdb3xxmt"
+ElementosManager="*uid://cq0xfvgb03wig"
 
 [display]
 

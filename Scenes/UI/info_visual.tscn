@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://7x6yiu78p2w0"]
+
+[ext_resource type="Script" uid="uid://bl3hdcln4vqki" path="res://Scripts/UI/InfoVisual.cs" id="1_mqe4w"]
+
+[node name="InfoVisual" type="Sprite3D" unique_id=933123433]
+script = ExtResource("1_mqe4w")

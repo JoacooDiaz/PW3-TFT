@@ -1,85 +1,54 @@
 using Godot;
-using System;
 using System.Threading.Tasks;
 
-public partial class InfoAccion : Sprite3D
+public partial class InfoAccion : InfoVisual
 {
-	
-	private Label InfoNum; 
+    private Label _infoNum;
 
-	private TextureRect InfoAccionTexture; 
+    private TextureRect _infoTexture;
 
-	//??? 
-	[Export] private Texture2D NeutralTexture;
-	[Export] private Texture2D FuegoTexture;
-	[Export] private Texture2D AguaTexture;
-	[Export] private Texture2D PlantaTexture;
-	[Export] private Texture2D ElectricoTexture;
-	[Export] private Texture2D OscuridadTexture;
-	[Export] private Texture2D LuzTexture;
+    private ElementosManager _elementosManager;
 
-	public override void _Ready()
-	{
-		InfoNum = GetNode<Label>("SubViewport/Panel/InfoNum");
-		InfoAccionTexture = GetNode<TextureRect>("SubViewport/Panel/InfoAction");
-	}
+    public override void _Ready()
+    {
+        _infoNum = GetNode<Label>("SubViewport/Panel/InfoNum");
 
-	public async void MostrarInfo(
-		int num,
-		TipoElemento elemento
-	)
-	{
-		InfoNum.Text = "-" + num;
+        _infoTexture = GetNode<TextureRect>("SubViewport/Panel/InfoAction");
 
-		InfoAccionTexture.Texture =
-			ObtenerTexturaElemento(elemento);
+        _elementosManager = GetNode<ElementosManager>("/root/ElementosManager");
 
-		InfoAccionTexture.Visible = true;
+        Apagar();
+    }
 
-		await ToSignal(
-			GetTree().CreateTimer(0.5),
-			SceneTreeTimer.SignalName.Timeout
-		);
+    public async void MostrarInfo(
+        int num,
+        TipoElemento elemento
+    )
+    {
+        _infoNum.Text = "-" + num;
 
-		if (!IsInsideTree())
-			return;
+        _infoTexture.Texture = _elementosManager.ObtenerTexturaElemento(elemento);
 
-		OcultarInfo();
-	}
+        await MostrarTemporal();
 
-	private Texture2D ObtenerTexturaElemento(
-    	TipoElemento elemento
-	)
-	{
-		switch (elemento)
-		{
-			case TipoElemento.Fuego:
-				return FuegoTexture;
+        Limpiar();
+    }
 
-			case TipoElemento.Agua:
-				return AguaTexture;
+    public void Limpiar()
+    {
+        _infoNum.Text = "";
+        _infoTexture.Texture = null;
+    }
 
-			case TipoElemento.Planta:
-				return PlantaTexture;
+    public override void Prender()
+    {
+        base.Prender();
+        _infoTexture.Visible = true;
+    }
 
-			case TipoElemento.Electrico:
-				return ElectricoTexture;
-
-			case TipoElemento.Oscuridad:
-				return OscuridadTexture;
-
-			case TipoElemento.Luz:
-				return LuzTexture;
-
-			default:
-				return NeutralTexture;
-		}
-	}
-
-	public void OcultarInfo()
-	{
-		InfoNum.Text = ""; 
-		InfoAccionTexture.Visible = false; 
-	}
-
+    public override void Apagar()
+    {
+        base.Apagar();
+        _infoTexture.Visible = false;
+    }
 }
