@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://ufy8i5ljn2c5"]
+
+[ext_resource type="Script" uid="uid://dn7o0xb3bnwpc" path="res://Scripts/UI/IconCuracion.cs" id="1_lv667"]
+[ext_resource type="Texture2D" uid="uid://bhjubbtp12ppr" path="res://Assets/Img/Curacion.jpg" id="2_lv667"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lv667"]
+viewport_path = NodePath("SubViewport")
+
+[node name="IconCuracion" type="Sprite3D" unique_id=810924509]
+billboard = 1
+texture = SubResource("ViewportTexture_lv667")
+script = ExtResource("1_lv667")
+Imagen = ExtResource("2_lv667")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=603928566]
+transparent_bg = true
+size = Vector2i(133, 131)
+
+[node name="Panel" type="Panel" parent="SubViewport" unique_id=584239365]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VidaIcon" type="TextureRect" parent="SubViewport/Panel" unique_id=603679777]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lv667")
+expand_mode = 4

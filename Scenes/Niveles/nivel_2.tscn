@@ -73,7 +73,7 @@ environment = SubResource("Environment_bij32")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="GlobalIlumination" unique_id=781185432]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-light_color = Color(0.27395454, 0.14263341, 0.059825785, 1)
+light_color = Color(0.83316696, 0.17414317, 0.2556903, 1)
 light_energy = 2.589
 light_angular_distance = 43.64
 shadow_enabled = true
@@ -96,7 +96,7 @@ size = Vector2i(384, 216)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Vista/SubViewport" unique_id=1755437125]
-transform = Transform3D(1, 0, 0, 0, 0.81079835, 0.58532566, 0, -0.58532566, 0.81079835, 0, 3.360402, 7)
+transform = Transform3D(1, 0, 0, 0, 0.9948348, 0.10150769, 0, -0.10150769, 0.9948348, 0, 1.3604021, 9)
 current = true
 fov = 90.0
 script = ExtResource("2_81wkf")

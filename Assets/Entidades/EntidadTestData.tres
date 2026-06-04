@@ -6,4 +6,5 @@
 script = ExtResource("1_o37k0")
 Nombre = "EntidadTest"
 DistanciaAtaque = 1.1
+Elemento = 1
 metadata/_custom_type_script = "uid://cprb44o6jey2a"

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_7dv6c")
 Nombre = "Picachu"
-"Daño" = 50
+"Daño" = 15
 VelocidadMovimiento = 3.0
 DistanciaAtaque = 3.0
 Elemento = 4

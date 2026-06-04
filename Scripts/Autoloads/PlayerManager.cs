@@ -22,12 +22,11 @@ public partial class PlayerManager : Node
 
             Tenemos que ver si hacemos que esto sea una funcionalidad o si vamos a "Corregirlo"
             para controlarlo nosotros mismos...
-
         */
-
+        
         Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Blissey/Blissey.tscn"));
 
-        Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Audino/Audino.tscn"));
+        Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Audino/Audino.tscn")); 
 
         Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/ElPicachu/Picachu.tscn"));
     }
