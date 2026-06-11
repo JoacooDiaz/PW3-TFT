@@ -328,6 +328,7 @@ public partial class Entidad : CharacterBody3D
         EstadoActual = EstadoEntidad.Muerto;
 
         InfoAccion.Limpiar(); 
+        aura.Apagar(); 
 
         Velocity = Vector3.Zero;
 
