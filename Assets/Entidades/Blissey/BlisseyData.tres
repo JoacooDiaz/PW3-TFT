@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource("1_cap48")
 Nombre = "Blissey"
-"Daño" = 20
-TiempoEntreAtaques = 2.5
+"Daño" = 15
+TiempoEntreAtaques = 2.0
 VelocidadMovimiento = 1.0
 DistanciaAtaque = 5.0
 Rol = 1

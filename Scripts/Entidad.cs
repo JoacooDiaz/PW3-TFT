@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class Entidad : CharacterBody3D
 {
@@ -14,6 +15,9 @@ public partial class Entidad : CharacterBody3D
 
     [Export]
     private IconCuracion InfoCuracion; 
+
+    [Export]
+    private Aura aura; 
 
     private NavigationAgent3D _navigation;
 
@@ -184,7 +188,7 @@ public partial class Entidad : CharacterBody3D
         MoveAndSlide();
     }
 
-    private void Atacar(double delta)
+    private async Task Atacar(double delta)
     {
         _cooldownAtaque -= (float)delta;
 
@@ -204,7 +208,7 @@ public partial class Entidad : CharacterBody3D
                 break;
 
             case TipoRol.Asistente:
-                EjecutarAsistencia();
+                await EjecutarAsistencia();
                 break;
         }
     }
@@ -258,10 +262,9 @@ public partial class Entidad : CharacterBody3D
         );
     }
 
-    private void EjecutarAsistencia()
+    private async Task EjecutarAsistencia()
     {
-        Entidad aliado =
-            BuscarAliadoParaAsistir();
+        Entidad aliado = BuscarAliadoParaAsistir();
 
         if (aliado == null)
         {
@@ -276,6 +279,8 @@ public partial class Entidad : CharacterBody3D
             Data.MultiplicadorAsistencia,
             Data.DuracionAsistencia
         );
+
+        await aliado.aura.MostrarAura(ColoresAura.Buff); 
 
         GD.Print(
             Data.Nombre +
@@ -306,17 +311,15 @@ public partial class Entidad : CharacterBody3D
         }
     }
 
-    public void Curar(int cantidad)
+    public async void Curar(int cantidad)
     {
         VidaActual += cantidad;
-
-        InfoCuracion.MostrarInfo(); 
-
         if (VidaActual > Data.Vida)
         {
             VidaActual = Data.Vida;
         }
-        
+        InfoCuracion.MostrarInfo(); 
+        await aura.MostrarAura(ColoresAura.Curar);         
         barraDeVida.ActualizarBarra(VidaActual); 
     }
 
