@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://4b2qwq0lgkww" path="res://Scenes/UI/barra_de_vida.tscn" id="3_osogu"]
 [ext_resource type="PackedScene" uid="uid://byce8a2d54kwx" path="res://Scenes/UI/info_accion.tscn" id="4_3pnkt"]
 [ext_resource type="PackedScene" uid="uid://ufy8i5ljn2c5" path="res://Scenes/UI/icon_curacion.tscn" id="5_d122b"]
+[ext_resource type="PackedScene" uid="uid://vloalwhycnl0" path="res://Scenes/UI/aura.tscn" id="6_7mndg"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0py3c"]
 
@@ -17,21 +18,22 @@ albedo_color = Color(0.712126, 0.3275082, 0.5574483, 1)
 radius = 0.53515625
 height = 1.0703125
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_7mndg"]
-viewport_path = NodePath("SubViewport")
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_hghqp"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_hrvy6"]
 viewport_path = NodePath("SubViewport")
 
-[node name="Audino" type="CharacterBody3D" unique_id=1636602526 node_paths=PackedStringArray("barraDeVida", "InfoAccion", "InfoCuracion")]
+[sub_resource type="ViewportTexture" id="ViewportTexture_mhsrn"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Audino" type="CharacterBody3D" unique_id=1636602526 node_paths=PackedStringArray("barraDeVida", "InfoAccion", "InfoCuracion", "aura")]
 script = ExtResource("1_4gyln")
 Data = ExtResource("2_4gyln")
 barraDeVida = NodePath("BarraDeVida")
 InfoAccion = NodePath("InfoAccion")
 InfoCuracion = NodePath("IconCuracion")
+aura = NodePath("Aura")
 
 [node name="Cuerpo" type="Node3D" parent="." unique_id=532352232]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -54,12 +56,15 @@ shape = SubResource("CapsuleShape3D_c2cdy")
 
 [node name="BarraDeVida" parent="." unique_id=1814894225 instance=ExtResource("3_osogu")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 1.3621805, 0)
-texture = SubResource("ViewportTexture_7mndg")
+texture = SubResource("ViewportTexture_hghqp")
 
 [node name="InfoAccion" parent="." unique_id=2008531708 instance=ExtResource("4_3pnkt")]
 transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 0, 1.9927523, 0)
-texture = SubResource("ViewportTexture_hghqp")
+texture = SubResource("ViewportTexture_hrvy6")
 
 [node name="IconCuracion" parent="." unique_id=810924509 instance=ExtResource("5_d122b")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 1.5907409, 0)
-texture = SubResource("ViewportTexture_hrvy6")
+texture = SubResource("ViewportTexture_mhsrn")
+
+[node name="Aura" parent="." unique_id=1566409700 instance=ExtResource("6_7mndg")]
+transform = Transform3D(-0.25881898, 0, 0.96592563, 0, 1, 0, -0.96592563, 0, -0.25881898, 0, 0.53971803, 0)

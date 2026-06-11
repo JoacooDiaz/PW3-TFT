@@ -24,11 +24,11 @@ public partial class PlayerManager : Node
             para controlarlo nosotros mismos...
         */
         
-        Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Blissey/Blissey.tscn"));
-
         Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Audino/Audino.tscn")); 
 
         Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/ElPicachu/Picachu.tscn"));
+
+        Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Blissey/Blissey.tscn"));
     }
 
     public void SetUpUi(Ui ui)
