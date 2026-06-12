@@ -116,24 +116,30 @@ _comprar3.Pressed += OnComprar3;
 		);
 	}
 	
-	private void OnComprar1()
+private void OnComprar1()
 {
-	_tiendaManager.ComprarPokemon(
-		_pokemon1
-	);
+	if (_tiendaManager.ComprarPokemon(_pokemon1))
+	{
+		_comprar1.Disabled = true;
+		_comprar1.Text = "Comprado";
+	}
 }
 private void OnComprar2()
 {
-	_tiendaManager.ComprarPokemon(
-		_pokemon2
-	);
+	if (_tiendaManager.ComprarPokemon(_pokemon2))
+	{
+		_comprar2.Disabled = true;
+		_comprar2.Text = "Comprado";
+	}
 }
 
 private void OnComprar3()
 {
-	_tiendaManager.ComprarPokemon(
-		_pokemon3
-	);
+	if (_tiendaManager.ComprarPokemon(_pokemon3))
+	{
+		_comprar3.Disabled = true;
+		_comprar3.Text = "Comprado";
+	}
 }
 	
 	public void ConfigurarTarjeta(
