@@ -35,7 +35,7 @@ public partial class EntidadData : Resource
     public TipoRol Rol = TipoRol.Atacante;
 
     [Export]
-    public TipoElemento Elemento = TipoElemento.Neutral;
+    public TipoElemento Elemento = TipoElemento.Normal;
 
     [Export]
     public int Precio = 3;

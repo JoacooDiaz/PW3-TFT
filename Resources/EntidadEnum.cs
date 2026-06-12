@@ -18,11 +18,13 @@ public enum EstadoEntidad
 
 public enum TipoElemento
 {
-    Neutral,
+    Normal,
     Fuego,
     Agua,
     Planta,
     Electrico,
-    Oscuridad,
-    Luz
+    Hada,
+    Lucha,
+    Acero,
+    Tierra
 }
