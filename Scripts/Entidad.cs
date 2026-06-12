@@ -3,503 +3,503 @@ using System;
 
 public partial class Entidad : CharacterBody3D
 {
-    [Export]
-    public EntidadData Data;
+	[Export]
+	public EntidadData Data;
 
-    [Export]
-    public BarraDeVida barraDeVida;
+	[Export]
+	public BarraDeVida barraDeVida;
 
-    [Export]
-    private InfoAccion InfoAccion; 
+	[Export]
+	private InfoAccion InfoAccion; 
 
-    [Export]
-    private IconCuracion InfoCuracion; 
+	[Export]
+	private IconCuracion InfoCuracion; 
 
-    private NavigationAgent3D _navigation;
+	private NavigationAgent3D _navigation;
 
-    public EstadoEntidad EstadoActual = EstadoEntidad.Idle;
+	public EstadoEntidad EstadoActual = EstadoEntidad.Idle;
 
-    public int VidaActual;
+	public int VidaActual;
 
-    private float _cooldownAtaque;
+	private float _cooldownAtaque;
 
-    private float _multiplicadorDaño = 1.0f;
+	private float _multiplicadorDaño = 1.0f;
 
-    private float _tiempoBuffActual = 0.0f;
+	private float _tiempoBuffActual = 0.0f;
 
-    public Entidad ObjetivoActual;
+	public Entidad ObjetivoActual;
 
-    public SpawnNode Equipo;
+	public SpawnNode Equipo;
 
-    public SpawnNode EquipoEnemigo;
+	public SpawnNode EquipoEnemigo;
 
-    private float _alturaFestejo = 0.5f;
+	private float _alturaFestejo = 0.5f;
 
-    private float _velocidadFestejo = 4.0f;
+	private float _velocidadFestejo = 4.0f;
 
-    private Vector3 _posicionFestejo;
+	private Vector3 _posicionFestejo;
 
-    private float _tiempoFestejo = 0.0f;
+	private float _tiempoFestejo = 0.0f;
 
-    [Signal]
-    public delegate void EntidadMurioEventHandler(
-        Entidad entidad
-    );
+	[Signal]
+	public delegate void EntidadMurioEventHandler(
+		Entidad entidad
+	);
 
-    public override void _Ready()
-    {
-        _navigation = GetNode<NavigationAgent3D>("NavigationAgent3D");
+	public override void _Ready()
+	{
+		_navigation = GetNode<NavigationAgent3D>("NavigationAgent3D");
 
-        InfoAccion = GetNode<InfoAccion>("InfoAccion"); 
+		InfoAccion = GetNode<InfoAccion>("InfoAccion"); 
 
-        if (Data == null)
-        {
-            GD.Print(Name + " no tiene EntidadData.");
-            return;
-        }
+		if (Data == null)
+		{
+			GD.Print(Name + " no tiene EntidadData.");
+			return;
+		}
 
-        VidaActual = Data.Vida;
-        barraDeVida.setUpBarra(VidaActual); 
-        InfoAccion.Limpiar(); 
-    }
+		VidaActual = Data.Vida;
+		barraDeVida.setUpBarra(VidaActual); 
+		InfoAccion.Limpiar(); 
+	}
 
-    public override void _PhysicsProcess(double delta)
-    {
-        if (EstadoActual == EstadoEntidad.Festejo)
-        {
-            FestejarVictoria();
+	public override void _PhysicsProcess(double delta)
+	{
+		if (EstadoActual == EstadoEntidad.Festejo)
+		{
+			FestejarVictoria();
 
-            return;
-        }
+			return;
+		}
 
-        if (EstadoActual != EstadoEntidad.Pelea)
-        {
-            return;
-        }
+		if (EstadoActual != EstadoEntidad.Pelea)
+		{
+			return;
+		}
 
-        ActualizarBuffs(delta);
+		ActualizarBuffs(delta);
 
-        if (ObjetivoActual == null)
-        {
-            BuscarObjetivo();
+		if (ObjetivoActual == null)
+		{
+			BuscarObjetivo();
 
-            return;
-        }
+			return;
+		}
 
-        if (!IsInstanceValid(ObjetivoActual))
-        {
-            BuscarObjetivo();
+		if (!IsInstanceValid(ObjetivoActual))
+		{
+			BuscarObjetivo();
 
-            return;
-        }
+			return;
+		}
 
-        if (ObjetivoActual.EstadoActual == EstadoEntidad.Muerto)
-        {
-            BuscarObjetivo();
+		if (ObjetivoActual.EstadoActual == EstadoEntidad.Muerto)
+		{
+			BuscarObjetivo();
 
-            return;
-        }
+			return;
+		}
 
-        float distancia =
-            GlobalPosition.DistanceTo(ObjetivoActual.GlobalPosition);
+		float distancia =
+			GlobalPosition.DistanceTo(ObjetivoActual.GlobalPosition);
 
-        if (distancia > Data.DistanciaAtaque)
-        {
-            MoverHaciaObjetivo(delta);
-        }
-        else
-        {
-            Atacar(delta);
-        }
-    }
-
-    public void CambiarEstado(EstadoEntidad nuevoEstado)
-    {
-        EstadoActual = nuevoEstado;
-
-        switch (EstadoActual)
-        {
-            case EstadoEntidad.Festejo:
-                Velocity = Vector3.Zero;
-                _posicionFestejo = GlobalPosition;
-                _tiempoFestejo = 0.0f;
-                break;
-
-            case EstadoEntidad.Pelea:
-                GD.Print(Data.Nombre + " Entra a la pelea");
-                BuscarObjetivo();
-                break;
-        }
-    }
-
-    private void BuscarObjetivo()
-    {
-        if (EquipoEnemigo == null)
-        {
-            GD.Print(Data.Nombre + " No encontro un enemigo");
-            return;
-        }
-
-        float mejorDistancia = Mathf.Inf;
-
-        Entidad mejorObjetivo = null;
-
-        foreach (Entidad entidad in EquipoEnemigo.Entidades)
-        {
-            if (entidad.EstadoActual == EstadoEntidad.Muerto)
-                continue;
-
-            float distancia =
-                GlobalPosition.DistanceTo(entidad.GlobalPosition);
-
-            if (distancia < mejorDistancia)
-            {
-                mejorDistancia = distancia;
-
-                mejorObjetivo = entidad;
-            }
-        }
-
-        ObjetivoActual = mejorObjetivo;
-    }
-
-    private void MoverHaciaObjetivo(double delta)
-    {
-        _navigation.TargetPosition =
-            ObjetivoActual.GlobalPosition;
-
-        Vector3 siguientePunto =
-            _navigation.GetNextPathPosition();
-
-        Vector3 direccion =
-            (siguientePunto - GlobalPosition).Normalized();
-
-        direccion.Y = 0;
-
-        MirarObjetivo(delta);
-
-        Velocity =
-            direccion * Data.VelocidadMovimiento;
-
-        MoveAndSlide();
-    }
-
-    private void Atacar(double delta)
-    {
-        _cooldownAtaque -= (float)delta;
-
-        if (_cooldownAtaque > 0)
-            return;
-
-        _cooldownAtaque = Data.TiempoEntreAtaques;
-
-        switch (Data.Rol)
-        {
-            case TipoRol.Atacante:
-                EjecutarAtaque();
-                break;
-
-            case TipoRol.Curador:
-                EjecutarCuracion();
-                break;
-
-            case TipoRol.Asistente:
-                EjecutarAsistencia();
-                break;
-        }
-    }
-
-    private void EjecutarAtaque()
-    {
-        if (ObjetivoActual == null)
-            return;
-
-        MirarObjetivo(0.1);
-
-        int dañoFinal =
-            Mathf.RoundToInt(
-                CalcularDañoFinal(
-                    Data.Daño,
-                    Data.Elemento,
-                    ObjetivoActual.Data.Elemento
-                ) * _multiplicadorDaño
-        );
-
-        ObjetivoActual.RecibirDaño(dañoFinal, Data.Elemento);
-
-        GD.Print(
-            Data.Nombre +
-            " ataca a " +
-            ObjetivoActual.Data.Nombre +
-            " por " +
-            dañoFinal
-        );
-    }
-
-    private void EjecutarCuracion()
-    {
-        Entidad aliado = BuscarAliadoHerido();
-
-        if (aliado == null)
-        {
-            EjecutarAtaque();
-
-            return;
-        }
-
-        MirarObjetivo(0.1);
-
-        aliado.Curar(Data.Curacion);
-
-        GD.Print(
-            Data.Nombre +
-            " cura a " +
-            aliado.Data.Nombre
-        );
-    }
-
-    private void EjecutarAsistencia()
-    {
-        Entidad aliado =
-            BuscarAliadoParaAsistir();
-
-        if (aliado == null)
-        {
-            EjecutarAtaque();
-
-            return;
-        }
-
-        MirarObjetivo(0.1);
-
-        aliado.RecibirBuffDaño(
-            Data.MultiplicadorAsistencia,
-            Data.DuracionAsistencia
-        );
-
-        GD.Print(
-            Data.Nombre +
-            " fortalece a " +
-            aliado.Data.Nombre
-        );
-    }
-
-    //???
-    public void RecibirDaño(int daño, TipoElemento elemento)
-    {
-        VidaActual -= daño;
-
-        barraDeVida.ActualizarBarra(VidaActual); 
-
-        InfoAccion.MostrarInfo(daño, elemento); 
-
-        GD.Print(
-            Data.Nombre +
-            " recibe " +
-            daño +
+		if (distancia > Data.DistanciaAtaque)
+		{
+			MoverHaciaObjetivo(delta);
+		}
+		else
+		{
+			Atacar(delta);
+		}
+	}
+
+	public void CambiarEstado(EstadoEntidad nuevoEstado)
+	{
+		EstadoActual = nuevoEstado;
+
+		switch (EstadoActual)
+		{
+			case EstadoEntidad.Festejo:
+				Velocity = Vector3.Zero;
+				_posicionFestejo = GlobalPosition;
+				_tiempoFestejo = 0.0f;
+				break;
+
+			case EstadoEntidad.Pelea:
+				GD.Print(Data.Nombre + " Entra a la pelea");
+				BuscarObjetivo();
+				break;
+		}
+	}
+
+	private void BuscarObjetivo()
+	{
+		if (EquipoEnemigo == null)
+		{
+			GD.Print(Data.Nombre + " No encontro un enemigo");
+			return;
+		}
+
+		float mejorDistancia = Mathf.Inf;
+
+		Entidad mejorObjetivo = null;
+
+		foreach (Entidad entidad in EquipoEnemigo.Entidades)
+		{
+			if (entidad.EstadoActual == EstadoEntidad.Muerto)
+				continue;
+
+			float distancia =
+				GlobalPosition.DistanceTo(entidad.GlobalPosition);
+
+			if (distancia < mejorDistancia)
+			{
+				mejorDistancia = distancia;
+
+				mejorObjetivo = entidad;
+			}
+		}
+
+		ObjetivoActual = mejorObjetivo;
+	}
+
+	private void MoverHaciaObjetivo(double delta)
+	{
+		_navigation.TargetPosition =
+			ObjetivoActual.GlobalPosition;
+
+		Vector3 siguientePunto =
+			_navigation.GetNextPathPosition();
+
+		Vector3 direccion =
+			(siguientePunto - GlobalPosition).Normalized();
+
+		direccion.Y = 0;
+
+		MirarObjetivo(delta);
+
+		Velocity =
+			direccion * Data.VelocidadMovimiento;
+
+		MoveAndSlide();
+	}
+
+	private void Atacar(double delta)
+	{
+		_cooldownAtaque -= (float)delta;
+
+		if (_cooldownAtaque > 0)
+			return;
+
+		_cooldownAtaque = Data.TiempoEntreAtaques;
+
+		switch (Data.Rol)
+		{
+			case TipoRol.Atacante:
+				EjecutarAtaque();
+				break;
+
+			case TipoRol.Curador:
+				EjecutarCuracion();
+				break;
+
+			case TipoRol.Asistente:
+				EjecutarAsistencia();
+				break;
+		}
+	}
+
+	private void EjecutarAtaque()
+	{
+		if (ObjetivoActual == null)
+			return;
+
+		MirarObjetivo(0.1);
+
+		int dañoFinal =
+			Mathf.RoundToInt(
+				CalcularDañoFinal(
+					Data.Daño,
+					Data.Elemento,
+					ObjetivoActual.Data.Elemento
+				) * _multiplicadorDaño
+		);
+
+		ObjetivoActual.RecibirDaño(dañoFinal, Data.Elemento);
+
+		GD.Print(
+			Data.Nombre +
+			" ataca a " +
+			ObjetivoActual.Data.Nombre +
+			" por " +
+			dañoFinal
+		);
+	}
+
+	private void EjecutarCuracion()
+	{
+		Entidad aliado = BuscarAliadoHerido();
+
+		if (aliado == null)
+		{
+			EjecutarAtaque();
+
+			return;
+		}
+
+		MirarObjetivo(0.1);
+
+		aliado.Curar(Data.Curacion);
+
+		GD.Print(
+			Data.Nombre +
+			" cura a " +
+			aliado.Data.Nombre
+		);
+	}
+
+	private void EjecutarAsistencia()
+	{
+		Entidad aliado =
+			BuscarAliadoParaAsistir();
+
+		if (aliado == null)
+		{
+			EjecutarAtaque();
+
+			return;
+		}
+
+		MirarObjetivo(0.1);
+
+		aliado.RecibirBuffDaño(
+			Data.MultiplicadorAsistencia,
+			Data.DuracionAsistencia
+		);
+
+		GD.Print(
+			Data.Nombre +
+			" fortalece a " +
+			aliado.Data.Nombre
+		);
+	}
+
+	//???
+	public void RecibirDaño(int daño, TipoElemento elemento)
+	{
+		VidaActual -= daño;
+
+		barraDeVida.ActualizarBarra(VidaActual); 
+
+		InfoAccion.MostrarInfo(daño, elemento); 
+
+		GD.Print(
+			Data.Nombre +
+			" recibe " +
+			daño +
             " daño."
-        );
+		);
 
-        if (VidaActual <= 0)
-        {
-            Morir();
-        }
-    }
+		if (VidaActual <= 0)
+		{
+			Morir();
+		}
+	}
 
-    public void Curar(int cantidad)
-    {
-        VidaActual += cantidad;
+	public void Curar(int cantidad)
+	{
+		VidaActual += cantidad;
 
-        InfoCuracion.MostrarInfo(); 
+		InfoCuracion.MostrarInfo(); 
 
-        if (VidaActual > Data.Vida)
-        {
-            VidaActual = Data.Vida;
-        }
-        
-        barraDeVida.ActualizarBarra(VidaActual); 
-    }
+		if (VidaActual > Data.Vida)
+		{
+			VidaActual = Data.Vida;
+		}
+		
+		barraDeVida.ActualizarBarra(VidaActual); 
+	}
 
-    public void Morir()
-    {
-        EstadoActual = EstadoEntidad.Muerto;
+	public void Morir()
+	{
+		EstadoActual = EstadoEntidad.Muerto;
 
-        InfoAccion.Limpiar(); 
+		InfoAccion.Limpiar(); 
 
-        Velocity = Vector3.Zero;
+		Velocity = Vector3.Zero;
 
-        RotateObjectLocal(
-            Vector3.Right,
-            Mathf.DegToRad(90)
-        );
+		RotateObjectLocal(
+			Vector3.Right,
+			Mathf.DegToRad(90)
+		);
 
-        barraDeVida.OcultarBarra();
+		barraDeVida.OcultarBarra();
 
-        EmitSignal(
-            SignalName.EntidadMurio,
-            this
-        );
-    }
+		EmitSignal(
+			SignalName.EntidadMurio,
+			this
+		);
+	}
 
-    private Entidad BuscarAliadoHerido()
-    {
-        foreach (Entidad entidad in Equipo.Entidades)
-        {
-            if (entidad == this)
-                continue;
+	private Entidad BuscarAliadoHerido()
+	{
+		foreach (Entidad entidad in Equipo.Entidades)
+		{
+			if (entidad == this)
+				continue;
 
-            if (entidad.EstadoActual == EstadoEntidad.Muerto)
-                continue;
+			if (entidad.EstadoActual == EstadoEntidad.Muerto)
+				continue;
 
-            if (entidad.VidaActual < entidad.Data.Vida)
-            {
-                return entidad;
-            }
-        }
+			if (entidad.VidaActual < entidad.Data.Vida)
+			{
+				return entidad;
+			}
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    private Entidad BuscarAliadoParaAsistir()
-    {
-        foreach (Entidad entidad in Equipo.Entidades)
-        {
-            if (entidad == this)
-                continue;
+	private Entidad BuscarAliadoParaAsistir()
+	{
+		foreach (Entidad entidad in Equipo.Entidades)
+		{
+			if (entidad == this)
+				continue;
 
-            if (
-                entidad.EstadoActual ==
-                EstadoEntidad.Muerto
-            )
-            {
-                continue;
-            }
+			if (
+				entidad.EstadoActual ==
+				EstadoEntidad.Muerto
+			)
+			{
+				continue;
+			}
 
-            if (
-                entidad.Data.Rol ==
-                TipoRol.Atacante
-            )
-            {
-                return entidad;
-            }
-        }
+			if (
+				entidad.Data.Rol ==
+				TipoRol.Atacante
+			)
+			{
+				return entidad;
+			}
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    private int CalcularDañoFinal(
-        int dañoBase,
-        TipoElemento atacante,
-        TipoElemento defensor
-    )
-    {
-        float multiplicador = 1.0f;
+	private int CalcularDañoFinal(
+		int dañoBase,
+		TipoElemento atacante,
+		TipoElemento defensor
+	)
+	{
+		float multiplicador = 1.0f;
 
-        if (
-            atacante == TipoElemento.Fuego &&
-            defensor == TipoElemento.Planta
-        )
-        {
-            multiplicador = 1.5f;
-        }
+		if (
+			atacante == TipoElemento.Fuego &&
+			defensor == TipoElemento.Planta
+		)
+		{
+			multiplicador = 1.5f;
+		}
 
-        if (
-            atacante == TipoElemento.Agua &&
-            defensor == TipoElemento.Fuego
-        )
-        {
-            multiplicador = 1.5f;
-        }
+		if (
+			atacante == TipoElemento.Agua &&
+			defensor == TipoElemento.Fuego
+		)
+		{
+			multiplicador = 1.5f;
+		}
 
-        if (
-            atacante == TipoElemento.Planta &&
-            defensor == TipoElemento.Agua
-        )
-        {
-            multiplicador = 1.5f;
-        }
+		if (
+			atacante == TipoElemento.Planta &&
+			defensor == TipoElemento.Agua
+		)
+		{
+			multiplicador = 1.5f;
+		}
 
-        return Mathf.RoundToInt(dañoBase * multiplicador);
-    }
+		return Mathf.RoundToInt(dañoBase * multiplicador);
+	}
 
-    public void FestejarVictoria()
-    {
-        Velocity = Vector3.Zero;
+	public void FestejarVictoria()
+	{
+		Velocity = Vector3.Zero;
 
-        _tiempoFestejo += (float)GetPhysicsProcessDeltaTime();
+		_tiempoFestejo += (float)GetPhysicsProcessDeltaTime();
 
-        float salto =
-            (Mathf.Sin(
-                _tiempoFestejo *
-                _velocidadFestejo
-            ) + 1.0f) * 0.5f;
+		float salto =
+			(Mathf.Sin(
+				_tiempoFestejo *
+				_velocidadFestejo
+			) + 1.0f) * 0.5f;
 
-        Vector3 posicionObjetivo =
-            _posicionFestejo;
+		Vector3 posicionObjetivo =
+			_posicionFestejo;
 
-        posicionObjetivo.Y +=
-            salto * _alturaFestejo;
+		posicionObjetivo.Y +=
+			salto * _alturaFestejo;
 
-        GlobalPosition = posicionObjetivo;
-    }
+		GlobalPosition = posicionObjetivo;
+	}
 
-    //Los buffs estan atados al _PhysicsProcess, funciona pero si alguien tiene tiempo de cambiarlo...
-    public void RecibirBuffDaño(
-        float multiplicador,
-        float duracion
-    )
-    {
-        _multiplicadorDaño = multiplicador;
+	//Los buffs estan atados al _PhysicsProcess, funciona pero si alguien tiene tiempo de cambiarlo...
+	public void RecibirBuffDaño(
+		float multiplicador,
+		float duracion
+	)
+	{
+		_multiplicadorDaño = multiplicador;
 
-        _tiempoBuffActual = duracion;
+		_tiempoBuffActual = duracion;
 
-        GD.Print(
-            Data.Nombre +
+		GD.Print(
+			Data.Nombre +
             " recibe buff de daño."
-        );
-    }
+		);
+	}
 
-    private void ActualizarBuffs(double delta)
-    {
-        if (_tiempoBuffActual <= 0)
-            return;
+	private void ActualizarBuffs(double delta)
+	{
+		if (_tiempoBuffActual <= 0)
+			return;
 
-        _tiempoBuffActual -= (float)delta;
+		_tiempoBuffActual -= (float)delta;
 
-        if (_tiempoBuffActual <= 0)
-        {
-            _multiplicadorDaño = 1.0f;
+		if (_tiempoBuffActual <= 0)
+		{
+			_multiplicadorDaño = 1.0f;
 
-            GD.Print(
-                Data.Nombre +
+			GD.Print(
+				Data.Nombre +
                 " perdió su buff."
-            );
-        }
-    }
+			);
+		}
+	}
 
-    private void MirarObjetivo(double delta)
-    {
-        if (ObjetivoActual == null)
-            return;
+	private void MirarObjetivo(double delta)
+	{
+		if (ObjetivoActual == null)
+			return;
 
-        Vector3 direccion =
-            ObjetivoActual.GlobalPosition - GlobalPosition;
+		Vector3 direccion =
+			ObjetivoActual.GlobalPosition - GlobalPosition;
 
-        direccion.Y = 0;
+		direccion.Y = 0;
 
-        if (direccion == Vector3.Zero)
-            return;
+		if (direccion == Vector3.Zero)
+			return;
 
-        Vector3 objetivoRotacion =
-            new Vector3(
-                Rotation.X,
-                Mathf.Atan2(-direccion.X, -direccion.Z),
-                Rotation.Z
-            );
+		Vector3 objetivoRotacion =
+			new Vector3(
+				Rotation.X,
+				Mathf.Atan2(-direccion.X, -direccion.Z),
+				Rotation.Z
+			);
 
-        Rotation = Rotation.Lerp(
-            objetivoRotacion,
-            8.0f * (float)delta
-        );
-    }
+		Rotation = Rotation.Lerp(
+			objetivoRotacion,
+			8.0f * (float)delta
+		);
+	}
 }

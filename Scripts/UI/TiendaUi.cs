@@ -2,20 +2,189 @@ using Godot;
 
 public partial class TiendaUi : Control
 {
-    [Signal]
-    public delegate void ContinuarPressedEventHandler();
+	[Signal]
+	public delegate void ContinuarPressedEventHandler();
 
-    private Button _continuarButton;
+	private Button _continuarButton;
 
-    public override void _Ready()
-    {
-        _continuarButton = GetNode<Button>("ContinuarButton");
+	private Label _nombre1;
+	private Label _precio1;
+	private TextureRect _imagen1;
 
-        _continuarButton.Pressed += OnContinuarPressed;
-    }
+	private Label _nombre2;
+	private Label _precio2;
+	private TextureRect _imagen2;
 
-    private void OnContinuarPressed()
-    {
-        EmitSignal(SignalName.ContinuarPressed);
-    }
+	private Label _nombre3;
+	private Label _precio3;
+	private TextureRect _imagen3;
+	
+	private Button _comprar1;
+	private Button _comprar2;
+	private Button _comprar3;
+
+	private PackedScene _pokemon1;
+	private PackedScene _pokemon2;
+	private PackedScene _pokemon3;
+	
+	private TiendaManager _tiendaManager;
+
+	public override void _Ready()
+	{
+		
+		_tiendaManager =
+	GetNode<TiendaManager>(
+        "/root/TiendaManager"
+	);
+	
+		_continuarButton =
+			GetNode<Button>("ContinuarButton");
+
+		_continuarButton.Pressed +=
+			OnContinuarPressed;
+
+		_nombre1 =
+			GetNode<Label>(
+                "HBoxContainer/Tarjeta1/Nombre"
+			);
+
+		_precio1 =
+			GetNode<Label>(
+                "HBoxContainer/Tarjeta1/Precio"
+			);
+
+		_imagen1 =
+			GetNode<TextureRect>(
+                "HBoxContainer/Tarjeta1/Imagen"
+			);
+
+		_nombre2 =
+			GetNode<Label>(
+                "HBoxContainer/Tarjeta2/Nombre"
+			);
+
+		_precio2 =
+			GetNode<Label>(
+                "HBoxContainer/Tarjeta2/Precio"
+			);
+
+		_imagen2 =
+			GetNode<TextureRect>(
+                "HBoxContainer/Tarjeta2/Imagen"
+			);
+
+		_nombre3 =
+			GetNode<Label>(
+                "HBoxContainer/Tarjeta3/Nombre"
+			);
+
+		_precio3 =
+			GetNode<Label>(
+                "HBoxContainer/Tarjeta3/Precio"
+			);
+
+		_imagen3 =
+			GetNode<TextureRect>(
+                "HBoxContainer/Tarjeta3/Imagen"
+			);
+			
+			_comprar1 =
+	GetNode<Button>(
+        "HBoxContainer/Tarjeta1/Comprar"
+	);
+
+_comprar2 =
+	GetNode<Button>(
+        "HBoxContainer/Tarjeta2/Comprar"
+	);
+
+_comprar3 =
+	GetNode<Button>(
+        "HBoxContainer/Tarjeta3/Comprar"
+	);
+	
+	_comprar1.Pressed += OnComprar1;
+_comprar2.Pressed += OnComprar2;
+_comprar3.Pressed += OnComprar3;
+	
+	}
+
+	private void OnContinuarPressed()
+	{
+		EmitSignal(
+			SignalName.ContinuarPressed
+		);
+	}
+	
+	private void OnComprar1()
+{
+	_tiendaManager.ComprarPokemon(
+		_pokemon1
+	);
+}
+private void OnComprar2()
+{
+	_tiendaManager.ComprarPokemon(
+		_pokemon2
+	);
+}
+
+private void OnComprar3()
+{
+	_tiendaManager.ComprarPokemon(
+		_pokemon3
+	);
+}
+	
+	public void ConfigurarTarjeta(
+	int indice,
+	PackedScene escena
+)
+{
+	Entidad entidad =
+		escena.Instantiate<Entidad>();
+
+	if (indice == 0)
+	{
+		_pokemon1 = escena;
+
+		_nombre1.Text =
+			entidad.Data.Nombre;
+
+		_precio1.Text =
+			"$" + entidad.Data.Precio;
+
+		_imagen1.Texture =
+			entidad.Data.Icono;
+	}
+
+	if (indice == 1)
+	{
+		_pokemon2 = escena;
+
+		_nombre2.Text =
+			entidad.Data.Nombre;
+
+		_precio2.Text =
+			"$" + entidad.Data.Precio;
+
+		_imagen2.Texture =
+			entidad.Data.Icono;
+	}
+
+	if (indice == 2)
+	{
+		_pokemon3 = escena;
+
+		_nombre3.Text =
+			entidad.Data.Nombre;
+
+		_precio3.Text =
+			"$" + entidad.Data.Precio;
+
+		_imagen3.Texture =
+			entidad.Data.Icono;
+	}
+}
+
 }

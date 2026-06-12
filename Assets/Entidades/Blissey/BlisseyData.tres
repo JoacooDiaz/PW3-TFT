@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="EntidadData" format=3 uid="uid://c5t63xye04t6"]
 
+[ext_resource type="Texture2D" uid="uid://bvg8iiyvhy46b" path="res://Assets/Entidades/Blissey/Blissey.png" id="1_6ajm2"]
 [ext_resource type="Script" uid="uid://cprb44o6jey2a" path="res://Resources/EntidadData.cs" id="1_cap48"]
 
 [resource]
 script = ExtResource("1_cap48")
 Nombre = "Blissey"
+Icono = ExtResource("1_6ajm2")
 "Daño" = 20
 TiempoEntreAtaques = 2.5
 VelocidadMovimiento = 1.0
