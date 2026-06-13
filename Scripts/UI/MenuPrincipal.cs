@@ -9,12 +9,19 @@ public partial class MenuPrincipal : Control
 
     public override void _Ready()
     {
-        GD.Print("Menu Principal listo");
+        _btnJugar = GetNode<Button>("VBoxContainer/BtnJugar");
+        _btnOpciones = GetNode<Button>("VBoxContainer/BtnOpciones");
+        _btnSalir = GetNode<Button>("VBoxContainer/BtnSalir");
+
+        _btnJugar.Pressed += OnBtnJugarPressed;
+        _btnOpciones.Pressed += OnBtnOpcionesPressed;
+        _btnSalir.Pressed += OnBtnSalirPressed;
     }
 
     private void OnBtnJugarPressed()
     {
-        GD.Print("READY EJECUTADO");
+        GD.Print("Comenzaste el Juego");
+        GetTree().ChangeSceneToFile("uid://co5gt2hmtwe4i");
     }
 
     private void OnBtnOpcionesPressed()

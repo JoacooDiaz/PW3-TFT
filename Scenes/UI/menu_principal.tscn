@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://pkl1ufm5eaih"]
 
 [ext_resource type="Texture2D" uid="uid://dkkdc70r4p88t" path="res://Assets/Img/Fondo_menu/Fondo_prueba.jpg" id="1_8wq1t"]
+[ext_resource type="Script" uid="uid://c6ya8t60deque" path="res://Scripts/UI/MenuPrincipal.cs" id="3_mei27"]
 
 [node name="MenuPrincipal" type="Control" unique_id=478054471]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_mei27")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1653093555]
 layout_mode = 1
@@ -24,6 +26,7 @@ offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_8wq1t")
+script = ExtResource("3_mei27")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1422085982]
 layout_mode = 1
