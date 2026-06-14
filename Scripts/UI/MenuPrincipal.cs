@@ -26,7 +26,7 @@ public partial class MenuPrincipal : Control
 
     private void OnBtnOpcionesPressed()
     {
-        GD.Print("Opciones");
+        GetTree().ChangeSceneToFile("uid://c4co0np2apqqm");
     }
 
     private void OnBtnSalirPressed()

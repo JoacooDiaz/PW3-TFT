@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c4co0np2apqqm"]
+
+[ext_resource type="Script" uid="uid://bwdlxd3fntt6s" path="res://Scripts/UI/MenuOpciones.cs" id="1_74ngv"]
+[ext_resource type="Texture2D" uid="uid://dkkdc70r4p88t" path="res://Assets/Img/Fondo_menu/Fondo_prueba.jpg" id="1_ghyi0"]
+[ext_resource type="Script" uid="uid://c6ya8t60deque" path="res://Scripts/UI/MenuPrincipal.cs" id="1_qbyqf"]
+
+[node name="MenuOpciones" type="Control" unique_id=478054471]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_74ngv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1653093555]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.5
+offset_top = -325.0
+offset_right = 574.5
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ghyi0")
+script = ExtResource("1_qbyqf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1422085982]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -211.125
+offset_top = -64.0
+offset_right = 211.125
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=2111562573]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Opciones"
+vertical_alignment = 1
+
+[node name="BtnConfiguracion" type="Button" parent="VBoxContainer" unique_id=1848672385]
+layout_mode = 2
+text = "Configuraciones"
+
+[node name="BtnInformacion" type="Button" parent="VBoxContainer" unique_id=1062227002]
+layout_mode = 2
+text = "Informacion"
+
+[node name="BtnVolver" type="Button" parent="VBoxContainer" unique_id=652152902]
+layout_mode = 2
+text = "Volver"
