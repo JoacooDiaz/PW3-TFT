@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ctrcs2bxpa4yo"]
+
+[ext_resource type="Texture2D" uid="uid://dqoehau5ocsvj" path="res://Assets/Entidades/Psyduck/psyduckMesh_0.png" id="1_jbjp7"]
+
+[resource]
+resource_name = "psy.notshaded"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_jbjp7")
+texture_filter = 0

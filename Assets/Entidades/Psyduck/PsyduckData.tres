@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EntidadData" format=3 uid="uid://b4jlfi8gicagb"]
+
+[ext_resource type="Script" uid="uid://cprb44o6jey2a" path="res://Resources/EntidadData.cs" id="1_rilna"]
+
+[resource]
+script = ExtResource("1_rilna")
+Nombre = "Psyduck"
+Vida = 50
+Curacion = 5
+MultiplicadorAsistencia = 0.0
+DuracionAsistencia = 3.0
+TiempoEntreAtaques = 0.2
+VelocidadMovimiento = 1.0
+Rol = 1
+Elemento = 2
+Precio = 2
+metadata/_custom_type_script = "uid://cprb44o6jey2a"

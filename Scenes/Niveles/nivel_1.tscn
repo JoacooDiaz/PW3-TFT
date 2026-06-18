@@ -5,13 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://c5echom83h5ji" path="res://Scenes/UI/Ui.tscn" id="2_ncuar"]
 [ext_resource type="Script" uid="uid://du08ojmmg8jps" path="res://Scripts/SpawnNode.cs" id="3_2ckao"]
 [ext_resource type="Script" uid="uid://cp6vrnxxl4owv" path="res://Scripts/EnemigosSpawnNode.cs" id="4_3uoup"]
-[ext_resource type="PackedScene" uid="uid://bhv08wjwmolyy" path="res://Assets/Entidades/Audino/Audino.tscn" id="5_66nc1"]
-[ext_resource type="PackedScene" uid="uid://c5y6drv86woc7" path="res://Assets/Entidades/Entidad.tscn" id="6_2ckao"]
+[ext_resource type="PackedScene" uid="uid://b13w2gmw6kqmh" path="res://Assets/Entidades/Lucario/Lucario.tscn" id="7_2ckao"]
+[ext_resource type="PackedScene" uid="uid://cl78xuo2ju7xb" path="res://Assets/Entidades/Horsea/Horsea.tscn" id="7_3uoup"]
+[ext_resource type="PackedScene" uid="uid://j2o3wkkf3jwr" path="res://Assets/Entidades/Pichu/Pichu.tscn" id="8_3uoup"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4tssb"]
-vertices = PackedVector3Array(-14.679199, 10.245012, -29.873543, -14.679199, 9.495012, -29.123543, -13.429199, 9.745012, -29.373543, -13.679199, -1.4849882, -22.623543, -13.679199, -1.4849882, -21.873543, 13.320801, -1.4849882, -21.873543, 13.320801, -1.4849882, -22.623543, 7.820801, -1.4849882, -8.123543, 8.070801, -1.4849882, -6.373543, 13.320801, -1.4849882, -6.623543, 13.320801, -1.2549882, -18.373543, 11.045801, -1.4849882, -11.648542, -13.679199, -1.4849882, -5.873543, -8.179199, -1.4849882, -5.873543, -7.929199, -1.4849882, -8.123543, -13.679199, -1.4849882, -18.123543, 9.58597, -1.4849882, -16.144724, 11.070982, -1.4849882, -16.133736, -7.179199, -0.4849882, -7.123543, -7.179199, -0.4849882, 6.876457, 7.070801, -0.4849882, 6.876457, 7.070801, -0.4849882, -7.123543, 8.070801, -1.4849882, 6.626457, 13.320801, -1.4849882, 6.626457, -13.679199, -1.4849882, 6.626457, -8.179199, -1.4849882, 6.626457)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(6, 5, 3), PackedInt32Array(3, 5, 4), PackedInt32Array(9, 11, 10), PackedInt32Array(10, 11, 7), PackedInt32Array(7, 9, 8), PackedInt32Array(9, 7, 11), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(10, 16, 15), PackedInt32Array(15, 16, 14), PackedInt32Array(14, 16, 7), PackedInt32Array(7, 17, 10), PackedInt32Array(10, 17, 16), PackedInt32Array(16, 17, 7), PackedInt32Array(21, 20, 18), PackedInt32Array(18, 20, 19), PackedInt32Array(22, 8, 23), PackedInt32Array(23, 8, 9), PackedInt32Array(25, 24, 13), PackedInt32Array(13, 24, 12)]
-cell_height = 0.01
+vertices = PackedVector3Array(-13.679199, -1.1149883, -22.623543, -13.679199, -1.1149883, -22.123543, 13.320801, -1.1149883, -22.123543, 13.320801, -1.1149883, -22.623543, -4.429199, -1.1149883, -8.123543, -4.429199, -1.1149883, -9.623543, -5.679199, -1.1149883, -10.623543, -7.929199, -1.1149883, -8.123543, -5.179199, -1.1149883, -12.123543, 8.070801, -1.1149883, -18.123543, -13.679199, -1.1149883, -18.123543, -13.679199, -1.1149883, -5.873543, -8.179199, -1.1149883, -5.873543, 13.320801, -1.1149883, -18.123543, 9.570801, -1.1149883, -18.123543, 10.070801, -1.1149883, -17.373543, 9.820801, -1.1149883, -15.873543, 7.820801, -1.1149883, -8.123543, 8.070801, -1.1149883, -6.373543, 13.320801, -1.1149883, -6.623543, -7.179199, -0.11498833, -7.123543, -7.179199, -0.11498833, 6.876457, 7.070801, -0.11498833, 6.876457, 7.070801, -0.11498833, -7.123543, 8.070801, -1.1149883, 6.626457, 13.320801, -1.1149883, 6.626457, -13.679199, -1.1149883, 6.626457, -8.179199, -1.1149883, 6.626457)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(10, 9, 8), PackedInt32Array(6, 7, 8), PackedInt32Array(8, 7, 11), PackedInt32Array(8, 11, 10), PackedInt32Array(7, 12, 11), PackedInt32Array(13, 15, 14), PackedInt32Array(16, 15, 13), PackedInt32Array(18, 17, 19), PackedInt32Array(19, 17, 16), PackedInt32Array(19, 16, 13), PackedInt32Array(4, 5, 17), PackedInt32Array(17, 5, 16), PackedInt32Array(23, 22, 20), PackedInt32Array(20, 22, 21), PackedInt32Array(24, 18, 25), PackedInt32Array(25, 18, 19), PackedInt32Array(27, 26, 12), PackedInt32Array(12, 26, 11)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3s6e8"]
 albedo_color = Color(8.904189e-07, 0.63166535, 0.1636002, 1)
@@ -118,6 +118,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
 script = ExtResource("4_3uoup")
 CantidadMinima = 3
 CantidadMaxima = 5
-EnemigosPosibles = Array[PackedScene]([ExtResource("6_2ckao"), ExtResource("5_66nc1")])
+EnemigosPosibles = Array[PackedScene]([ExtResource("7_2ckao"), ExtResource("7_3uoup"), ExtResource("8_3uoup")])
 _distanciaEntreEntidades = 3.0
 _entidadesPorFila = 2

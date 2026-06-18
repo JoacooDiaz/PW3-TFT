@@ -5,7 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://boqgok60w6mf5" path="res://Assets/Entidades/Blissey/Blissey.tscn" id="3_uex7r"]
 [ext_resource type="PackedScene" uid="uid://dn7akxhunesdn" path="res://Assets/Entidades/ElPicachu/Picachu.tscn" id="4_1r6pr"]
 [ext_resource type="PackedScene" uid="uid://c5y6drv86woc7" path="res://Assets/Entidades/Entidad.tscn" id="5_l11gy"]
+[ext_resource type="PackedScene" uid="uid://0e8wv4xadc7d" path="res://Assets/Entidades/Axew/Axew.tscn" id="6_1r6pr"]
+[ext_resource type="PackedScene" uid="uid://b13w2gmw6kqmh" path="res://Assets/Entidades/Lucario/Lucario.tscn" id="7_l11gy"]
+[ext_resource type="PackedScene" uid="uid://cl78xuo2ju7xb" path="res://Assets/Entidades/Horsea/Horsea.tscn" id="8_l11gy"]
+[ext_resource type="PackedScene" uid="uid://b86ytddkiyhcm" path="res://Assets/Entidades/Glalie/Glalie.tscn" id="9_q3h6s"]
+[ext_resource type="PackedScene" uid="uid://syyb8kejdxfo" path="res://Assets/Entidades/Psyduck/Psyduck.tscn" id="10_0lcsy"]
+[ext_resource type="PackedScene" uid="uid://j2o3wkkf3jwr" path="res://Assets/Entidades/Pichu/Pichu.tscn" id="11_bu5nv"]
 
 [node name="BDDEntidades" type="Node" unique_id=584457621]
 script = ExtResource("1_pd1dh")
-Entidades = Array[PackedScene]([ExtResource("2_dmjb0"), ExtResource("3_uex7r"), ExtResource("4_1r6pr"), ExtResource("5_l11gy")])
+Entidades = Array[PackedScene]([ExtResource("2_dmjb0"), ExtResource("3_uex7r"), ExtResource("4_1r6pr"), ExtResource("5_l11gy"), ExtResource("6_1r6pr"), ExtResource("7_l11gy"), ExtResource("8_l11gy"), ExtResource("9_q3h6s"), ExtResource("10_0lcsy"), ExtResource("11_bu5nv")])
