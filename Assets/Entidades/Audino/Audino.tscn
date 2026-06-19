@@ -22,7 +22,7 @@ height = 1.0703125
 [sub_resource type="ViewportTexture" id="ViewportTexture_hghqp"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hrvy6"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_k43nq"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mhsrn"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8pd5h42mv8pv"
-path="res://.godot/imported/Oscurida.jpg-7996528ee8717f703b58429a00c2d672.ctex"
+uid="uid://btxcxbwegmjyl"
+path="res://.godot/imported/lucha.png-0de139f610364058cc7e50541f5797d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Img/Elementos/Oscurida.jpg"
-dest_files=["res://.godot/imported/Oscurida.jpg-7996528ee8717f703b58429a00c2d672.ctex"]
+source_file="res://Assets/Img/Elementos/lucha.png"
+dest_files=["res://.godot/imported/lucha.png-0de139f610364058cc7e50541f5797d9.ctex"]
 
 [params]
 

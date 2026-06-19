@@ -60,6 +60,13 @@ texture = SubResource("ViewportTexture_xv3t6")
 transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 0, 2.830572, 0)
 texture = SubResource("ViewportTexture_g2vfm")
 
+[node name="IconTipo" parent="." unique_id=1137762650 instance=ExtResource("5_evoii")]
+transform = Transform3D(0.24989267, 0, -0.007324915, 9.971819e-06, 0.24999976, 0.00034019296, 0.007324908, -0.0003403391, 0.24989243, -0.8612181, 2.2776492, 0)
+offset = Vector2(-1, 0)
+pixel_size = 0.006
+texture = ExtResource("6_xv3t6")
+script = ExtResource("6_3wfg6")
+
 [node name="IconCuracion" parent="." unique_id=810924509 instance=ExtResource("5_evoii")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 2.484954, 0)
 texture = SubResource("ViewportTexture_xhuoe")
