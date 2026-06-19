@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://ccijh7ayh6tia" path="res://Scripts/Entidad.cs" id="1_d5f6i"]
 [ext_resource type="Resource" uid="uid://de1kk4sa37wxw" path="res://Assets/Entidades/EntidadTestData.tres" id="2_ty5po"]
 [ext_resource type="PackedScene" uid="uid://4b2qwq0lgkww" path="res://Scenes/UI/barra_de_vida.tscn" id="3_jwto4"]
+[ext_resource type="PackedScene" uid="uid://4mdvmflr8p5d" path="res://Scenes/NA3DEntidades.tscn" id="3_xv3t6"]
 [ext_resource type="PackedScene" uid="uid://byce8a2d54kwx" path="res://Scenes/UI/info_accion.tscn" id="4_sn2vm"]
 [ext_resource type="PackedScene" uid="uid://ufy8i5ljn2c5" path="res://Scenes/UI/icon_curacion.tscn" id="5_evoii"]
-[ext_resource type="Script" uid="uid://dvpg1q8rllmsf" path="res://Scripts/UI/IconTipo.cs" id="6_3wfg6"]
-[ext_resource type="Texture2D" uid="uid://cifelukqpwcb6" path="res://Assets/Img/Elementos/agua.png" id="6_xv3t6"]
+[ext_resource type="PackedScene" uid="uid://vloalwhycnl0" path="res://Scenes/UI/aura.tscn" id="6_3wfg6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_d5f6i"]
 
@@ -26,12 +26,13 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_xhuoe"]
 viewport_path = NodePath("SubViewport")
 
-[node name="Entidad" type="CharacterBody3D" unique_id=1145482933 node_paths=PackedStringArray("barraDeVida", "InfoAccion", "InfoCuracion")]
+[node name="Entidad" type="CharacterBody3D" unique_id=1145482933 node_paths=PackedStringArray("barraDeVida", "InfoAccion", "InfoCuracion", "aura")]
 script = ExtResource("1_d5f6i")
 Data = ExtResource("2_ty5po")
 barraDeVida = NodePath("BarraDeVida")
 InfoAccion = NodePath("InfoAccion")
 InfoCuracion = NodePath("IconCuracion")
+aura = NodePath("Aura")
 
 [node name="Cuerpo" type="Node3D" parent="." unique_id=251734799]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -49,8 +50,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ty5po")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_ty5po")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1051388730]
-path_height_offset = 0.1
+[node name="NavigationAgent3D" parent="." unique_id=1409190723 instance=ExtResource("3_xv3t6")]
 
 [node name="BarraDeVida" parent="." unique_id=1814894225 instance=ExtResource("3_jwto4")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 2.2, 0)
@@ -70,3 +70,6 @@ script = ExtResource("6_3wfg6")
 [node name="IconCuracion" parent="." unique_id=810924509 instance=ExtResource("5_evoii")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 2.484954, 0)
 texture = SubResource("ViewportTexture_xhuoe")
+
+[node name="Aura" parent="." unique_id=1566409700 instance=ExtResource("6_3wfg6")]
+transform = Transform3D(-0.25881895, 0, 0.9659255, 0, 1, 0, -0.9659255, 0, -0.25881895, 0, 0.7759727, 0.1)

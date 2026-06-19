@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class Entidad : CharacterBody3D
 {
@@ -16,6 +17,9 @@ public partial class Entidad : CharacterBody3D
     private IconCuracion InfoCuracion;
 
     private IconTipo _iconTipo;
+
+    [Export]
+    private Aura aura; 
 
     private NavigationAgent3D _navigation;
 
@@ -188,7 +192,7 @@ public override void _Ready()
         MoveAndSlide();
     }
 
-    private void Atacar(double delta)
+    private async Task Atacar(double delta)
     {
         _cooldownAtaque -= (float)delta;
 
@@ -208,7 +212,7 @@ public override void _Ready()
                 break;
 
             case TipoRol.Asistente:
-                EjecutarAsistencia();
+                await EjecutarAsistencia();
                 break;
         }
     }
@@ -259,10 +263,9 @@ public override void _Ready()
         );
     }
 
-    private void EjecutarAsistencia()
+    private async Task EjecutarAsistencia()
     {
-        Entidad aliado =
-            BuscarAliadoParaAsistir();
+        Entidad aliado = BuscarAliadoParaAsistir();
 
         if (aliado == null)
         {
@@ -277,6 +280,8 @@ public override void _Ready()
             Data.MultiplicadorAsistencia,
             Data.DuracionAsistencia
         );
+
+        await aliado.aura.MostrarAura(ColoresAura.Buff); 
 
         GD.Print(
             Data.Nombre +
@@ -307,7 +312,7 @@ public override void _Ready()
         }
     }
 
-    public void Curar(int cantidad)
+    public async void Curar(int cantidad)
     {
         VidaActual += cantidad;
 
@@ -319,6 +324,9 @@ public override void _Ready()
         }
 
         barraDeVida.ActualizarBarra(VidaActual);
+        InfoCuracion.MostrarInfo(); 
+        await aura.MostrarAura(ColoresAura.Curar);         
+        barraDeVida.ActualizarBarra(VidaActual); 
     }
 
     public void Morir()
@@ -326,6 +334,8 @@ public override void _Ready()
         EstadoActual = EstadoEntidad.Muerto;
 
         InfoAccion.Limpiar();
+        InfoAccion.Limpiar(); 
+        aura.Apagar(); 
 
         Velocity = Vector3.Zero;
 
