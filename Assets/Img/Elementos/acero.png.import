@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8pd5h42mv8pv"
-path="res://.godot/imported/Oscurida.jpg-7996528ee8717f703b58429a00c2d672.ctex"
+uid="uid://vv1bquqohptf"
+path="res://.godot/imported/acero.png-611c05aafd8d4482348fd894fafff4c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Img/Elementos/Oscurida.jpg"
-dest_files=["res://.godot/imported/Oscurida.jpg-7996528ee8717f703b58429a00c2d672.ctex"]
+source_file="res://Assets/Img/Elementos/acero.png"
+dest_files=["res://.godot/imported/acero.png-611c05aafd8d4482348fd894fafff4c3.ctex"]
 
 [params]
 

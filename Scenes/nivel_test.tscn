@@ -5,13 +5,12 @@
 [ext_resource type="Script" uid="uid://dsw6qow5j87v0" path="res://Scripts/CameraPelea.cs" id="2_lv5gi"]
 [ext_resource type="PackedScene" uid="uid://c5echom83h5ji" path="res://Scenes/UI/Ui.tscn" id="2_uaqnl"]
 [ext_resource type="Script" uid="uid://cp6vrnxxl4owv" path="res://Scripts/EnemigosSpawnNode.cs" id="5_ff72a"]
-[ext_resource type="PackedScene" uid="uid://boqgok60w6mf5" path="res://Assets/Entidades/Blissey/Blissey.tscn" id="7_6glv2"]
-[ext_resource type="PackedScene" uid="uid://bhv08wjwmolyy" path="res://Assets/Entidades/Audino/Audino.tscn" id="7_eonep"]
+[ext_resource type="PackedScene" uid="uid://0e8wv4xadc7d" path="res://Assets/Entidades/Axew/Axew.tscn" id="6_c0bpi"]
+[ext_resource type="PackedScene" uid="uid://syyb8kejdxfo" path="res://Assets/Entidades/Psyduck/Psyduck.tscn" id="7_6glv2"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_7fknf"]
-vertices = PackedVector3Array(-14.679199, 10.245012, -29.873543, -14.679199, 9.495012, -29.123543, -13.429199, 9.745012, -29.373543, -13.679199, -1.4849882, -22.623543, -13.679199, -1.4849882, -21.873543, 13.320801, -1.4849882, -21.873543, 13.320801, -1.4849882, -22.623543, 7.820801, -1.4849882, -8.123543, 8.070801, -1.4849882, -6.373543, 13.320801, -1.4849882, -6.623543, 13.320801, -1.2549882, -18.373543, 11.045801, -1.4849882, -11.648542, -13.679199, -1.4849882, -5.873543, -8.179199, -1.4849882, -5.873543, -7.929199, -1.4849882, -8.123543, -13.679199, -1.4849882, -18.123543, 9.58597, -1.4849882, -16.144724, 11.070982, -1.4849882, -16.133736, -7.179199, -0.4849882, -7.123543, -7.179199, -0.4849882, 6.876457, 7.070801, -0.4849882, 6.876457, 7.070801, -0.4849882, -7.123543, 8.070801, -1.4849882, 6.626457, 13.320801, -1.4849882, 6.626457, -13.679199, -1.4849882, 6.626457, -8.179199, -1.4849882, 6.626457)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(6, 5, 3), PackedInt32Array(3, 5, 4), PackedInt32Array(9, 11, 10), PackedInt32Array(10, 11, 7), PackedInt32Array(7, 9, 8), PackedInt32Array(9, 7, 11), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(10, 16, 15), PackedInt32Array(15, 16, 14), PackedInt32Array(14, 16, 7), PackedInt32Array(7, 17, 10), PackedInt32Array(10, 17, 16), PackedInt32Array(16, 17, 7), PackedInt32Array(21, 20, 18), PackedInt32Array(18, 20, 19), PackedInt32Array(22, 8, 23), PackedInt32Array(23, 8, 9), PackedInt32Array(25, 24, 13), PackedInt32Array(13, 24, 12)]
-cell_height = 0.01
+vertices = PackedVector3Array(-14.679199, 10.635012, -29.873543, -14.679199, 9.885012, -29.123543, -13.429199, 10.135012, -29.373543, -13.679199, -1.1149883, -22.623543, -13.679199, -1.1149883, -22.123543, 13.320801, -1.1149883, -22.123543, 13.320801, -1.1149883, -22.623543, 7.820801, -1.1149883, -8.123543, 8.070801, -1.1149883, -6.373543, 13.320801, -1.1149883, -6.623543, 13.320801, -0.8649883, -18.373543, -13.679199, -1.1149883, -5.873543, -8.179199, -1.1149883, -5.873543, -7.929199, -1.1149883, -8.123543, -13.679199, -1.1149883, -18.123543, -7.179199, -0.11498833, -7.123543, -7.179199, -0.11498833, 6.876457, 7.070801, -0.11498833, 6.876457, 7.070801, -0.11498833, -7.123543, 8.070801, -1.1149883, 6.626457, 13.320801, -1.1149883, 6.626457, -13.679199, -1.1149883, 6.626457, -8.179199, -1.1149883, 6.626457)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(6, 5, 3), PackedInt32Array(3, 5, 4), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 10), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 14), PackedInt32Array(7, 13, 10), PackedInt32Array(10, 13, 14), PackedInt32Array(18, 17, 15), PackedInt32Array(15, 17, 16), PackedInt32Array(19, 8, 20), PackedInt32Array(20, 8, 9), PackedInt32Array(22, 21, 12), PackedInt32Array(12, 21, 11)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fknf"]
 albedo_color = Color(8.904189e-07, 0.63166535, 0.1636002, 1)
@@ -41,7 +40,6 @@ Ui = NodePath("Vista/SubViewport/UI")
 navigation_mesh = SubResource("NavigationMesh_7fknf")
 
 [node name="Mapa_Mesh" type="CSGCombiner3D" parent="NM_Mapa" unique_id=196442379]
-use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=977527740]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -111,6 +109,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
 script = ExtResource("5_ff72a")
 CantidadMinima = 2
 CantidadMaxima = 4
-EnemigosPosibles = Array[PackedScene]([ExtResource("7_6glv2"), ExtResource("7_eonep")])
-_distanciaEntreEntidades = 3.0
-_entidadesPorFila = 2
+EnemigosPosibles = Array[PackedScene]([ExtResource("6_c0bpi"), ExtResource("7_6glv2")])

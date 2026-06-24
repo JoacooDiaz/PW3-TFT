@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://syyb8kejdxfo"]
+
+[ext_resource type="Script" uid="uid://ccijh7ayh6tia" path="res://Scripts/Entidad.cs" id="1_0v0c8"]
+[ext_resource type="Resource" uid="uid://b4jlfi8gicagb" path="res://Assets/Entidades/Psyduck/PsyduckData.tres" id="2_2f3y8"]
+[ext_resource type="PackedScene" uid="uid://b323mmv8loeu1" path="res://Assets/Entidades/Psyduck/psyduck_mesh.tscn" id="3_07m1d"]
+[ext_resource type="PackedScene" uid="uid://4mdvmflr8p5d" path="res://Scenes/NA3DEntidades.tscn" id="4_lsqul"]
+[ext_resource type="PackedScene" uid="uid://4b2qwq0lgkww" path="res://Scenes/UI/barra_de_vida.tscn" id="5_yth6b"]
+[ext_resource type="PackedScene" uid="uid://byce8a2d54kwx" path="res://Scenes/UI/info_accion.tscn" id="6_455rh"]
+[ext_resource type="PackedScene" uid="uid://ufy8i5ljn2c5" path="res://Scenes/UI/icon_curacion.tscn" id="7_tuwtj"]
+[ext_resource type="PackedScene" uid="uid://vloalwhycnl0" path="res://Scenes/UI/aura.tscn" id="8_n73rw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rwm6y"]
+height = 1.4482422
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0v0c8"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2f3y8"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_07m1d"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Psyduck" type="CharacterBody3D" unique_id=1613253232 node_paths=PackedStringArray("barraDeVida", "InfoAccion", "InfoCuracion", "aura")]
+script = ExtResource("1_0v0c8")
+Data = ExtResource("2_2f3y8")
+barraDeVida = NodePath("BarraDeVida")
+InfoAccion = NodePath("InfoAccion")
+InfoCuracion = NodePath("IconCuracion")
+aura = NodePath("Aura")
+
+[node name="PsyduckMesh" parent="." unique_id=1923346205 instance=ExtResource("3_07m1d")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1653128532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7241211, 0)
+shape = SubResource("CapsuleShape3D_rwm6y")
+
+[node name="NavigationAgent3D" parent="." unique_id=1409190723 instance=ExtResource("4_lsqul")]
+debug_path_custom_color = Color(0.80034655, 0.6563357, 0.17728567, 1)
+
+[node name="BarraDeVida" parent="." unique_id=1814894225 instance=ExtResource("5_yth6b")]
+transform = Transform3D(0.34999457, -0.0016797549, -0.0009859017, 0.0017193721, 0.349692, 0.014579653, 0.0009150621, -0.014584271, 0.34969482, 0.0014646278, 1.6912719, 0.012716455)
+texture = SubResource("ViewportTexture_0v0c8")
+
+[node name="InfoAccion" parent="." unique_id=2008531708 instance=ExtResource("6_455rh")]
+transform = Transform3D(0.514992, -0.0024716393, -0.0014506839, 0.0025299334, 0.51454675, 0.021452917, 0.0013464486, -0.021459714, 0.5145509, -0.0015616756, 2.3212888, -0.013559061)
+texture = SubResource("ViewportTexture_2f3y8")
+
+[node name="IconCuracion" parent="." unique_id=810924509 instance=ExtResource("7_tuwtj")]
+transform = Transform3D(0.24999613, -0.001199825, -0.0007042155, 0.001228123, 0.24977998, 0.010414038, 0.0006536158, -0.010417337, 0.24978201, 9.704776e-05, 1.9759752, 0.0008426056)
+texture = SubResource("ViewportTexture_07m1d")
+
+[node name="Aura" parent="." unique_id=1566409700 instance=ExtResource("8_n73rw")]
+transform = Transform3D(-0.25881895, 0, 0.9659255, 0, 0.52902853, 0, -0.9659255, 0, -0.25881895, 0, 0.58935344, 0.1)
