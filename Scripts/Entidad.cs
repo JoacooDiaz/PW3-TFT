@@ -16,6 +16,8 @@ public partial class Entidad : CharacterBody3D
     [Export]
     private IconCuracion InfoCuracion;
 
+    private IconTipo _iconTipo;
+
     [Export]
     private Aura aura; 
 
@@ -318,10 +320,15 @@ public override void _Ready()
     public async void Curar(int cantidad)
     {
         VidaActual += cantidad;
+
+        InfoCuracion.MostrarInfo();
+
         if (VidaActual > Data.Vida)
         {
             VidaActual = Data.Vida;
         }
+
+        barraDeVida.ActualizarBarra(VidaActual);
         InfoCuracion.MostrarInfo(); 
         await aura.MostrarAura(ColoresAura.Curar);         
         barraDeVida.ActualizarBarra(VidaActual); 
@@ -331,6 +338,7 @@ public override void _Ready()
     {
         EstadoActual = EstadoEntidad.Muerto;
 
+        InfoAccion.Limpiar();
         InfoAccion.Limpiar(); 
         aura.Apagar(); 
 
