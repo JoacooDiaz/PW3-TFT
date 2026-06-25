@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bo06wf1ixy0t4" path="res://Assets/Img/Elementos/Fuego.jpg" id="3_s2lu1"]
 [ext_resource type="Texture2D" uid="uid://dqc8l87g1nn16" path="res://Assets/Img/Elementos/Agua.jpg" id="4_wvwse"]
 [ext_resource type="Texture2D" uid="uid://dlmggn6btvqj0" path="res://Assets/Img/Elementos/Planta.png" id="5_eft3w"]
-[ext_resource type="Texture2D" uid="uid://kgguyuciomqg" path="res://Assets/Img/Elementos/Electrio.jpg" id="6_pyyr0"]
-[ext_resource type="Texture2D" uid="uid://b8pd5h42mv8pv" path="res://Assets/Img/Elementos/Oscurida.jpg" id="7_6wp84"]
-[ext_resource type="Texture2D" uid="uid://db4kyc5kevpe1" path="res://Assets/Img/Elementos/Sol.jpg" id="8_1x0yr"]
+[ext_resource type="Texture2D" uid="uid://kgguyuciomqg" path="res://Assets/Img/Elementos/electrico.png" id="6_pyyr0"]
+[ext_resource type="Texture2D" uid="uid://b8pd5h42mv8pv" path="res://Assets/Img/Elementos/lucha.png" id="7_6wp84"]
+[ext_resource type="Texture2D" uid="uid://db4kyc5kevpe1" path="res://Assets/Img/Elementos/hada.png" id="8_1x0yr"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_44ffh"]
 viewport_path = NodePath("SubViewport")

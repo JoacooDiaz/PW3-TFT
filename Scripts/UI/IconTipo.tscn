@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dwfaogctfdbrw"]
+
+[ext_resource type="Script" path="res://Scripts/UI/IconTipo.cs" id="2_iyqkc"]
+
+[node name="IconTipo" type="Sprite3D" unique_id=558981504]
+transform = Transform3D(0.99997264, 0, -0.0074001285, 0, 1, 0, 0.0074001285, 0, 0.99997264, 0.023266435, -0.010286331, -0.006307602)
+pixel_size = 0.001
+script = ExtResource("2_iyqkc")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1142386904]
+
+[node name="Panel" type="Panel" parent="SubViewport" unique_id=1743238196]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TipoIcon" type="TextureRect" parent="SubViewport/Panel" unique_id=477811702]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_group_ = true
