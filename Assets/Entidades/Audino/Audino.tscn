@@ -30,9 +30,6 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_k43nq"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_mhsrn"]
-viewport_path = NodePath("SubViewport")
-
 [node name="Audino" type="CharacterBody3D" unique_id=1636602526 node_paths=PackedStringArray("barraDeVida", "InfoAccion", "InfoCuracion", "aura")]
 script = ExtResource("1_4gyln")
 Data = ExtResource("2_4gyln")
@@ -63,11 +60,11 @@ debug_path_custom_color = Color(0.93304265, 9.62615e-07, 0.45480317, 1)
 
 [node name="BarraDeVida" parent="." unique_id=1814894225 instance=ExtResource("3_osogu")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 1.3621805, 0)
-texture = SubResource("ViewportTexture_hghqp")
+texture = SubResource("ViewportTexture_mhsrn")
 
 [node name="InfoAccion" parent="." unique_id=2008531708 instance=ExtResource("4_3pnkt")]
 transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 0, 1.9927523, 0)
-texture = SubResource("ViewportTexture_hrvy6")
+texture = SubResource("ViewportTexture_hkgqf")
 
 [node name="IconCuracion" parent="." unique_id=810924509 instance=ExtResource("5_d122b")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 1.5907409, 0)
@@ -77,7 +74,7 @@ texture = SubResource("ViewportTexture_k43nq")
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.81573844, 1.4126124, 0)
 pixel_size = 0.006
 texture = ExtResource("6_hghqp")
-script = ExtResource("7_mhsrn")
+script = ExtResource("7_hrvy6")
 
 [node name="Aura" parent="." unique_id=1566409700 instance=ExtResource("6_7mndg")]
 transform = Transform3D(-0.25881895, 0, 0.9659255, 0, 1, 0, -0.9659255, 0, -0.25881895, 0, 0.53971803, 0)

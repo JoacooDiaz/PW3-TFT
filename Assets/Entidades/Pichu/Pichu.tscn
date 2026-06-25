@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://byce8a2d54kwx" path="res://Scenes/UI/info_accion.tscn" id="6_wrxgm"]
 [ext_resource type="PackedScene" uid="uid://ufy8i5ljn2c5" path="res://Scenes/UI/icon_curacion.tscn" id="7_4t4mm"]
 [ext_resource type="PackedScene" uid="uid://vloalwhycnl0" path="res://Scenes/UI/aura.tscn" id="8_6p20w"]
+[ext_resource type="Texture2D" uid="uid://cifelukqpwcb6" path="res://Assets/Img/Elementos/agua.png" id="9_su1fu"]
+[ext_resource type="Script" uid="uid://dvpg1q8rllmsf" path="res://Scripts/UI/IconTipo.cs" id="10_gvfo5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cv67n"]
 radius = 0.48291016
@@ -51,6 +53,12 @@ texture = SubResource("ViewportTexture_qpncm")
 [node name="IconCuracion" parent="." unique_id=810924509 instance=ExtResource("7_4t4mm")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 1.9431319, 0)
 texture = SubResource("ViewportTexture_1prle")
+
+[node name="IconTipo" parent="." unique_id=172600238 instance=ExtResource("7_4t4mm")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.81573844, 1.67, 0)
+pixel_size = 0.006
+texture = ExtResource("9_su1fu")
+script = ExtResource("10_gvfo5")
 
 [node name="Aura" parent="." unique_id=1566409700 instance=ExtResource("8_6p20w")]
 transform = Transform3D(-0.19306806, 0, 0.72053975, 0, 0.4304056, 0, -0.72053975, 0, -0.19306806, 0, 0.2991631, 0.018083192)

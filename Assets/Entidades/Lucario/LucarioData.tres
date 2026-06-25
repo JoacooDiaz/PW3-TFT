@@ -13,4 +13,5 @@ VelocidadMovimiento = 2.0
 DistanciaAtaque = 1.5
 Precio = 6
 Recompensa = 3
+Elemento= 6
 metadata/_custom_type_script = "uid://cprb44o6jey2a"

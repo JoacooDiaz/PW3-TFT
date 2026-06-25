@@ -55,7 +55,7 @@ public partial class Entidad : CharacterBody3D
     );
 public override void _Ready()
 {
-    _iconTipo = GetNode<IconTipo>("IconTipo");
+    _iconTipo = GetNodeOrNull<IconTipo>("IconTipo");
     _navigation = GetNode<NavigationAgent3D>("NavigationAgent3D");
     _elementosManager = GetNode<ElementosManager>("/root/ElementosManager");
 
@@ -67,7 +67,10 @@ public override void _Ready()
 
     VidaActual = Data.Vida;
     barraDeVida.setUpBarra(VidaActual, Data.Elemento);
-    _iconTipo.Texture = _elementosManager.ObtenerTexturaElemento(Data.Elemento);
+    if (_iconTipo != null)
+    {
+        _iconTipo.Texture = _elementosManager.ObtenerTexturaElemento(Data.Elemento);
+    }
     InfoAccion.Limpiar();
 }
 

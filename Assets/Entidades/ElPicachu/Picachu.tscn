@@ -57,17 +57,23 @@ shape = SubResource("CapsuleShape3D_rkixr")
 [node name="NavigationAgent3D" parent="." unique_id=1409190723 instance=ExtResource("3_6vtcc")]
 debug_path_custom_color = Color(0.9282305, 0.66150403, 0, 1)
 
-[node name="BarraDeVida" parent="." unique_id=1814894225 instance=ExtResource("3_yody7")]
+[node name="BarraDeVida" parent="." unique_id=1814894225 instance=ExtResource("3_k8c7p")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 2.192454, 0)
 texture = SubResource("ViewportTexture_6vtcc")
 
-[node name="InfoAccion" parent="." unique_id=2008531708 instance=ExtResource("4_esvvx")]
+[node name="InfoAccion" parent="." unique_id=2008531708 instance=ExtResource("4_jsqld")]
 transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 0, 2.823026, 0)
 texture = SubResource("ViewportTexture_hwm8e")
 
-[node name="IconCuracion" parent="." unique_id=810924509 instance=ExtResource("5_kj4i1")]
+[node name="IconCuracion" parent="." unique_id=810924509 instance=ExtResource("5_24dme")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 2.4774082, 0)
 texture = SubResource("ViewportTexture_ps0fn")
+
+[node name="IconTipo" parent="." unique_id=172600238 instance=ExtResource("5_24dme")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.81573844, 2.2151992, 0)
+pixel_size = 0.006
+texture = ExtResource("6_su1fu")
+script = ExtResource("7_gvfo5")
 
 [node name="Aura" parent="." unique_id=1566409700 instance=ExtResource("6_wuhfn")]
 transform = Transform3D(-0.25881895, 0, 0.9659255, 0, 1, 0, -0.9659255, 0, -0.25881895, 0, 0.79292274, 0)

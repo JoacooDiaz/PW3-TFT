@@ -26,5 +26,7 @@ public enum TipoElemento
     Hada,
     Lucha,
     Acero,
-    Tierra
+    Tierra,
+    Hielo,
+    Dragon,
 }

@@ -60,8 +60,22 @@ public partial class TiendaNodoRaiz : Node
             PackedScene escena =
                 _ofertasActuales[indice];
 
+            if (escena == null)
+            {
+                GD.PrintErr("[TiendaNodoRaiz] Escena en el índice " + indice + " es nula.");
+                indice++;
+                continue;
+            }
+
             Entidad entidad =
                 escena.Instantiate<Entidad>();
+
+            if (entidad == null)
+            {
+                GD.PrintErr("[TiendaNodoRaiz] No se pudo instanciar la entidad para la escena en el índice " + indice);
+                indice++;
+                continue;
+            }
 
             slot.AddChild(entidad);
 
