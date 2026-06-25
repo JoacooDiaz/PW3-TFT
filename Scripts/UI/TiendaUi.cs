@@ -2,20 +2,20 @@ using Godot;
 
 public partial class TiendaUi : Control
 {
-    [Signal]
-    public delegate void ContinuarPressedEventHandler();
+	[Signal]
+	public delegate void ContinuarPressedEventHandler();
 
-    private Button _continuarButton;
+	private Button _continuarButton;
 
-    public override void _Ready()
-    {
-        _continuarButton = GetNode<Button>("ContinuarButton");
+	public override void _Ready()
+	{
+		_continuarButton = GetNode<Button>("ContinuarButton");
 
-        _continuarButton.Pressed += OnContinuarPressed;
-    }
+		_continuarButton.Pressed += OnContinuarPressed;
+	}
 
-    private void OnContinuarPressed()
-    {
-        EmitSignal(SignalName.ContinuarPressed);
-    }
+	private void OnContinuarPressed()
+	{
+		EmitSignal(SignalName.ContinuarPressed);
+	}
 }
