@@ -90,3 +90,11 @@ layout_mode = 2
 [node name="Comprar" type="Button" parent="HBoxContainer/Tarjeta3" unique_id=188857912]
 layout_mode = 2
 text = "Comprar"
+
+[node name="BotonRefrescar" type="Button" parent="." unique_id=1784073112]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 604.0
+offset_right = 354.0
+offset_bottom = 635.0
+text = "Refrescar (-2)"

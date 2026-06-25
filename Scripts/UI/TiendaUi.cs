@@ -22,12 +22,17 @@ public partial class TiendaUi : Control
 	private Button _comprar1;
 	private Button _comprar2;
 	private Button _comprar3;
+	private Button _botonRefrescar;
 
 	private PackedScene _pokemon1;
 	private PackedScene _pokemon2;
 	private PackedScene _pokemon3;
 	
 	private TiendaManager _tiendaManager;
+	
+	[Signal]
+public delegate void RefrescarPressedEventHandler();
+
 
 	public override void _Ready()
 	{
@@ -106,6 +111,13 @@ _comprar3 =
 	_comprar1.Pressed += OnComprar1;
 _comprar2.Pressed += OnComprar2;
 _comprar3.Pressed += OnComprar3;
+
+
+_botonRefrescar =
+	GetNode<Button>("BotonRefrescar");
+	
+	_botonRefrescar.Pressed +=
+	OnRefrescarPressed;
 	
 	}
 
@@ -140,6 +152,13 @@ private void OnComprar3()
 		_comprar3.Disabled = true;
 		_comprar3.Text = "Comprado";
 	}
+}
+
+private void OnRefrescarPressed()
+{
+	EmitSignal(
+		SignalName.RefrescarPressed
+	);
 }
 	
 	public void ConfigurarTarjeta(
@@ -191,6 +210,18 @@ private void OnComprar3()
 		_imagen3.Texture =
 			entidad.Data.Icono;
 	}
+}
+
+public void ResetearBotones()
+{
+	_comprar1.Disabled = false;
+	_comprar1.Text = "Comprar";
+
+	_comprar2.Disabled = false;
+	_comprar2.Text = "Comprar";
+
+	_comprar3.Disabled = false;
+	_comprar3.Text = "Comprar";
 }
 
 }
