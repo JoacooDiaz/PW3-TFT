@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EntidadData" format=3 uid="uid://654r08wejhwa"]
+
+[ext_resource type="Script" uid="uid://cprb44o6jey2a" path="res://Resources/EntidadData.cs" id="1_1ncc5"]
+
+[resource]
+script = ExtResource("1_1ncc5")
+Nombre = "Axew"
+Vida = 70
+Curacion = 0
+MultiplicadorAsistencia = 0.0
+DuracionAsistencia = 0.0
+Elemento = 10
+metadata/_custom_type_script = "uid://cprb44o6jey2a"

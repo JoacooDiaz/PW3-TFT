@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EntidadData" format=3 uid="uid://c5lwy6y5rk184"]
+
+[ext_resource type="Script" uid="uid://cprb44o6jey2a" path="res://Resources/EntidadData.cs" id="1_e6vcn"]
+
+[resource]
+script = ExtResource("1_e6vcn")
+Nombre = "Pichu"
+Vida = 50
+"Daño" = 5
+Curacion = 0
+MultiplicadorAsistencia = 0.0
+DuracionAsistencia = 0.0
+TiempoEntreAtaques = 0.5
+VelocidadMovimiento = 6.0
+DistanciaAtaque = 1.5
+Elemento = 4
+metadata/_custom_type_script = "uid://cprb44o6jey2a"

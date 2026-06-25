@@ -11,5 +11,5 @@ Vida = 50
 VelocidadMovimiento = 1.0
 DistanciaAtaque = 3.0
 Rol = 2
-Elemento = 6
+Elemento = 0
 metadata/_custom_type_script = "uid://cprb44o6jey2a"
