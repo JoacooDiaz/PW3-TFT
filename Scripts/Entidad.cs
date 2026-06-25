@@ -11,13 +11,15 @@ public partial class Entidad : CharacterBody3D
     public BarraDeVida barraDeVida;
 
     [Export]
-    private InfoAccion InfoAccion; 
+    private InfoAccion InfoAccion;
 
     [Export]
-    private IconCuracion InfoCuracion; 
+    private IconCuracion InfoCuracion;
 
     [Export]
     private Aura aura; 
+
+    private IconTipo _iconTipo;
 
     private NavigationAgent3D _navigation;
 
@@ -45,27 +47,29 @@ public partial class Entidad : CharacterBody3D
 
     private float _tiempoFestejo = 0.0f;
 
+    private ElementosManager _elementosManager;
+
     [Signal]
     public delegate void EntidadMurioEventHandler(
         Entidad entidad
     );
+public override void _Ready()
+{
+    _iconTipo = GetNode<IconTipo>("IconTipo");
+    _navigation = GetNode<NavigationAgent3D>("NavigationAgent3D");
+    _elementosManager = GetNode<ElementosManager>("/root/ElementosManager");
 
-    public override void _Ready()
+    if (Data == null)
     {
-        _navigation = GetNode<NavigationAgent3D>("NavigationAgent3D");
-
-        InfoAccion = GetNode<InfoAccion>("InfoAccion"); 
-
-        if (Data == null)
-        {
-            GD.Print(Name + " no tiene EntidadData.");
-            return;
-        }
-
-        VidaActual = Data.Vida;
-        barraDeVida.setUpBarra(VidaActual); 
-        InfoAccion.Limpiar(); 
+        GD.Print(Name + " no tiene EntidadData.");
+        return;
     }
+
+    VidaActual = Data.Vida;
+    barraDeVida.setUpBarra(VidaActual, Data.Elemento);
+    _iconTipo.Texture = _elementosManager.ObtenerTexturaElemento(Data.Elemento);
+    InfoAccion.Limpiar();
+}
 
     public override void _PhysicsProcess(double delta)
     {
@@ -220,13 +224,10 @@ public partial class Entidad : CharacterBody3D
 
         MirarObjetivo(0.1);
 
-        int dañoFinal =
-            Mathf.RoundToInt(
-                CalcularDañoFinal(
-                    Data.Daño,
-                    Data.Elemento,
-                    ObjetivoActual.Data.Elemento
-                ) * _multiplicadorDaño
+        int dañoFinal = _elementosManager.CalcularDañoFinal(
+            Mathf.RoundToInt(Data.Daño * _multiplicadorDaño),
+            Data.Elemento,
+            ObjetivoActual.Data.Elemento
         );
 
         ObjetivoActual.RecibirDaño(dañoFinal, Data.Elemento);
@@ -294,9 +295,9 @@ public partial class Entidad : CharacterBody3D
     {
         VidaActual -= daño;
 
-        barraDeVida.ActualizarBarra(VidaActual); 
+        barraDeVida.ActualizarBarra(VidaActual);
 
-        InfoAccion.MostrarInfo(daño, elemento); 
+        InfoAccion.MostrarInfo(daño, elemento);
 
         GD.Print(
             Data.Nombre +
@@ -391,40 +392,6 @@ public partial class Entidad : CharacterBody3D
         return null;
     }
 
-    private int CalcularDañoFinal(
-        int dañoBase,
-        TipoElemento atacante,
-        TipoElemento defensor
-    )
-    {
-        float multiplicador = 1.0f;
-
-        if (
-            atacante == TipoElemento.Fuego &&
-            defensor == TipoElemento.Planta
-        )
-        {
-            multiplicador = 1.5f;
-        }
-
-        if (
-            atacante == TipoElemento.Agua &&
-            defensor == TipoElemento.Fuego
-        )
-        {
-            multiplicador = 1.5f;
-        }
-
-        if (
-            atacante == TipoElemento.Planta &&
-            defensor == TipoElemento.Agua
-        )
-        {
-            multiplicador = 1.5f;
-        }
-
-        return Mathf.RoundToInt(dañoBase * multiplicador);
-    }
 
     public void FestejarVictoria()
     {

@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dn7akxhunesdn"]
 
-[ext_resource type="Script" uid="uid://ccijh7ayh6tia" path="res://Scripts/Entidad.cs" id="1_07e7e"]
-[ext_resource type="Resource" uid="uid://d1p5xhqrneojq" path="res://Assets/Entidades/ElPicachu/PicachuData.tres" id="2_yody7"]
+[ext_resource type="Script" uid="uid://ccijh7ayh6tia" path="res://Scripts/Entidad.cs" id="1_i8yso"]
+[ext_resource type="Resource" uid="uid://d1p5xhqrneojq" path="res://Assets/Entidades/ElPicachu/PicachuData.tres" id="2_gfmpe"]
 [ext_resource type="PackedScene" uid="uid://4mdvmflr8p5d" path="res://Scenes/NA3DEntidades.tscn" id="3_6vtcc"]
-[ext_resource type="PackedScene" uid="uid://4b2qwq0lgkww" path="res://Scenes/UI/barra_de_vida.tscn" id="3_yody7"]
-[ext_resource type="PackedScene" uid="uid://byce8a2d54kwx" path="res://Scenes/UI/info_accion.tscn" id="4_esvvx"]
-[ext_resource type="PackedScene" uid="uid://ufy8i5ljn2c5" path="res://Scenes/UI/icon_curacion.tscn" id="5_kj4i1"]
+[ext_resource type="PackedScene" uid="uid://4b2qwq0lgkww" path="res://Scenes/UI/barra_de_vida.tscn" id="3_k8c7p"]
+[ext_resource type="PackedScene" uid="uid://byce8a2d54kwx" path="res://Scenes/UI/info_accion.tscn" id="4_jsqld"]
+[ext_resource type="PackedScene" uid="uid://ufy8i5ljn2c5" path="res://Scenes/UI/icon_curacion.tscn" id="5_24dme"]
+[ext_resource type="Texture2D" uid="uid://cifelukqpwcb6" path="res://Assets/Img/Elementos/agua.png" id="6_su1fu"]
+[ext_resource type="Script" uid="uid://dvpg1q8rllmsf" path="res://Scripts/UI/IconTipo.cs" id="7_gvfo5"]
 [ext_resource type="PackedScene" uid="uid://vloalwhycnl0" path="res://Scenes/UI/aura.tscn" id="6_wuhfn"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_x4bpy"]
@@ -29,8 +31,8 @@ viewport_path = NodePath("SubViewport")
 viewport_path = NodePath("SubViewport")
 
 [node name="Picachu" type="CharacterBody3D" unique_id=1156186729 node_paths=PackedStringArray("barraDeVida", "InfoAccion", "InfoCuracion", "aura")]
-script = ExtResource("1_07e7e")
-Data = ExtResource("2_yody7")
+script = ExtResource("1_i8yso")
+Data = ExtResource("2_gfmpe")
 barraDeVida = NodePath("BarraDeVida")
 InfoAccion = NodePath("InfoAccion")
 InfoCuracion = NodePath("IconCuracion")

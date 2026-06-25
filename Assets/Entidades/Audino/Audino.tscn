@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://byce8a2d54kwx" path="res://Scenes/UI/info_accion.tscn" id="4_3pnkt"]
 [ext_resource type="PackedScene" uid="uid://ufy8i5ljn2c5" path="res://Scenes/UI/icon_curacion.tscn" id="5_d122b"]
 [ext_resource type="PackedScene" uid="uid://vloalwhycnl0" path="res://Scenes/UI/aura.tscn" id="6_7mndg"]
+[ext_resource type="Texture2D" uid="uid://cifelukqpwcb6" path="res://Assets/Img/Elementos/agua.png" id="6_hghqp"]
+[ext_resource type="Script" uid="uid://dvpg1q8rllmsf" path="res://Scripts/UI/IconTipo.cs" id="7_hrvy6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0py3c"]
 
@@ -19,10 +21,13 @@ albedo_color = Color(0.712126, 0.3275082, 0.5574483, 1)
 radius = 0.53515625
 height = 1.0703125
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hghqp"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_mhsrn"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hrvy6"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hkgqf"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_k43nq"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mhsrn"]
@@ -66,7 +71,13 @@ texture = SubResource("ViewportTexture_hrvy6")
 
 [node name="IconCuracion" parent="." unique_id=810924509 instance=ExtResource("5_d122b")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 1.5907409, 0)
-texture = SubResource("ViewportTexture_mhsrn")
+texture = SubResource("ViewportTexture_k43nq")
+
+[node name="IconTipo" parent="." unique_id=1591879067 instance=ExtResource("5_d122b")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.81573844, 1.4126124, 0)
+pixel_size = 0.006
+texture = ExtResource("6_hghqp")
+script = ExtResource("7_mhsrn")
 
 [node name="Aura" parent="." unique_id=1566409700 instance=ExtResource("6_7mndg")]
 transform = Transform3D(-0.25881895, 0, 0.9659255, 0, 1, 0, -0.9659255, 0, -0.25881895, 0, 0.53971803, 0)
