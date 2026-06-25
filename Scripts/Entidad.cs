@@ -21,8 +21,6 @@ public partial class Entidad : CharacterBody3D
     [Export]
     private Aura aura; 
 
-    private IconTipo _iconTipo;
-
     private NavigationAgent3D _navigation;
 
     public EstadoEntidad EstadoActual = EstadoEntidad.Idle;
