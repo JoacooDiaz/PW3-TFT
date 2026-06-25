@@ -46,6 +46,7 @@ public partial class ElementosManager : Node
             [TipoElemento.Lucha]  = 2.0f,
             [TipoElemento.Acero]  = 0.5f,
             [TipoElemento.Fuego]  = 0.5f,
+            [TipoElemento.Dragon]  = 2.0f,
         },
         [TipoElemento.Normal] = new()
         {
@@ -57,6 +58,9 @@ public partial class ElementosManager : Node
             [TipoElemento.Normal] = 2.0f,
             [TipoElemento.Acero]  = 2.0f,
             [TipoElemento.Hada]   = 0.5f,
+            [TipoElemento.Hielo]   = 2.0f,
+            [TipoElemento.Dragon]   = 2.0f,
+            
         },
         [TipoElemento.Acero] = new()
         {
@@ -74,6 +78,20 @@ public partial class ElementosManager : Node
             [TipoElemento.Agua]     = 0.5f,
             [TipoElemento.Planta]   = 0.5f,
         },
+          [TipoElemento.Hielo] = new()
+        {
+            [TipoElemento.Dragon]    = 2.0f,
+            [TipoElemento.Planta]   = 0.5f,
+            [TipoElemento.Tierra]     = 2.0f,
+        },
+           [TipoElemento.Dragon] = new()
+        {
+            [TipoElemento.Dragon]    = 2.0f,
+            [TipoElemento.Fuego]   = 0.5f,
+            [TipoElemento.Agua]   = 0.5f,
+            [TipoElemento.Electrico]     = 0.5f,
+            [TipoElemento.Planta]     = 0.5f,
+        },
     };
 
     public override void _Ready()
@@ -90,6 +108,8 @@ public partial class ElementosManager : Node
         CargarTextura(TipoElemento.Lucha,     "res://Assets/Img/Elementos/lucha.png");
         CargarTextura(TipoElemento.Acero,     "res://Assets/Img/Elementos/acero.png");
         CargarTextura(TipoElemento.Tierra,    "res://Assets/Img/Elementos/tierra.png");
+        CargarTextura(TipoElemento.Hielo,    "res://Assets/Img/Elementos/hielo.png");//9
+        CargarTextura(TipoElemento.Dragon,    "res://Assets/Img/Elementos/dragon.png");//10
 
         GD.Print("[ElementosManager] Texturas cargadas.");
     }
