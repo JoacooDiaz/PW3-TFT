@@ -47,9 +47,20 @@ public partial class LevelManager : Node
         IrATienda();
     }
 
-    private void OnDerrota()
+    private async void OnDerrota()
     {
         _ui.MostrarDerrota();
+
+        // Reiniciamos nivel y progreso del jugador
+        NivelActual = 0;
+        var playerManager = GetNode<PlayerManager>("/root/PlayerManager");
+        playerManager.ResetearProgreso();
+
+        // Esperamos 3 segundos para que el jugador vea el mensaje de derrota
+        await Task.Delay(3000);
+
+        // De vuelta a la tienda
+        IrATienda();
     }
 
     private void IrATienda()
@@ -69,8 +80,11 @@ public partial class LevelManager : Node
 
     private void CargarNiveles()
     {
-        _niveles.Add(GD.Load<PackedScene>("res://Scenes/nivel_test.tscn")); 
         _niveles.Add(GD.Load<PackedScene>("res://Scenes/Niveles/nivel_1.tscn")); 
         _niveles.Add(GD.Load<PackedScene>("res://Scenes/Niveles/nivel_2.tscn")); 
+        _niveles.Add(GD.Load<PackedScene>("res://Scenes/Niveles/nivel_3.tscn")); 
+        _niveles.Add(GD.Load<PackedScene>("res://Scenes/Niveles/nivel_4.tscn")); 
+        _niveles.Add(GD.Load<PackedScene>("res://Scenes/Niveles/nivel_5.tscn")); 
+        _niveles.Add(GD.Load<PackedScene>("res://Scenes/Niveles/nivel_jefe.tscn")); 
     }
 }

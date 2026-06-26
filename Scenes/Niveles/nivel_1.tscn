@@ -1,17 +1,16 @@
 [gd_scene format=3 uid="uid://co5gt2hmtwe4i"]
 
-[ext_resource type="Script" uid="uid://ddd0udsr4uoqd" path="res://Scripts/NivelNodoRaiz.cs" id="1_ncuar"]
-[ext_resource type="Script" uid="uid://dsw6qow5j87v0" path="res://Scripts/CameraPelea.cs" id="1_obdua"]
-[ext_resource type="PackedScene" uid="uid://c5echom83h5ji" path="res://Scenes/UI/Ui.tscn" id="2_ncuar"]
-[ext_resource type="Script" uid="uid://du08ojmmg8jps" path="res://Scripts/SpawnNode.cs" id="3_2ckao"]
-[ext_resource type="Script" uid="uid://cp6vrnxxl4owv" path="res://Scripts/EnemigosSpawnNode.cs" id="4_3uoup"]
-[ext_resource type="PackedScene" uid="uid://b13w2gmw6kqmh" path="res://Assets/Entidades/Lucario/Lucario.tscn" id="7_2ckao"]
-[ext_resource type="PackedScene" uid="uid://cl78xuo2ju7xb" path="res://Assets/Entidades/Horsea/Horsea.tscn" id="7_3uoup"]
-[ext_resource type="PackedScene" uid="uid://j2o3wkkf3jwr" path="res://Assets/Entidades/Pichu/Pichu.tscn" id="8_3uoup"]
+[ext_resource type="Script" uid="uid://ddd0udsr4uoqd" path="res://Scripts/NivelNodoRaiz.cs" id="1_1vc5s"]
+[ext_resource type="Script" uid="uid://dsw6qow5j87v0" path="res://Scripts/CameraPelea.cs" id="2_81wkf"]
+[ext_resource type="PackedScene" uid="uid://c5echom83h5ji" path="res://Scenes/UI/Ui.tscn" id="3_31k04"]
+[ext_resource type="Script" uid="uid://du08ojmmg8jps" path="res://Scripts/SpawnNode.cs" id="4_fvw0e"]
+[ext_resource type="Script" uid="uid://cp6vrnxxl4owv" path="res://Scripts/EnemigosSpawnNode.cs" id="5_sddnt"]
+[ext_resource type="PackedScene" uid="uid://j2o3wkkf3jwr" path="res://Assets/Entidades/Pichu/Pichu.tscn" id="6_pichu"]
+[ext_resource type="PackedScene" uid="uid://cl78xuo2ju7xb" path="res://Assets/Entidades/Horsea/Horsea.tscn" id="7_horsea"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4tssb"]
-vertices = PackedVector3Array(-13.679199, -1.1149883, -22.623543, -13.679199, -1.1149883, -22.123543, 13.320801, -1.1149883, -22.123543, 13.320801, -1.1149883, -22.623543, -4.429199, -1.1149883, -8.123543, -4.429199, -1.1149883, -9.623543, -5.679199, -1.1149883, -10.623543, -7.929199, -1.1149883, -8.123543, -5.179199, -1.1149883, -12.123543, 8.070801, -1.1149883, -18.123543, -13.679199, -1.1149883, -18.123543, -13.679199, -1.1149883, -5.873543, -8.179199, -1.1149883, -5.873543, 13.320801, -1.1149883, -18.123543, 9.570801, -1.1149883, -18.123543, 10.070801, -1.1149883, -17.373543, 9.820801, -1.1149883, -15.873543, 7.820801, -1.1149883, -8.123543, 8.070801, -1.1149883, -6.373543, 13.320801, -1.1149883, -6.623543, -7.179199, -0.11498833, -7.123543, -7.179199, -0.11498833, 6.876457, 7.070801, -0.11498833, 6.876457, 7.070801, -0.11498833, -7.123543, 8.070801, -1.1149883, 6.626457, 13.320801, -1.1149883, 6.626457, -13.679199, -1.1149883, 6.626457, -8.179199, -1.1149883, 6.626457)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(10, 9, 8), PackedInt32Array(6, 7, 8), PackedInt32Array(8, 7, 11), PackedInt32Array(8, 11, 10), PackedInt32Array(7, 12, 11), PackedInt32Array(13, 15, 14), PackedInt32Array(16, 15, 13), PackedInt32Array(18, 17, 19), PackedInt32Array(19, 17, 16), PackedInt32Array(19, 16, 13), PackedInt32Array(4, 5, 17), PackedInt32Array(17, 5, 16), PackedInt32Array(23, 22, 20), PackedInt32Array(20, 22, 21), PackedInt32Array(24, 18, 25), PackedInt32Array(25, 18, 19), PackedInt32Array(27, 26, 12), PackedInt32Array(12, 26, 11)]
+vertices = PackedVector3Array(-14.679199, 10.635012, -29.873543, -14.679199, 9.885012, -29.123543, -13.429199, 10.135012, -29.373543, -13.679199, -1.1149883, -22.623543, -13.679199, -1.1149883, -22.123543, 13.320801, -1.1149883, -22.123543, 13.320801, -1.1149883, -22.623543, 7.820801, -1.1149883, -8.123543, 8.070801, -1.1149883, -6.373543, 13.320801, -1.1149883, -6.623543, 13.320801, -0.8649883, -18.373543, -13.679199, -1.1149883, -5.873543, -8.179199, -1.1149883, -5.873543, -7.929199, -1.1149883, -8.123543, -13.679199, -1.1149883, -18.123543, -7.179199, -0.11498833, -7.123543, -7.179199, -0.11498833, 6.876457, 7.070801, -0.11498833, 6.876457, 7.070801, -0.11498833, -7.123543, 8.070801, -1.1149883, 6.626457, 13.320801, -1.1149883, 6.626457, -13.679199, -1.1149883, 6.626457, -8.179199, -1.1149883, 6.626457)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(6, 5, 3), PackedInt32Array(3, 5, 4), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 10), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 14), PackedInt32Array(7, 13, 10), PackedInt32Array(10, 13, 14), PackedInt32Array(18, 17, 15), PackedInt32Array(15, 17, 16), PackedInt32Array(19, 8, 20), PackedInt32Array(20, 8, 9), PackedInt32Array(22, 21, 12), PackedInt32Array(12, 21, 11)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3s6e8"]
 albedo_color = Color(8.904189e-07, 0.63166535, 0.1636002, 1)
@@ -31,7 +30,7 @@ sky = SubResource("Sky_lv5gi")
 tonemap_mode = 2
 
 [node name="Nivel1" type="Node" unique_id=1103045667 node_paths=PackedStringArray("Aliados", "Enemigos", "Ui")]
-script = ExtResource("1_ncuar")
+script = ExtResource("1_1vc5s")
 Aliados = NodePath("Aliados")
 Enemigos = NodePath("Enemigos")
 Ui = NodePath("Vista/SubViewport/UI")
@@ -57,11 +56,6 @@ transform = Transform3D(1, 0, 0, 0, 0.7071067, -0.7071068, 0, 0.7071068, 0.70710
 size = Vector3(37.8584, 1, 21)
 material = SubResource("StandardMaterial3D_78s11")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=1706737888]
-transform = Transform3D(0.9102072, 0.41331676, 0.026307844, 0, 0.06352201, -0.9979804, -0.4141532, 0.90836895, 0.057818193, 2.2185066, -1.5370064, -13.906313)
-size = Vector3(15.412598, 1, 8.705566)
-material = SubResource("StandardMaterial3D_78s11")
-
 [node name="CSGBox3D4" type="CSGBox3D" parent="NM_Mapa/Mapa_Mesh" unique_id=775293796]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -14.785986, 1.401207, -16.123543)
 size = Vector3(46, 1, 15.753906)
@@ -79,9 +73,8 @@ environment = SubResource("Environment_bij32")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="GlobalIlumination" unique_id=781185432]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-light_color = Color(0.66713846, 0.32359532, 9.62615e-08, 1)
-light_energy = 2.589
-light_angular_distance = 43.64
+light_color = Color(0.9, 0.95, 0.9, 1)
+light_energy = 2.0
 shadow_enabled = true
 
 [node name="Vista" type="SubViewportContainer" parent="." unique_id=408241760]
@@ -93,6 +86,7 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 stretch_shrink = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="Vista" unique_id=83235663]
 handle_input_locally = false
@@ -101,23 +95,23 @@ size = Vector2i(384, 216)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Vista/SubViewport" unique_id=1755437125]
-transform = Transform3D(1, 0, 0, 0, 0.81079835, 0.58532566, 0, -0.58532566, 0.81079835, 0, 3.360402, 7)
+transform = Transform3D(1, 0, 0, 0, 0.9948348, 0.10150769, 0, -0.10150769, 0.9948348, 0, 1.3604021, 9)
 current = true
 fov = 90.0
-script = ExtResource("1_obdua")
+script = ExtResource("2_81wkf")
 
-[node name="UI" parent="Vista/SubViewport" unique_id=434444583 instance=ExtResource("2_ncuar")]
+[node name="UI" parent="Vista/SubViewport" unique_id=434444583 instance=ExtResource("3_31k04")]
 
 [node name="Aliados" type="Node3D" parent="." unique_id=242155482]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
-script = ExtResource("3_2ckao")
+script = ExtResource("4_fvw0e")
 _entidadesPorFila = 1
 
 [node name="Enemigos" type="Node3D" parent="." unique_id=2002000349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
-script = ExtResource("4_3uoup")
-CantidadMinima = 3
-CantidadMaxima = 5
-EnemigosPosibles = Array[PackedScene]([ExtResource("7_2ckao"), ExtResource("7_3uoup"), ExtResource("8_3uoup")])
+script = ExtResource("5_sddnt")
+CantidadMinima = 2
+CantidadMaxima = 3
+EnemigosPosibles = Array[PackedScene]([ExtResource("6_pichu"), ExtResource("7_horsea")])
 _distanciaEntreEntidades = 3.0
 _entidadesPorFila = 2
