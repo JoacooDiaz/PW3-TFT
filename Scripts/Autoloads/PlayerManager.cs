@@ -24,11 +24,23 @@ public partial class PlayerManager : Node
 			para controlarlo nosotros mismos...
 		*/
 		
+		CargarEquipoInicial();
+	}
+
+	private void CargarEquipoInicial()
+	{
+		Aliados.Clear();
 		Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Blissey/Blissey.tscn"));
-
 		Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Audino/Audino.tscn")); 
-
 		Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/ElPicachu/Picachu.tscn"));
+	}
+
+	public void ResetearProgreso()
+	{
+		Dinero = 50;
+		CargarEquipoInicial();
+		if (IsInstanceValid(_ui))
+			_ui.ActualizarDinero();
 	}
 
 	public void SetUpUi(Ui ui)
