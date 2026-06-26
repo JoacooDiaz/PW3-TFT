@@ -24,11 +24,11 @@ public partial class PlayerManager : Node
 			para controlarlo nosotros mismos...
 		*/
 		
-		Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Psyduck/Psyduck.tscn")); 
+		Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Blissey/Blissey.tscn"));
+
+		Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Audino/Audino.tscn")); 
 
 		Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/ElPicachu/Picachu.tscn"));
-
-		Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Glalie/Glalie.tscn"));
 	}
 
 	public void SetUpUi(Ui ui)
@@ -46,5 +46,13 @@ public partial class PlayerManager : Node
 		if (IsInstanceValid(_ui))
 			_ui.ActualizarDinero();
 	}
+	
+	public void RestarDinero(int cantidad)
+{
+	Dinero -= cantidad;
+
+	if (IsInstanceValid(_ui))
+		_ui.ActualizarDinero();
+}
 
 }

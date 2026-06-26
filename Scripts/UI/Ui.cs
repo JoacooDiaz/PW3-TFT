@@ -11,11 +11,12 @@ public partial class Ui : Control
 	public override void _Ready()
 	{
 		_playerManager = GetNode<PlayerManager>("/root/PlayerManager");
+		
 		labelTest = GetNode<Label>("TestLabel");
 		DineroLabel = GetNode<Label>("DineroLabel");
 		labelTest.Visible = false; 
 		labelTest.Text = ""; 
-
+		_playerManager.SetUpUi(this);
 		ActualizarDinero(); 
 
 		OcultarMensaje();

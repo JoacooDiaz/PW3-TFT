@@ -25,15 +25,31 @@ public partial class TiendaNodoRaiz : Node
                 "/root/TiendaManager"
 			);
 
+		CargarUiTienda();
 		CargarTienda();
 
-		CargarUiTienda(); 
+		 
 	}
 
 	public void CargarTienda()
 	{
+		
+		foreach (
+	Node hijo
+	in SP_Comprables.GetChildren()
+)
+{
+	foreach (
+		Node nieto
+		in hijo.GetChildren()
+	)
+	{
+		nieto.QueueFree();
+	}
+}
+
 		_ofertasActuales =
-			_tiendaManager.GenerarTienda(5);
+			_tiendaManager.GenerarTienda(3);
 
 		int indice = 0;
 
@@ -59,23 +75,14 @@ public partial class TiendaNodoRaiz : Node
 
 			PackedScene escena =
 				_ofertasActuales[indice];
-
-			if (escena == null)
-			{
-				GD.PrintErr("[TiendaNodoRaiz] Escena en el índice " + indice + " es nula.");
-				indice++;
-				continue;
-			}
+				
+				_uiTienda.ConfigurarTarjeta(
+				indice,
+   				escena
+				);
 
 			Entidad entidad =
 				escena.Instantiate<Entidad>();
-
-			if (entidad == null)
-			{
-				GD.PrintErr("[TiendaNodoRaiz] No se pudo instanciar la entidad para la escena en el índice " + indice);
-				indice++;
-				continue;
-			}
 
 			slot.AddChild(entidad);
 
@@ -99,6 +106,10 @@ public partial class TiendaNodoRaiz : Node
 		_Ui.AddChild(_uiTienda);
 
 		_uiTienda.ContinuarPressed += OnContinuarPressed;
+	
+	_uiTienda.RefrescarPressed +=
+	OnRefrescarPressed;
+	
 	}
 
 	private void OnContinuarPressed()
@@ -106,4 +117,33 @@ public partial class TiendaNodoRaiz : Node
 		LevelManager _levelManager = GetNode<LevelManager>("/root/LevelManager");
 		_levelManager.IrAlSiguienteNivel(); 
 	}
+	
+	private void OnRefrescarPressed()
+{
+	PlayerManager player =
+		GetNode<PlayerManager>(
+            "/root/PlayerManager"
+		);
+
+	if (player.Dinero < 2)
+	{
+		GD.Print(
+            "No alcanza el dinero"
+		);
+
+		return;
+	}
+
+	player.RestarDinero(2);
+	_uiTienda.ResetearBotones();
+	CargarTienda();
+
+	GD.Print(
+        "Tienda refrescada"
+	);
+}
+	
+	
+
+
 }

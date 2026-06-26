@@ -79,8 +79,12 @@ public partial class TiendaManager : Node
 			return false;
 		}
 
-		_playerManager.Dinero -=
-			entidad.Data.Precio;
+		/*_playerManager.Dinero -=
+			entidad.Data.Precio;*/
+			
+			_playerManager.RestarDinero(
+			entidad.Data.Precio
+			);
 
 		_playerManager.Aliados.Add(
 			escena
