@@ -5,14 +5,7 @@ public partial class TiendaNodoRaiz : Node
 {
 	[Export]
 	public Ui _Ui; 
-	[Export]
-	public Ui _Ui; 
 
-	[Export]
-	public Node3D SP_Comprables;
-	
-	[Export]
-	public PackedScene UITiendaScene;
 	[Export]
 	public Node3D SP_Comprables;
 	
@@ -20,24 +13,16 @@ public partial class TiendaNodoRaiz : Node
 	public PackedScene UITiendaScene;
 
 	private TiendaUi _uiTienda;
-	private TiendaUi _uiTienda;
 
-	private TiendaManager _tiendaManager;
 	private TiendaManager _tiendaManager;
 
 	private List<PackedScene> _ofertasActuales = new();
-	private List<PackedScene> _ofertasActuales = new();
 
-	public override void _Ready()
-	{
-		_tiendaManager =
-			GetNode<TiendaManager>(
 	public override void _Ready()
 	{
 		_tiendaManager =
 			GetNode<TiendaManager>(
                 "/root/TiendaManager"
-			);
 			);
 
 		CargarUiTienda();
@@ -67,19 +52,7 @@ public partial class TiendaNodoRaiz : Node
 			_tiendaManager.GenerarTienda(3);
 
 		int indice = 0;
-		int indice = 0;
 
-		foreach (
-			Node hijo
-			in SP_Comprables.GetChildren()
-		)
-		{
-			if (
-				indice >= _ofertasActuales.Count
-			)
-			{
-				break;
-			}
 		foreach (
 			Node hijo
 			in SP_Comprables.GetChildren()
@@ -94,13 +67,7 @@ public partial class TiendaNodoRaiz : Node
 
 			Node3D slot =
 				hijo as Node3D;
-			Node3D slot =
-				hijo as Node3D;
 
-			if (slot == null)
-			{
-				continue;
-			}
 			if (slot == null)
 			{
 				continue;
@@ -121,12 +88,7 @@ public partial class TiendaNodoRaiz : Node
 
 			entidad.Position =
 				Vector3.Zero;
-			entidad.Position =
-				Vector3.Zero;
 
-			indice++;
-		}
-	}
 			indice++;
 		}
 	}
@@ -138,18 +100,9 @@ public partial class TiendaNodoRaiz : Node
 			GD.PrintErr("UITiendaScene no asignada.");
 			return;
 		}
-	private void CargarUiTienda()
-	{
-		if (UITiendaScene == null)
-		{
-			GD.PrintErr("UITiendaScene no asignada.");
-			return;
-		}
 
 		_uiTienda = UITiendaScene.Instantiate<TiendaUi>();
-		_uiTienda = UITiendaScene.Instantiate<TiendaUi>();
 
-		_Ui.AddChild(_uiTienda);
 		_Ui.AddChild(_uiTienda);
 
 		_uiTienda.ContinuarPressed += OnContinuarPressed;

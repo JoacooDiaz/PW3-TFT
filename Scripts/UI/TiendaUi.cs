@@ -4,8 +4,7 @@ public partial class TiendaUi : Control
 {
 	[Signal]
 	public delegate void ContinuarPressedEventHandler();
-	[Signal]
-	public delegate void ContinuarPressedEventHandler();
+	
 
 	private Button _continuarButton;
 
