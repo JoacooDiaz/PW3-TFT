@@ -3,6 +3,8 @@
 [ext_resource type="Theme" uid="uid://bqihnpmilrm7y" path="res://Scripts/UI/Themes/UI_Theme.tres" id="1_2wma7"]
 [ext_resource type="Script" uid="uid://5htdpn4tn8b8" path="res://Scripts/UI/TiendaUi.cs" id="1_22dhi"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_22dhi"]
+
 [node name="TiendaUi" type="Control" unique_id=364080961]
 layout_mode = 3
 anchors_preset = 15
@@ -42,11 +44,22 @@ theme_override_constants/separation = 20
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Imagen" type="TextureRect" parent="HBoxContainer/Tarjeta1" unique_id=2097207890]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/Tarjeta1" unique_id=111980378]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
-expand_mode = 3
-stretch_mode = 5
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/Tarjeta1/SubViewportContainer" unique_id=48812924]
+
+[node name="Node3D" type="Node3D" parent="HBoxContainer/Tarjeta1/SubViewportContainer/SubViewport" unique_id=278847961]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HBoxContainer/Tarjeta1/SubViewportContainer/SubViewport/Node3D" unique_id=203968942]
+mesh = SubResource("BoxMesh_22dhi")
+
+[node name="Camera3D" type="Camera3D" parent="HBoxContainer/Tarjeta1/SubViewportContainer/SubViewport" unique_id=440299873]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 3)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="HBoxContainer/Tarjeta1/SubViewportContainer/SubViewport" unique_id=968338667]
 
 [node name="Nombre" type="Label" parent="HBoxContainer/Tarjeta1" unique_id=182449530]
 layout_mode = 2
@@ -62,11 +75,11 @@ text = "Comprar"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Imagen" type="TextureRect" parent="HBoxContainer/Tarjeta2" unique_id=446376732]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/Tarjeta2" unique_id=2030883323]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
-expand_mode = 3
-stretch_mode = 5
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/Tarjeta2/SubViewportContainer" unique_id=117622773]
 
 [node name="Nombre" type="Label" parent="HBoxContainer/Tarjeta2" unique_id=1514168061]
 layout_mode = 2
@@ -82,11 +95,11 @@ text = "Comprar"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Imagen" type="TextureRect" parent="HBoxContainer/Tarjeta3" unique_id=609446451]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/Tarjeta3" unique_id=746113753]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
-expand_mode = 3
-stretch_mode = 5
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/Tarjeta3/SubViewportContainer" unique_id=1438005485]
 
 [node name="Nombre" type="Label" parent="HBoxContainer/Tarjeta3" unique_id=431881360]
 layout_mode = 2
