@@ -10,15 +10,15 @@ public partial class TiendaUi : Control
 
 	private Label _nombre1;
 	private Label _precio1;
-	private TextureRect _imagen1;
+	private Node3D _preview1;
 
 	private Label _nombre2;
 	private Label _precio2;
-	private TextureRect _imagen2;
+	private Node3D _preview2;
 
 	private Label _nombre3;
 	private Label _precio3;
-	private TextureRect _imagen3;
+	private Node3D _preview3;
 	
 	private Button _comprar1;
 	private Button _comprar2;
@@ -37,6 +37,11 @@ public delegate void RefrescarPressedEventHandler();
 
 	public override void _Ready()
 	{
+		
+		if (GetParent() is SubViewport)
+{
+	SetPhysicsProcess(false);
+}
 		
 		_tiendaManager =
 	GetNode<TiendaManager>(
@@ -59,9 +64,9 @@ public delegate void RefrescarPressedEventHandler();
                 "HBoxContainer/Tarjeta1/Precio"
 			);
 
-		_imagen1 =
-			GetNode<TextureRect>(
-                "HBoxContainer/Tarjeta1/Imagen"
+		_preview1 =
+			GetNode<Node3D>(
+				"HBoxContainer/Tarjeta1/SubViewportContainer/SubViewport/Node3D"
 			);
 
 		_nombre2 =
@@ -74,9 +79,9 @@ public delegate void RefrescarPressedEventHandler();
                 "HBoxContainer/Tarjeta2/Precio"
 			);
 
-		_imagen2 =
-			GetNode<TextureRect>(
-                "HBoxContainer/Tarjeta2/Imagen"
+		_preview2 =
+			GetNode<Node3D>(
+				"HBoxContainer/Tarjeta2/SubViewportContainer/SubViewport/Node3D"
 			);
 
 		_nombre3 =
@@ -89,9 +94,9 @@ public delegate void RefrescarPressedEventHandler();
                 "HBoxContainer/Tarjeta3/Precio"
 			);
 
-		_imagen3 =
-			GetNode<TextureRect>(
-                "HBoxContainer/Tarjeta3/Imagen"
+		_preview3 =
+			GetNode<Node3D>(
+				"HBoxContainer/Tarjeta3/SubViewportContainer/SubViewport/Node3D"
 			);
 			
 			_comprar1 =
@@ -167,11 +172,16 @@ private void OnRefrescarPressed()
 	PackedScene escena
 )
 {
+	
+	GD.Print(preview.GetParent().Name);
 	Entidad entidad =
 		escena.Instantiate<Entidad>();
+		
+		
 
 	if (indice == 0)
 	{
+		GD.Print(indice);
 		_pokemon1 = escena;
 
 		_nombre1.Text =
@@ -180,8 +190,35 @@ private void OnRefrescarPressed()
 		_precio1.Text =
 			"$" + entidad.Data.Precio;
 
-		_imagen1.Texture =
-			entidad.Data.Icono;
+		foreach (Node hijo in _preview1.GetChildren())
+{
+	if (hijo is Entidad)
+		hijo.QueueFree();
+}
+
+Entidad preview =
+escena.Instantiate<Entidad>();
+
+preview.EstadoActual =
+EstadoEntidad.Idle;
+
+preview.GetNode<Sprite3D>("BarraDeVida").Visible = false;
+preview.GetNode<Sprite3D>("InfoAccion").Visible = false;
+preview.GetNode<Sprite3D>("IconCuracio").Visible = false;
+preview.GetNode<Sprite3D>("IconTipo").Visible = false;
+preview.GetNode<Node3D>("Aura").Visible = false;
+
+_preview1.AddChild(preview);
+GD.Print(preview.GetParent().Name);
+preview.Position = Vector3.Zero;
+preview.GlobalPosition = Vector3.Zero;
+/*Node3D cuerpo = preview.GetNode<Node3D>("Cuerpo");
+cuerpo.Position = Vector3.Zero;
+cuerpo.Rotation = Vector3.Zero;
+cuerpo.Scale = Vector3.One;*/
+
+preview.Rotation = Vector3.Zero;
+preview.Scale = Vector3.One * 0.7f;
 	}
 
 	if (indice == 1)
@@ -194,8 +231,35 @@ private void OnRefrescarPressed()
 		_precio2.Text =
 			"$" + entidad.Data.Precio;
 
-		_imagen2.Texture =
-			entidad.Data.Icono;
+		foreach (Node hijo in _preview2.GetChildren())
+{
+	if (hijo is Entidad)
+		hijo.QueueFree();
+}
+
+Entidad preview =
+	escena.Instantiate<Entidad>();
+
+preview.EstadoActual =
+	EstadoEntidad.Idle;
+	
+preview.GetNode<Sprite3D>("BarraDeVida").Visible = false;
+preview.GetNode<Sprite3D>("InfoAccion").Visible = false;
+preview.GetNode<Sprite3D>("IconCuracio").Visible = false;
+preview.GetNode<Sprite3D>("IconTipo").Visible = false;
+preview.GetNode<Node3D>("Aura").Visible = false;
+
+_preview2.AddChild(preview);
+GD.Print(preview.GetParent().Name);
+preview.Position = Vector3.Zero;
+preview.GlobalPosition = Vector3.Zero;
+/*Node3D cuerpo = preview.GetNode<Node3D>("Cuerpo");
+cuerpo.Position = Vector3.Zero;
+cuerpo.Rotation = Vector3.Zero;
+cuerpo.Scale = Vector3.One;*/
+
+preview.Rotation = Vector3.Zero;
+preview.Scale = Vector3.One * 0.7f;
 	}
 
 	if (indice == 2)
@@ -208,8 +272,35 @@ private void OnRefrescarPressed()
 		_precio3.Text =
 			"$" + entidad.Data.Precio;
 
-		_imagen3.Texture =
-			entidad.Data.Icono;
+		foreach (Node hijo in _preview3.GetChildren())
+{
+	if (hijo is Entidad)
+		hijo.QueueFree();
+}
+
+Entidad preview =
+	escena.Instantiate<Entidad>();
+
+preview.EstadoActual =
+	EstadoEntidad.Idle;
+	
+preview.GetNode<Sprite3D>("BarraDeVida").Visible = false;
+preview.GetNode<Sprite3D>("InfoAccion").Visible = false;
+preview.GetNode<Sprite3D>("IconCuracio").Visible = false;
+preview.GetNode<Sprite3D>("IconTipo").Visible = false;
+preview.GetNode<Node3D>("Aura").Visible = false;
+
+_preview3.AddChild(preview);
+GD.Print(preview.GetParent().Name);
+preview.Position = Vector3.Zero;
+preview.GlobalPosition = Vector3.Zero;
+/*Node3D cuerpo = preview.GetNode<Node3D>("Cuerpo");
+cuerpo.Position = Vector3.Zero;
+cuerpo.Rotation = Vector3.Zero;
+cuerpo.Scale = Vector3.One;*/
+
+preview.Rotation = Vector3.Zero;
+preview.Scale = Vector3.One * 0.7f;
 	}
 }
 

@@ -42,11 +42,22 @@ theme_override_constants/separation = 20
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Imagen" type="TextureRect" parent="HBoxContainer/Tarjeta1" unique_id=2097207890]
-custom_minimum_size = Vector2(0, 150)
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/Tarjeta1" unique_id=392513184]
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
-expand_mode = 3
-stretch_mode = 5
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/Tarjeta1/SubViewportContainer" unique_id=2114377269]
+handle_input_locally = false
+size = Vector2i(300, 300)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="HBoxContainer/Tarjeta1/SubViewportContainer/SubViewport" unique_id=1302357739]
+
+[node name="Camera3D" type="Camera3D" parent="HBoxContainer/Tarjeta1/SubViewportContainer/SubViewport/Node3D" unique_id=2027229462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="HBoxContainer/Tarjeta1/SubViewportContainer/SubViewport/Node3D" unique_id=1117060279]
 
 [node name="Nombre" type="Label" parent="HBoxContainer/Tarjeta1" unique_id=182449530]
 layout_mode = 2
@@ -62,11 +73,22 @@ text = "Comprar"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Imagen" type="TextureRect" parent="HBoxContainer/Tarjeta2" unique_id=446376732]
-custom_minimum_size = Vector2(0, 150)
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/Tarjeta2" unique_id=1490567222]
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
-expand_mode = 3
-stretch_mode = 5
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/Tarjeta2/SubViewportContainer" unique_id=409145112]
+handle_input_locally = false
+size = Vector2i(300, 300)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="HBoxContainer/Tarjeta2/SubViewportContainer/SubViewport" unique_id=2100039700]
+
+[node name="Camera3D" type="Camera3D" parent="HBoxContainer/Tarjeta2/SubViewportContainer/SubViewport/Node3D" unique_id=2116956749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="HBoxContainer/Tarjeta2/SubViewportContainer/SubViewport/Node3D" unique_id=2055274489]
 
 [node name="Nombre" type="Label" parent="HBoxContainer/Tarjeta2" unique_id=1514168061]
 layout_mode = 2
@@ -82,11 +104,22 @@ text = "Comprar"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Imagen" type="TextureRect" parent="HBoxContainer/Tarjeta3" unique_id=609446451]
-custom_minimum_size = Vector2(0, 150)
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/Tarjeta3" unique_id=1146327431]
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
-expand_mode = 3
-stretch_mode = 5
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/Tarjeta3/SubViewportContainer" unique_id=1652332410]
+handle_input_locally = false
+size = Vector2i(300, 300)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="HBoxContainer/Tarjeta3/SubViewportContainer/SubViewport" unique_id=1222564277]
+
+[node name="Camera3D" type="Camera3D" parent="HBoxContainer/Tarjeta3/SubViewportContainer/SubViewport/Node3D" unique_id=481484944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="HBoxContainer/Tarjeta3/SubViewportContainer/SubViewport/Node3D" unique_id=713934886]
 
 [node name="Nombre" type="Label" parent="HBoxContainer/Tarjeta3" unique_id=431881360]
 layout_mode = 2

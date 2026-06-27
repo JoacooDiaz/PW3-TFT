@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://byce8a2d54kwx" path="res://Scenes/UI/info_accion.tscn" id="4_jsqld"]
 [ext_resource type="PackedScene" uid="uid://ufy8i5ljn2c5" path="res://Scenes/UI/icon_curacion.tscn" id="5_24dme"]
 [ext_resource type="Texture2D" uid="uid://cifelukqpwcb6" path="res://Assets/Img/Elementos/agua.png" id="6_su1fu"]
-[ext_resource type="Script" uid="uid://dvpg1q8rllmsf" path="res://Scripts/UI/IconTipo.cs" id="7_gvfo5"]
 [ext_resource type="PackedScene" uid="uid://vloalwhycnl0" path="res://Scenes/UI/aura.tscn" id="6_wuhfn"]
+[ext_resource type="Script" uid="uid://dvpg1q8rllmsf" path="res://Scripts/UI/IconTipo.cs" id="7_gvfo5"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_x4bpy"]
 
@@ -21,13 +21,13 @@ albedo_color = Color(0.7227768, 0.66976726, 0, 1)
 radius = 0.49658203
 height = 1.9987793
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_6vtcc"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_hwm8e"]
-viewport_path = NodePath("SubViewport")
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_ps0fn"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jbmjs"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1skup"]
 viewport_path = NodePath("SubViewport")
 
 [node name="Picachu" type="CharacterBody3D" unique_id=1156186729 node_paths=PackedStringArray("barraDeVida", "InfoAccion", "InfoCuracion", "aura")]
@@ -59,15 +59,15 @@ debug_path_custom_color = Color(0.9282305, 0.66150403, 0, 1)
 
 [node name="BarraDeVida" parent="." unique_id=1814894225 instance=ExtResource("3_k8c7p")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 2.192454, 0)
-texture = SubResource("ViewportTexture_6vtcc")
+texture = SubResource("ViewportTexture_ps0fn")
 
 [node name="InfoAccion" parent="." unique_id=2008531708 instance=ExtResource("4_jsqld")]
 transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 0, 2.823026, 0)
-texture = SubResource("ViewportTexture_hwm8e")
+texture = SubResource("ViewportTexture_jbmjs")
 
 [node name="IconCuracion" parent="." unique_id=810924509 instance=ExtResource("5_24dme")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 2.4774082, 0)
-texture = SubResource("ViewportTexture_ps0fn")
+texture = SubResource("ViewportTexture_1skup")
 
 [node name="IconTipo" parent="." unique_id=172600238 instance=ExtResource("5_24dme")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.81573844, 2.2151992, 0)
