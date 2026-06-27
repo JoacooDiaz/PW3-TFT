@@ -22,3 +22,91 @@ offset_right = 8.0
 grow_vertical = 0
 theme = ExtResource("1_2wma7")
 text = "CONTINUAR"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=674466331]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.5
+offset_top = -119.5
+offset_right = 135.5
+offset_bottom = 119.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Tarjeta1" type="VBoxContainer" parent="HBoxContainer" unique_id=1662624884]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Imagen" type="TextureRect" parent="HBoxContainer/Tarjeta1" unique_id=2097207890]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Nombre" type="Label" parent="HBoxContainer/Tarjeta1" unique_id=182449530]
+layout_mode = 2
+
+[node name="Precio" type="Label" parent="HBoxContainer/Tarjeta1" unique_id=115664420]
+layout_mode = 2
+
+[node name="Comprar" type="Button" parent="HBoxContainer/Tarjeta1" unique_id=1139265234]
+layout_mode = 2
+text = "Comprar"
+
+[node name="Tarjeta2" type="VBoxContainer" parent="HBoxContainer" unique_id=1904560457]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Imagen" type="TextureRect" parent="HBoxContainer/Tarjeta2" unique_id=446376732]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Nombre" type="Label" parent="HBoxContainer/Tarjeta2" unique_id=1514168061]
+layout_mode = 2
+
+[node name="Precio" type="Label" parent="HBoxContainer/Tarjeta2" unique_id=1596365013]
+layout_mode = 2
+
+[node name="Comprar" type="Button" parent="HBoxContainer/Tarjeta2" unique_id=1211425603]
+layout_mode = 2
+text = "Comprar"
+
+[node name="Tarjeta3" type="VBoxContainer" parent="HBoxContainer" unique_id=140528780]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Imagen" type="TextureRect" parent="HBoxContainer/Tarjeta3" unique_id=609446451]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Nombre" type="Label" parent="HBoxContainer/Tarjeta3" unique_id=431881360]
+layout_mode = 2
+
+[node name="Precio" type="Label" parent="HBoxContainer/Tarjeta3" unique_id=1337188075]
+layout_mode = 2
+
+[node name="Comprar" type="Button" parent="HBoxContainer/Tarjeta3" unique_id=188857912]
+layout_mode = 2
+text = "Comprar"
+
+[node name="BotonRefrescar" type="Button" parent="." unique_id=1784073112]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Refrescar (-2)"

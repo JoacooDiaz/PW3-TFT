@@ -15,10 +15,17 @@ public partial class SpawnNode : Node3D
         List<PackedScene> entidadesASpawnear
     )
     {
+        if (entidadesASpawnear == null) return;
         for (int i = 0; i < entidadesASpawnear.Count; i++)
         {
             PackedScene escenaEntidad =
                 entidadesASpawnear[i];
+
+            if (escenaEntidad == null)
+            {
+                GD.PrintErr("[SpawnNode] Escena de entidad nula encontrada en el índice: " + i);
+                continue;
+            }
 
             Entidad entidad =
                 escenaEntidad.Instantiate<Entidad>();

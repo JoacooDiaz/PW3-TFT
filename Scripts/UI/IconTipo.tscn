@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://mix8eoobqtwl"]
+[gd_scene format=3 uid="uid://dwfaogctfdbrw"]
 
-[ext_resource type="Script" uid="uid://dvpg1q8rllmsf" path="res://Scripts/UI/IconTipo.cs" id="2_iyqkc"]
+[ext_resource type="Script" path="res://Scripts/UI/IconTipo.cs" id="2_iyqkc"]
 
 [node name="IconTipo" type="Sprite3D" unique_id=558981504]
 transform = Transform3D(0.99997264, 0, -0.0074001285, 0, 1, 0, 0.0074001285, 0, 0.99997264, 0.023266435, -0.010286331, -0.006307602)

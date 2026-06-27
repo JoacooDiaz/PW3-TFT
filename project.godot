@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="PW3-JuegoTFT"
-run/main_scene="uid://c5y6drv86woc7"
+run/main_scene="uid://cx7cbqh8a0tab"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 <<<<<<<HEADrun/main_scene="uid://ufy8i5ljn2c5"

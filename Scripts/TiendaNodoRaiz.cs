@@ -3,93 +3,147 @@ using System.Collections.Generic;
 
 public partial class TiendaNodoRaiz : Node
 {
-    [Export]
-    public Ui _Ui; 
+	[Export]
+	public Ui _Ui; 
 
-    [Export]
-    public Node3D SP_Comprables;
-    
-    [Export]
-    public PackedScene UITiendaScene;
+	[Export]
+	public Node3D SP_Comprables;
+	
+	[Export]
+	public PackedScene UITiendaScene;
 
-    private TiendaUi _uiTienda;
+	private TiendaUi _uiTienda;
 
-    private TiendaManager _tiendaManager;
+	private TiendaManager _tiendaManager;
 
-    private List<PackedScene> _ofertasActuales = new();
+	private List<PackedScene> _ofertasActuales = new();
 
-    public override void _Ready()
-    {
-        _tiendaManager =
-            GetNode<TiendaManager>(
+	public override void _Ready()
+	{
+		_tiendaManager =
+			GetNode<TiendaManager>(
                 "/root/TiendaManager"
-            );
+			);
 
-        CargarTienda();
+		CargarUiTienda();
+		CargarTienda();
 
-        CargarUiTienda(); 
-    }
+		 
+	}
 
-    public void CargarTienda()
-    {
-        _ofertasActuales =
-            _tiendaManager.GenerarTienda(5);
+	public void CargarTienda()
+	{
+		
+		foreach (
+	Node hijo
+	in SP_Comprables.GetChildren()
+)
+{
+	foreach (
+		Node nieto
+		in hijo.GetChildren()
+	)
+	{
+		nieto.QueueFree();
+	}
+}
 
-        int indice = 0;
+		_ofertasActuales =
+			_tiendaManager.GenerarTienda(3);
 
-        foreach (
-            Node hijo
-            in SP_Comprables.GetChildren()
-        )
-        {
-            if (
-                indice >= _ofertasActuales.Count
-            )
-            {
-                break;
-            }
+		int indice = 0;
 
-            Node3D slot =
-                hijo as Node3D;
+		foreach (
+			Node hijo
+			in SP_Comprables.GetChildren()
+		)
+		{
+			if (
+				indice >= _ofertasActuales.Count
+			)
+			{
+				break;
+			}
 
-            if (slot == null)
-            {
-                continue;
-            }
+			Node3D slot =
+				hijo as Node3D;
 
-            PackedScene escena =
-                _ofertasActuales[indice];
+			if (slot == null)
+			{
+				continue;
+			}
 
-            Entidad entidad =
-                escena.Instantiate<Entidad>();
+			PackedScene escena =
+				_ofertasActuales[indice];
+				
+				_uiTienda.ConfigurarTarjeta(
+				indice,
+   				escena
+				);
 
-            slot.AddChild(entidad);
+			Entidad entidad =
+				escena.Instantiate<Entidad>();
 
-            entidad.Position =
-                Vector3.Zero;
+			slot.AddChild(entidad);
 
-            indice++;
-        }
-    }
+			entidad.Position =
+				Vector3.Zero;
 
-    private void CargarUiTienda()
-    {
-        if (UITiendaScene == null)
-        {
-            GD.PrintErr("UITiendaScene no asignada.");
-            return;
-        }
+			indice++;
+		}
+	}
 
-        _uiTienda = UITiendaScene.Instantiate<TiendaUi>();
+	private void CargarUiTienda()
+	{
+		if (UITiendaScene == null)
+		{
+			GD.PrintErr("UITiendaScene no asignada.");
+			return;
+		}
 
-        _Ui.AddChild(_uiTienda);
+		_uiTienda = UITiendaScene.Instantiate<TiendaUi>();
 
-        _uiTienda.ContinuarPressed += OnContinuarPressed;
-    }
+		_Ui.AddChild(_uiTienda);
 
-    private void OnContinuarPressed()
-    {
-        LevelManager _levelManager = GetNode<LevelManager>("/root/LevelManager");
-        _levelManager.IrAlSiguienteNivel(); 
-    }
+		_uiTienda.ContinuarPressed += OnContinuarPressed;
+	
+	_uiTienda.RefrescarPressed +=
+	OnRefrescarPressed;
+	
+	}
+
+	private void OnContinuarPressed()
+	{
+		LevelManager _levelManager = GetNode<LevelManager>("/root/LevelManager");
+		_levelManager.IrAlSiguienteNivel(); 
+	}
+	
+	private void OnRefrescarPressed()
+{
+	PlayerManager player =
+		GetNode<PlayerManager>(
+            "/root/PlayerManager"
+		);
+
+	if (player.Dinero < 2)
+	{
+		GD.Print(
+            "No alcanza el dinero"
+		);
+
+		return;
+	}
+
+	player.RestarDinero(2);
+	_uiTienda.ResetearBotones();
+	CargarTienda();
+
+	GD.Print(
+        "Tienda refrescada"
+	);
+}
+	
+	
+
+
 }

@@ -1,13 +1,14 @@
-[gd_scene format=3 uid="uid://ba3ytlvxc43a7"]
+[gd_scene format=3 uid="uid://b5c6d7e8gaa0b"]
 
 [ext_resource type="Script" uid="uid://ddd0udsr4uoqd" path="res://Scripts/NivelNodoRaiz.cs" id="1_1vc5s"]
 [ext_resource type="Script" uid="uid://dsw6qow5j87v0" path="res://Scripts/CameraPelea.cs" id="2_81wkf"]
 [ext_resource type="PackedScene" uid="uid://c5echom83h5ji" path="res://Scenes/UI/Ui.tscn" id="3_31k04"]
 [ext_resource type="Script" uid="uid://du08ojmmg8jps" path="res://Scripts/SpawnNode.cs" id="4_fvw0e"]
 [ext_resource type="Script" uid="uid://cp6vrnxxl4owv" path="res://Scripts/EnemigosSpawnNode.cs" id="5_sddnt"]
-[ext_resource type="PackedScene" uid="uid://j2o3wkkf3jwr" path="res://Assets/Entidades/Pichu/Pichu.tscn" id="6_pichu"]
-[ext_resource type="PackedScene" uid="uid://cl78xuo2ju7xb" path="res://Assets/Entidades/Horsea/Horsea.tscn" id="7_horsea"]
-[ext_resource type="PackedScene" uid="uid://syyb8kejdxfo" path="res://Assets/Entidades/Psyduck/Psyduck.tscn" id="8_psyduck"]
+[ext_resource type="PackedScene" uid="uid://b13w2gmw6kqmh" path="res://Assets/Entidades/Lucario/Lucario.tscn" id="6_lucario"]
+[ext_resource type="PackedScene" uid="uid://boqgok60w6mf5" path="res://Assets/Entidades/Blissey/Blissey.tscn" id="7_blissey"]
+[ext_resource type="PackedScene" uid="uid://bhv08wjwmolyy" path="res://Assets/Entidades/Audino/Audino.tscn" id="8_audino"]
+[ext_resource type="PackedScene" uid="uid://b86ytddkiyhcm" path="res://Assets/Entidades/Glalie/Glalie.tscn" id="9_glalie"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4tssb"]
 vertices = PackedVector3Array(-14.679199, 10.635012, -29.873543, -14.679199, 9.885012, -29.123543, -13.429199, 10.135012, -29.373543, -13.679199, -1.1149883, -22.623543, -13.679199, -1.1149883, -22.123543, 13.320801, -1.1149883, -22.123543, 13.320801, -1.1149883, -22.623543, 7.820801, -1.1149883, -8.123543, 8.070801, -1.1149883, -6.373543, 13.320801, -1.1149883, -6.623543, 13.320801, -0.8649883, -18.373543, -13.679199, -1.1149883, -5.873543, -8.179199, -1.1149883, -5.873543, -7.929199, -1.1149883, -8.123543, -13.679199, -1.1149883, -18.123543, -7.179199, -0.11498833, -7.123543, -7.179199, -0.11498833, 6.876457, 7.070801, -0.11498833, 6.876457, 7.070801, -0.11498833, -7.123543, 8.070801, -1.1149883, 6.626457, 13.320801, -1.1149883, 6.626457, -13.679199, -1.1149883, 6.626457, -8.179199, -1.1149883, 6.626457)
@@ -30,7 +31,7 @@ background_mode = 2
 sky = SubResource("Sky_lv5gi")
 tonemap_mode = 2
 
-[node name="Nivel2" type="Node" unique_id=1103045667 node_paths=PackedStringArray("Aliados", "Enemigos", "Ui")]
+[node name="Nivel5" type="Node" unique_id=1103045667 node_paths=PackedStringArray("Aliados", "Enemigos", "Ui")]
 script = ExtResource("1_1vc5s")
 Aliados = NodePath("Aliados")
 Enemigos = NodePath("Enemigos")
@@ -74,8 +75,8 @@ environment = SubResource("Environment_bij32")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="GlobalIlumination" unique_id=781185432]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-light_color = Color(0.8, 0.9, 1.0, 1)
-light_energy = 2.0
+light_color = Color(0.95, 0.6, 0.6, 1)
+light_energy = 2.4
 shadow_enabled = true
 
 [node name="Vista" type="SubViewportContainer" parent="." unique_id=408241760]
@@ -111,8 +112,8 @@ _entidadesPorFila = 1
 [node name="Enemigos" type="Node3D" parent="." unique_id=2002000349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
 script = ExtResource("5_sddnt")
-CantidadMinima = 3
-CantidadMaxima = 4
-EnemigosPosibles = Array[PackedScene]([ExtResource("6_pichu"), ExtResource("7_horsea"), ExtResource("8_psyduck")])
+CantidadMinima = 4
+CantidadMaxima = 5
+EnemigosPosibles = Array[PackedScene]([ExtResource("6_lucario"), ExtResource("7_blissey"), ExtResource("8_audino"), ExtResource("9_glalie")])
 _distanciaEntreEntidades = 3.0
 _entidadesPorFila = 2
