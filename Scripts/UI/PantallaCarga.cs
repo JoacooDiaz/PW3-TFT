@@ -15,7 +15,7 @@ public partial class PantallaCarga : Control
 
 			await ToSignal(GetTree().CreateTimer(0.03), SceneTreeTimer.SignalName.Timeout);
 		} 
-		GetTree().ChangeSceneToFile("res://Scenes/tienda.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/Niveles/nivel_1.tscn");
 	}
 
 	public override void _Process(double delta)
