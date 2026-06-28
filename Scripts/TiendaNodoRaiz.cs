@@ -1,5 +1,6 @@
 using Godot;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class TiendaNodoRaiz : Node
 {
@@ -53,41 +54,28 @@ public partial class TiendaNodoRaiz : Node
 
 		int indice = 0;
 
-		foreach (
-			Node hijo
-			in SP_Comprables.GetChildren()
-		)
+		Camera3D cam = GetNode<Camera3D>("Vista/SubViewport/Camera3D");
+		Transform3D camInv = cam.GlobalTransform.AffineInverse();
+
+		var slots = SP_Comprables.GetChildren()
+			.Cast<Node3D>()
+			.OrderBy(s => (camInv * s.GlobalPosition).X)
+			.ToList();
+
+		foreach (Node3D slot in slots)
 		{
-			if (
-				indice >= _ofertasActuales.Count
-			)
+			if (indice >= _ofertasActuales.Count)
 			{
 				break;
 			}
 
-			Node3D slot =
-				hijo as Node3D;
+			PackedScene escena = _ofertasActuales[indice];
 
-			if (slot == null)
-			{
-				continue;
-			}
+			_uiTienda.ConfigurarTarjeta(indice, escena);
 
-			PackedScene escena =
-				_ofertasActuales[indice];
-				
-				_uiTienda.ConfigurarTarjeta(
-				indice,
-   				escena
-				);
-
-			Entidad entidad =
-				escena.Instantiate<Entidad>();
-
+			Entidad entidad = escena.Instantiate<Entidad>();
 			slot.AddChild(entidad);
-
-			entidad.Position =
-				Vector3.Zero;
+			entidad.Position = Vector3.Zero;
 
 			indice++;
 		}

@@ -1,12 +1,10 @@
 [gd_resource type="Resource" script_class="EntidadData" format=3 uid="uid://d1p5xhqrneojq"]
 
 [ext_resource type="Script" uid="uid://cprb44o6jey2a" path="res://Resources/EntidadData.cs" id="1_7dv6c"]
-[ext_resource type="Texture2D" uid="uid://babf5khigv0pf" path="res://Assets/Entidades/ElPicachu/Pikachu.png" id="1_mkrfg"]
 
 [resource]
 script = ExtResource("1_7dv6c")
 Nombre = "Picachu"
-Icono = ExtResource("1_mkrfg")
 "Daño" = 15
 VelocidadMovimiento = 3.0
 DistanciaAtaque = 3.0
