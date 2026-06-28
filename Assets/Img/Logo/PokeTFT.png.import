@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byleh8r42tjbq"
-path="res://.godot/imported/button_rectangle_depth_line.png-48649c4e928e92f5c093f7daf0a254c3.ctex"
+uid="uid://bpitdtxb68vf7"
+path="res://.godot/imported/PokeTFT.png-795c7d277d67e9f823ea789002b2f12e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Img/Botones/button_rectangle_depth_line.png"
-dest_files=["res://.godot/imported/button_rectangle_depth_line.png-48649c4e928e92f5c093f7daf0a254c3.ctex"]
+source_file="res://Assets/Img/Logo/PokeTFT.png"
+dest_files=["res://.godot/imported/PokeTFT.png-795c7d277d67e9f823ea789002b2f12e.ctex"]
 
 [params]
 
