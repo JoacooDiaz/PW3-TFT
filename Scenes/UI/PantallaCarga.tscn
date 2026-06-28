@@ -36,13 +36,13 @@ expand_mode = 1
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=627212273]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.24900001
+anchor_left = 0.21400002
 anchor_top = 0.75000006
-anchor_right = 0.82600003
+anchor_right = 0.791
 anchor_bottom = 0.86700004
-offset_left = 0.15197754
+offset_left = -0.52801514
 offset_top = 0.17697144
-offset_right = 0.447937
+offset_right = -0.23199463
 offset_bottom = -0.21502686
 grow_horizontal = 2
 grow_vertical = 2
