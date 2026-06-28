@@ -32,13 +32,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -135.5
-offset_top = -119.5
-offset_right = 135.5
-offset_bottom = 119.5
+offset_left = -241.0
+offset_top = -123.0
+offset_right = 177.0
+offset_bottom = 123.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 65
 
 [node name="Tarjeta1" type="VBoxContainer" parent="HBoxContainer" unique_id=1662624884]
 layout_mode = 2
