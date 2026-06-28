@@ -3,16 +3,12 @@ using System;
 
 public partial class MenuPrincipal : Control
 {
-	private TextureButton _btnJugar;
-	private TextureButton _btnSalir;
+	private Button _btnJugar;
+	private Button _btnSalir;
 	public override void _Ready()
 	{
-        GD.Print("MenuPrincipal ready");
-        _btnJugar = GetNode<TextureButton>("VBoxContainer/Label/BtnJugar");
-		_btnSalir = GetNode<TextureButton>("VBoxContainer/Label/BtnSalir");
-
-        GD.Print(_btnJugar);
-        GD.Print(_btnSalir);
+        _btnJugar = GetNode<Button>("VBoxContainer/Label/BtnJugar");
+		_btnSalir = GetNode<Button>("VBoxContainer/Label/BtnSalir");
 
         _btnJugar.Pressed += OnJugarPressed;
         _btnSalir.Pressed += OnSalirPressed;
@@ -25,7 +21,7 @@ public partial class MenuPrincipal : Control
 
     private void OnJugarPressed()
     {
-        GetTree().ChangeSceneToFile("res://Scenes/PantallaInicio3d.tscn");
+        GetTree().ChangeSceneToFile("res://Scenes/UI/PantallaCarga.tscn");
     }
 
     public override void _Process(double delta)
