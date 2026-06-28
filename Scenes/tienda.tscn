@@ -29,6 +29,18 @@ UITiendaScene = ExtResource("2_mlssu")
 [node name="Sketchfab_Scene" parent="Mapa" unique_id=1168818913 instance=ExtResource("3_n40jt")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
+[node name="CSGBox3D" type="CSGBox3D" parent="Mapa" unique_id=1444115715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.8192186, 1.5024414)
+size = Vector3(24.041992, 1.532959, 15.074219)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Mapa" unique_id=2063550452]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 6.5520153, 0)
+light_color = Color(0.94127065, 0.78890413, 0.38196295, 1)
+light_energy = 11.935
+spot_range = 14.754
+spot_angle = 71.71874
+spot_angle_attenuation = 0.4352752
+
 [node name="GlobalIlumination" type="Node3D" parent="." unique_id=1407732488]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="GlobalIlumination" unique_id=464997572]

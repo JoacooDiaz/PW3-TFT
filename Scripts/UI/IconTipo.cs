@@ -1,18 +1,18 @@
 using Godot;
 
-public partial class IconTipo : Sprite3D
+public partial class IconTipo : InfoVisual
 {
-    public void SetupTipo(TipoElemento elemento, Texture2D textura)
+
+    private ElementosManager _elementosManager; 
+    private TextureRect elementoIcon; 
+    public override void _Ready()
     {
-        GD.Print("[IconTipo] SetupTipo llamado con: " + elemento + " textura: " + (textura != null ? "OK" : "NULL"));
+        _elementosManager = GetNode<ElementosManager>("/root/ElementosManager");
+        elementoIcon = GetNode<TextureRect>("SubViewport/Panel/TipoIcon");
+    }
 
-        if (textura == null)
-        {
-            Visible = false;
-            return;
-        }
-
-        Texture = textura;
-        Visible = true;
+    public void SetupTipo(TipoElemento elemento)
+    {
+        elementoIcon.Texture = _elementosManager.ObtenerTexturaElemento(elemento); 
     }
 }

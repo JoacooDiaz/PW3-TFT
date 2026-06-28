@@ -1,20 +1,41 @@
 [gd_scene format=3 uid="uid://dwfaogctfdbrw"]
 
-[ext_resource type="Script" path="res://Scripts/UI/IconTipo.cs" id="2_iyqkc"]
+[ext_resource type="Texture2D" uid="uid://e15puc8o5uhp" path="res://icon.svg" id="2_gn00f"]
+[ext_resource type="Script" uid="uid://dvpg1q8rllmsf" path="res://Scripts/UI/IconTipo.cs" id="2_iyqkc"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_iyqkc"]
+viewport_path = NodePath("SubViewport")
 
 [node name="IconTipo" type="Sprite3D" unique_id=558981504]
-transform = Transform3D(0.99997264, 0, -0.0074001285, 0, 1, 0, 0.0074001285, 0, 0.99997264, 0.023266435, -0.010286331, -0.006307602)
+transform = Transform3D(1.499959, 0, -0.011100193, 0, 1.5, 0, 0.011100193, 0, 1.499959, 0.023266435, -0.010286331, -0.006307602)
 pixel_size = 0.001
+billboard = 1
+texture = SubResource("ViewportTexture_iyqkc")
 script = ExtResource("2_iyqkc")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1142386904]
+transparent_bg = true
+size = Vector2i(236, 234)
 
 [node name="Panel" type="Panel" parent="SubViewport" unique_id=1743238196]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TipoIcon" type="TextureRect" parent="SubViewport/Panel" unique_id=477811702]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gn00f")
 metadata/_edit_group_ = true

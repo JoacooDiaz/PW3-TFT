@@ -69,7 +69,7 @@ public override void _Ready()
 	barraDeVida.setUpBarra(VidaActual, Data.Elemento);
 	if (_iconTipo != null)
 	{
-		_iconTipo.Texture = _elementosManager.ObtenerTexturaElemento(Data.Elemento);
+		_iconTipo.SetupTipo(Data.Elemento); 
 	}
 	InfoAccion.Limpiar();
 }
@@ -337,8 +337,8 @@ public override void _Ready()
 		EstadoActual = EstadoEntidad.Muerto;
 
 		InfoAccion.Limpiar();
-		InfoAccion.Limpiar(); 
 		aura.Apagar(); 
+		_iconTipo.Apagar(); 
 
 		Velocity = Vector3.Zero;
 
