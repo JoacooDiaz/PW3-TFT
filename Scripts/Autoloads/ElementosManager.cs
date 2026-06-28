@@ -96,37 +96,22 @@ public partial class ElementosManager : Node
 
     public override void _Ready()
     {
-        GD.Print("[ElementosManager] Cargando texturas...");
-
         CargarTextura(TipoElemento.Normal,    "res://Assets/Img/Elementos/Normal.png");
         CargarTextura(TipoElemento.Fuego,     "res://Assets/Img/Elementos/fuego.png");
         CargarTextura(TipoElemento.Agua,      "res://Assets/Img/Elementos/agua.png");
         CargarTextura(TipoElemento.Planta,    "res://Assets/Img/Elementos/Planta.png");
-        //E:\Practicas VS PW3\PW3 TFT\PW3-TFT-main\PW3-TFT-main\Assets\Img\Elementos\electrico.png
         CargarTextura(TipoElemento.Electrico, "res://Assets/Img/Elementos/electrico.png");
         CargarTextura(TipoElemento.Hada,      "res://Assets/Img/Elementos/hada.png");
         CargarTextura(TipoElemento.Lucha,     "res://Assets/Img/Elementos/lucha.png");
         CargarTextura(TipoElemento.Acero,     "res://Assets/Img/Elementos/acero.png");
         CargarTextura(TipoElemento.Tierra,    "res://Assets/Img/Elementos/tierra.png");
-        CargarTextura(TipoElemento.Hielo,    "res://Assets/Img/Elementos/hielo.png");//9
-        CargarTextura(TipoElemento.Dragon,    "res://Assets/Img/Elementos/dragon.png");//10
-
-        GD.Print("[ElementosManager] Texturas cargadas.");
+        CargarTextura(TipoElemento.Hielo,    "res://Assets/Img/Elementos/hielo.png");
+        CargarTextura(TipoElemento.Dragon,    "res://Assets/Img/Elementos/dragon.png");
     }
 
     private void CargarTextura(TipoElemento tipo, string path)
     {
         Texture2D textura = GD.Load<Texture2D>(path);
-
-        if (textura == null)
-        {
-            GD.PrintErr("[ElementosManager] No se encontro textura para " + tipo + " en path: " + path);
-        }
-        else
-        {
-            GD.Print("[ElementosManager] Textura cargada: " + tipo);
-        }
-
         _texturas[tipo] = textura;
     }
 
@@ -136,8 +121,6 @@ public partial class ElementosManager : Node
         {
             return textura;
         }
-
-        GD.PrintErr("[ElementosManager] No existe entrada de textura para: " + elemento);
         return null;
     }
 
@@ -147,36 +130,15 @@ public partial class ElementosManager : Node
         {
             if (filaAtacante.TryGetValue(defensor, out float multiplicador))
             {
-                GD.Print(
-                    "[ElementosManager] " + atacante +
-                    " vs " + defensor +
-                    " = x" + multiplicador
-                );
                 return multiplicador;
             }
         }
 
-        GD.Print(
-            "[ElementosManager] " + atacante +
-            " vs " + defensor +
-            " = x1.0 (neutral)"
-        );
         return 1.0f;
     }
-	public int CalcularDañoFinal(
-    int dañoBase,
-    TipoElemento atacante,
-    TipoElemento defensor
-)
-{
-    float multiplicador = ObtenerMultiplicador(atacante, defensor);
-
-    GD.Print(
-        "[ElementosManager] CalcularDañoFinal: " +
-        dañoBase + " x" + multiplicador +
-        " (" + atacante + " vs " + defensor + ")"
-    );
-
-    return Mathf.RoundToInt(dañoBase * multiplicador);
-}
+	public int CalcularDañoFinal(int dañoBase, TipoElemento atacante, TipoElemento defensor)
+    {
+        float multiplicador = ObtenerMultiplicador(atacante, defensor);
+        return Mathf.RoundToInt(dañoBase * multiplicador);
+    }
 }

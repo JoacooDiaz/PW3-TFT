@@ -13,6 +13,8 @@ config_version=5
 config/name="PW3-JuegoTFT"
 run/main_scene="uid://g3q34obgq1ts"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
+boot_splash/bg_color=Color(0.4177258, 0.7788734, 0.6893952, 1)
+boot_splash/image="uid://dxgnbg6rohn3p"
 config/icon="res://icon.svg"
 
 [autoload]

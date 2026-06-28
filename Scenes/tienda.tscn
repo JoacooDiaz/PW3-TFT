@@ -26,8 +26,20 @@ UITiendaScene = ExtResource("2_mlssu")
 
 [node name="Mapa" type="Node3D" parent="." unique_id=889126275]
 
-[node name="Sketchfab_Scene" parent="Mapa" unique_id=1168818913 instance=ExtResource("3_n40jt")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+[node name="Sketchfab_Scene" parent="Mapa" unique_id=548534538 instance=ExtResource("3_n40jt")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mapa" unique_id=2072682896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.765191, 1.395813)
+size = Vector3(21.40039, 1, 14.367798)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Mapa" unique_id=1709052654]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.129594, 0)
+light_color = Color(0.94035655, 0.7718801, 0.12349985, 1)
+light_energy = 5.029
+spot_range = 10.269465
+spot_attenuation = -0.01
+spot_angle = 61.51477
 
 [node name="GlobalIlumination" type="Node3D" parent="." unique_id=1407732488]
 
@@ -46,18 +58,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
-stretch_shrink = 3
+stretch_shrink = 2
 
 [node name="SubViewport" type="SubViewport" parent="Vista" unique_id=108062994]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(384, 216)
+size = Vector2i(576, 324)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Vista/SubViewport" unique_id=1091341562]
-transform = Transform3D(-1, 3.813326e-09, -8.733956e-08, -1.2849469e-08, 0.9817867, 0.18998657, 8.647329e-08, 0.18998657, -0.9817867, -0.2408933, 2.1505976, -6.829786)
+transform = Transform3D(-1, 3.813328e-09, -8.733955e-08, -1.4609474e-08, 0.97771, 0.2099599, 8.6193396e-08, 0.2099599, -0.97771, -0.2408933, 1.8736668, -6.905129)
 current = true
-fov = 50.0
+fov = 60.0
 script = ExtResource("1_yc8px")
 
 [node name="SP_Comprables" type="Node3D" parent="." unique_id=167879968]
@@ -66,10 +78,10 @@ script = ExtResource("1_yc8px")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0)
 
 [node name="Node3D2" type="Node3D" parent="SP_Comprables" unique_id=1188643915]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.06, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.06, 0)
 
 [node name="Node3D3" type="Node3D" parent="SP_Comprables" unique_id=262934078]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5369364, 0.0604524, -1.3635648)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.06, 0)
 
 [node name="UI" parent="." unique_id=434444583 instance=ExtResource("2_2bbwx")]
 

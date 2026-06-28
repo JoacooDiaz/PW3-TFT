@@ -13,7 +13,7 @@ public partial class PantallaCarga : Control
 		{
 			_bar.Value = i;
 
-			await ToSignal(GetTree().CreateTimer(0.03), SceneTreeTimer.SignalName.Timeout);
+			await ToSignal(GetTree().CreateTimer(0.003), SceneTreeTimer.SignalName.Timeout);
 		} 
 		 GetTree().ChangeSceneToFile("res://Scenes/Niveles/nivel_1.tscn");
 	}

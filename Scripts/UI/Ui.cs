@@ -27,7 +27,7 @@ public partial class Ui : Control
 	public void MostrarVictoria()
 	{
 		labelTest.Visible = true;
-		labelTest.Text = "vicTORIa";
+		labelTest.Text = "Victoria";
 		SonidoVictoria.Play();
 
 	}
@@ -35,7 +35,7 @@ public partial class Ui : Control
 	public void MostrarDerrota()
 	{
 		labelTest.Visible = true;
-		labelTest.Text = "deRota";
+		labelTest.Text = "Derrota";
 	}
 
 	public void OcultarMensaje()

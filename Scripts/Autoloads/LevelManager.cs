@@ -13,10 +13,12 @@ public partial class LevelManager : Node
 
 	private int NivelActual;
 
+	private PlayerManager _playerManager; 
+
 	private List<PackedScene> _niveles = new();
 
 	private readonly PackedScene _tiendaScene = GD.Load<PackedScene>("res://Scenes/tienda.tscn");
-
+	private readonly PackedScene _menuPrincipal = GD.Load<PackedScene>("res://Scenes/UI/MenuPrincipal.tscn"); 
 	public override void _Ready() 
 	{
 		_combateManager = GetNode<CombateManager>("/root/CombateManager");
@@ -25,7 +27,7 @@ public partial class LevelManager : Node
 		_combateManager.Derrota += OnDerrota;
 	
 		_gameManager = GetNode<GameManager>("/root/GameManager"); 
-
+		_playerManager = GetNode<PlayerManager>("/root/PlayerManager"); 
 		CargarNiveles(); 
 
 		NivelActual = 0; 
@@ -58,9 +60,9 @@ public partial class LevelManager : Node
 
 		// Esperamos 3 segundos para que el jugador vea el mensaje de derrota
 		await Task.Delay(3000);
-
-		// De vuelta a la tienda
-		IrATienda();
+		
+		_playerManager.CargarEquipoInicial(); 
+		_gameManager.IrAEscena(_menuPrincipal);
 	}
 
 	private void IrATienda()

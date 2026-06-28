@@ -2,41 +2,68 @@
 
 [ext_resource type="Script" uid="uid://dfllqw36j65u" path="res://Scripts/UI/BarraDeVida.cs" id="1_32ltt"]
 [ext_resource type="Theme" uid="uid://bqihnpmilrm7y" path="res://Scripts/UI/Themes/UI_Theme.tres" id="2_plrk5"]
+[ext_resource type="Texture2D" uid="uid://e15puc8o5uhp" path="res://icon.svg" id="3_6je8n"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ngp60"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_6je8n"]
 viewport_path = NodePath("SubViewport")
 
 [node name="BarraDeVida" type="Sprite3D" unique_id=1814894225]
 billboard = 1
-texture = SubResource("ViewportTexture_ngp60")
+texture = SubResource("ViewportTexture_6je8n")
 script = ExtResource("1_32ltt")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=969522257]
 transparent_bg = true
 canvas_item_default_texture_filter = 0
-size = Vector2i(353, 148)
+size = Vector2i(721, 175)
 
-[node name="Panel" type="Panel" parent="SubViewport" unique_id=1708327403]
-anchors_preset = 14
+[node name="PanelBarra" type="Panel" parent="SubViewport" unique_id=284371678]
+anchors_preset = -1
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.8
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_plrk5")
 
-[node name="ProgressBar" type="ProgressBar" parent="SubViewport/Panel" unique_id=1067118906]
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport/PanelBarra" unique_id=1067118906]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -44.0
-offset_bottom = 44.0
+offset_top = -64.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_plrk5")
 step = 1.0
 value = 50.0
 show_percentage = false
+
+[node name="PanelElemento" type="Panel" parent="SubViewport" unique_id=92636611]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="IconElemento" type="TextureRect" parent="SubViewport/PanelElemento" unique_id=113361082]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -128.375
+offset_top = -64.0
+offset_bottom = 64.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_6je8n")

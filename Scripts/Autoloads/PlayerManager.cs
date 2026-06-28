@@ -27,7 +27,7 @@ public partial class PlayerManager : Node
 		CargarEquipoInicial();
 	}
 
-	private void CargarEquipoInicial()
+	public void CargarEquipoInicial()
 	{
 		Aliados.Clear();
 		Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Popplio/Popplio.tscn"));
