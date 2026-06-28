@@ -6,6 +6,7 @@ public partial class Ui : Control
 
 	private Label labelTest; 
 	private Label DineroLabel; 
+	private AudioStreamPlayer SonidoVictoria;
 	private PlayerManager _playerManager; 
 
 	public override void _Ready()
@@ -14,6 +15,7 @@ public partial class Ui : Control
 		
 		labelTest = GetNode<Label>("TestLabel");
 		DineroLabel = GetNode<Label>("DineroLabel");
+		SonidoVictoria = GetNode<AudioStreamPlayer>("SonidoVictoria");
 		labelTest.Visible = false; 
 		labelTest.Text = ""; 
 		_playerManager.SetUpUi(this);
@@ -26,6 +28,8 @@ public partial class Ui : Control
 	{
 		labelTest.Visible = true;
 		labelTest.Text = "vicTORIa";
+		SonidoVictoria.Play();
+
 	}
 
 	public void MostrarDerrota()

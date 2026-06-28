@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cr62jk86tvijm" path="res://Scripts/UI/Ui.cs" id="1_vmxoy"]
 [ext_resource type="Theme" uid="uid://bqihnpmilrm7y" path="res://Scripts/UI/Themes/UI_Theme.tres" id="2_rjm2b"]
 [ext_resource type="Texture2D" uid="uid://bt4q7rpeclv3o" path="res://Assets/Img/Victoria/button_rectangle_gradient.png" id="3_tykam"]
+[ext_resource type="AudioStream" uid="uid://ccnc7lpdmb0cn" path="res://Scenes/UI/1-16. Victory (VS Trainer).mp3" id="4_80hui"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80hui"]
 texture = ExtResource("3_tykam")
@@ -49,3 +50,7 @@ offset_top = 16.0
 offset_right = 181.0
 offset_bottom = 39.0
 text = "$: Dinero no cargado"
+
+[node name="SonidoVictoria" type="AudioStreamPlayer" parent="." unique_id=1927506296]
+stream = ExtResource("4_80hui")
+volume_db = -15.445
