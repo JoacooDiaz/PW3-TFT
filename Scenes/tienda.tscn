@@ -92,3 +92,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5115277, 0.0604524, -1.3635
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5369364, 0.0604524, -1.3635648)
 
 [node name="UI" parent="." unique_id=434444583 instance=ExtResource("2_2bbwx")]
+
+[editable path="UI"]

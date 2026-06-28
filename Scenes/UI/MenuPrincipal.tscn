@@ -104,5 +104,5 @@ text = "Salir"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1768336932]
 stream = ExtResource("4_vymcu")
-volume_db = -22.391
+volume_db = -26.376
 autoplay = true

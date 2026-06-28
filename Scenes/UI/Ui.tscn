@@ -44,6 +44,8 @@ vertical_alignment = 1
 
 [node name="DineroLabel" type="Label" parent="." unique_id=1752589032]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 181.0
+offset_bottom = 39.0
 text = "$: Dinero no cargado"
