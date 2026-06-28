@@ -1,12 +1,10 @@
 [gd_resource type="Resource" script_class="EntidadData" format=3 uid="uid://uqtn055fsau2"]
 
 [ext_resource type="Script" uid="uid://cprb44o6jey2a" path="res://Resources/EntidadData.cs" id="1_3lpcg"]
-[ext_resource type="Texture2D" uid="uid://275nd2g4aofo" path="res://Assets/Entidades/Audino/Audino.png" id="1_xoc80"]
 
 [resource]
 script = ExtResource("1_3lpcg")
 Nombre = "Audino"
-Icono = ExtResource("1_xoc80")
 Vida = 50
 VelocidadMovimiento = 1.0
 DistanciaAtaque = 3.0

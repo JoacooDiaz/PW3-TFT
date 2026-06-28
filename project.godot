@@ -28,6 +28,7 @@ ElementosManager="*uid://cq0xfvgb03wig"
 [display]
 
 window/size/mode=4
+window/stretch/mode="viewport"
 
 [dotnet]
 

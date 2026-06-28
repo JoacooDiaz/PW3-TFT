@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EntidadData" format=3 uid="uid://dv7vxecvw0hyi"]
+
+[ext_resource type="Script" uid="uid://cprb44o6jey2a" path="res://Resources/EntidadData.cs" id="1_ppl"]
+
+[resource]
+script = ExtResource("1_ppl")
+Nombre = "Popplio"
+Vida = 80
+"Daño" = 8
+Curacion = 18
+MultiplicadorAsistencia = 0.0
+DuracionAsistencia = 0.0
+VelocidadMovimiento = 2.5
+DistanciaAtaque = 3.0
+Rol = 1
+Elemento = 2
+Precio = 4
+Recompensa = 2
+metadata/_custom_type_script = "uid://cprb44o6jey2a"

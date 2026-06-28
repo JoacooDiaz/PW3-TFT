@@ -179,9 +179,6 @@ private void OnRefrescarPressed()
 
 		_precio1.Text =
 			"$" + entidad.Data.Precio;
-
-		_imagen1.Texture =
-			entidad.Data.Icono;
 	}
 
 	if (indice == 1)
@@ -194,8 +191,6 @@ private void OnRefrescarPressed()
 		_precio2.Text =
 			"$" + entidad.Data.Precio;
 
-		_imagen2.Texture =
-			entidad.Data.Icono;
 	}
 
 	if (indice == 2)
@@ -207,9 +202,6 @@ private void OnRefrescarPressed()
 
 		_precio3.Text =
 			"$" + entidad.Data.Precio;
-
-		_imagen3.Texture =
-			entidad.Data.Icono;
 	}
 }
 

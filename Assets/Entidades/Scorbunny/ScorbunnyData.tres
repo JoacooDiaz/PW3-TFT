@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EntidadData" format=3 uid="uid://cu2axmynp7usy"]
+
+[ext_resource type="Script" uid="uid://cprb44o6jey2a" path="res://Resources/EntidadData.cs" id="1_scr"]
+
+[resource]
+script = ExtResource("1_scr")
+Nombre = "Scorbunny"
+Vida = 70
+"Daño" = 14
+TiempoEntreAtaques = 0.6
+VelocidadMovimiento = 4.5
+Elemento = 1
+metadata/_custom_type_script = "uid://cprb44o6jey2a"

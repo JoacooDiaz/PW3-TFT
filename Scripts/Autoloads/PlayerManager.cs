@@ -30,9 +30,9 @@ public partial class PlayerManager : Node
 	private void CargarEquipoInicial()
 	{
 		Aliados.Clear();
-		Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Blissey/Blissey.tscn"));
-		Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Audino/Audino.tscn")); 
-		Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/ElPicachu/Picachu.tscn"));
+		Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Popplio/Popplio.tscn"));
+		Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Bulbasaur/Bulbasaur.tscn")); 
+		Aliados.Add(GD.Load<PackedScene>("res://Assets/Entidades/Scorbunny/Scorbunny.tscn"));
 	}
 
 	public void ResetearProgreso()

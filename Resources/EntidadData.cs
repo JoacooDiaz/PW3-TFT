@@ -8,9 +8,6 @@ public partial class EntidadData : Resource
 	public string Nombre = "Entidad";
 
 	[Export]
-	public Texture2D Icono;
-
-	[Export]
 	public int Vida = 100;
 
 	[Export]

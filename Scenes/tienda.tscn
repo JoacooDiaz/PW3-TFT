@@ -19,7 +19,7 @@ tonemap_mode = 2
 
 [node name="Tienda" type="Node" unique_id=1630975717 node_paths=PackedStringArray("_Ui", "SP_Comprables")]
 script = ExtResource("1_2bbwx")
-_Ui = NodePath("Vista/SubViewport/UI")
+_Ui = NodePath("UI")
 SP_Comprables = NodePath("SP_Comprables")
 UITiendaScene = ExtResource("2_mlssu")
 
@@ -80,8 +80,6 @@ current = true
 fov = 90.0
 script = ExtResource("1_yc8px")
 
-[node name="UI" parent="Vista/SubViewport" unique_id=434444583 instance=ExtResource("2_2bbwx")]
-
 [node name="SP_Comprables" type="Node3D" parent="." unique_id=167879968]
 
 [node name="Node3D" type="Node3D" parent="SP_Comprables" unique_id=1516323635]
@@ -92,3 +90,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5115277, 0.0604524, -1.3635
 
 [node name="Node3D3" type="Node3D" parent="SP_Comprables" unique_id=262934078]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5369364, 0.0604524, -1.3635648)
+
+[node name="UI" parent="." unique_id=434444583 instance=ExtResource("2_2bbwx")]
+
+[editable path="UI"]
