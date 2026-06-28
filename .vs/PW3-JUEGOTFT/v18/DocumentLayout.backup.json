@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\joaqu\\Godot Games\\pw-3-juego-tft\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B93585C4-1A75-4695-9605-BD6EE307254A}|PW3-JuegoTFT.csproj|c:\\users\\joaqu\\godot games\\pw-3-juego-tft\\scripts\\nodoraizscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B93585C4-1A75-4695-9605-BD6EE307254A}|PW3-JuegoTFT.csproj|solutionrelative:scripts\\nodoraizscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B93585C4-1A75-4695-9605-BD6EE307254A}|PW3-JuegoTFT.csproj|c:\\users\\joaqu\\godot games\\pw-3-juego-tft\\scripts\\combatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B93585C4-1A75-4695-9605-BD6EE307254A}|PW3-JuegoTFT.csproj|solutionrelative:scripts\\combatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 304,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CombateManager.cs",
+              "DocumentMoniker": "C:\\Users\\joaqu\\Godot Games\\pw-3-juego-tft\\Scripts\\CombateManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\CombateManager.cs",
+              "ToolTip": "C:\\Users\\joaqu\\Godot Games\\pw-3-juego-tft\\Scripts\\CombateManager.cs",
+              "RelativeToolTip": "Scripts\\CombateManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-29T00:13:25.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NodoRaizScript.cs",
+              "DocumentMoniker": "C:\\Users\\joaqu\\Godot Games\\pw-3-juego-tft\\Scripts\\NodoRaizScript.cs",
+              "RelativeDocumentMoniker": "Scripts\\NodoRaizScript.cs",
+              "ToolTip": "C:\\Users\\joaqu\\Godot Games\\pw-3-juego-tft\\Scripts\\NodoRaizScript.cs",
+              "RelativeToolTip": "Scripts\\NodoRaizScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-29T00:12:51.988Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

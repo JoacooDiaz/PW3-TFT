@@ -37,27 +37,18 @@ expand_mode = 1
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=627212273]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.24900001
+anchor_left = 0.21400002
 anchor_top = 0.75000006
-anchor_right = 0.82600003
+anchor_right = 0.791
 anchor_bottom = 0.86700004
-offset_left = 0.15197754
+offset_left = -0.52801514
 offset_top = 0.17697144
-offset_right = 0.447937
+offset_right = -0.23199463
 offset_bottom = -0.21502686
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.078431375, 0.6509804, 0.8980392, 1)
-theme_override_colors/font_outline_color = Color(0.74509805, 0.972549, 0.96862745, 1)
-theme_override_font_sizes/font_size = 26
+theme_override_colors/font_color = Color(0.1321342, 0.555538, 0.9114479, 1)
+theme_override_colors/font_outline_color = Color(0.9691369, 0.9691369, 0.9691368, 1)
+theme_override_font_sizes/font_size = 25
 theme_override_styles/background = SubResource("StyleBoxTexture_ed35e")
 theme_override_styles/fill = SubResource("StyleBoxTexture_17ibv")
-
-[node name="Cargando" type="TextureRect" parent="." unique_id=338393527]
-layout_mode = 0
-offset_left = 107.0
-offset_top = -250.0
-offset_right = 1097.0
-offset_bottom = 728.0
-texture = ExtResource("5_0b17y")
-expand_mode = 1

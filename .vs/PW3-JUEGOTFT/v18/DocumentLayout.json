@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sal\\Documents\\TrabajoPracticoInvestigaci\u00F3n-TFT-PW3\\PW3-TFT\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B93585C4-1A75-4695-9605-BD6EE307254A}|PW3-JuegoTFT.csproj|c:\\users\\sal\\documents\\trabajopracticoinvestigaci\u00F3n-tft-pw3\\pw3-tft\\scripts\\ui\\icontipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B93585C4-1A75-4695-9605-BD6EE307254A}|PW3-JuegoTFT.csproj|solutionrelative:scripts\\ui\\icontipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 304,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IconTipo.cs",
+              "DocumentMoniker": "C:\\Users\\sal\\Documents\\TrabajoPracticoInvestigaci\u00F3n-TFT-PW3\\PW3-TFT\\Scripts\\UI\\IconTipo.cs",
+              "RelativeDocumentMoniker": "Scripts\\UI\\IconTipo.cs",
+              "ToolTip": "C:\\Users\\sal\\Documents\\TrabajoPracticoInvestigaci\u00F3n-TFT-PW3\\PW3-TFT\\Scripts\\UI\\IconTipo.cs",
+              "RelativeToolTip": "Scripts\\UI\\IconTipo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T15:09:01.448Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
