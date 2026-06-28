@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ccijh7ayh6tia" path="res://Scripts/Entidad.cs" id="1_wbira"]
 [ext_resource type="Resource" uid="uid://c5t63xye04t6" path="res://Assets/Entidades/Blissey/BlisseyData.tres" id="2_gp3nf"]
 [ext_resource type="PackedScene" uid="uid://4b2qwq0lgkww" path="res://Scenes/UI/barra_de_vida.tscn" id="2_k31es"]
+[ext_resource type="PackedScene" uid="uid://bja64ottu7o0m" path="res://Assets/Entidades/Blissey/blissey.glb" id="3_8cmgp"]
 [ext_resource type="PackedScene" uid="uid://4mdvmflr8p5d" path="res://Scenes/NA3DEntidades.tscn" id="3_31v0a"]
 [ext_resource type="PackedScene" uid="uid://byce8a2d54kwx" path="res://Scenes/UI/info_accion.tscn" id="4_p2vuw"]
 [ext_resource type="PackedScene" uid="uid://ufy8i5ljn2c5" path="res://Scenes/UI/icon_curacion.tscn" id="5_ac5se"]
@@ -10,22 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://cifelukqpwcb6" path="res://Assets/Img/Elementos/agua.png" id="6_31v0a"]
 [ext_resource type="Script" uid="uid://dvpg1q8rllmsf" path="res://Scripts/UI/IconTipo.cs" id="7_af6sk"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_gp3nf"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_coud3"]
-albedo_color = Color(0.45515007, 0.6871677, 0.92155486, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_0n4sw"]
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mpgx5"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_31v0a"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_68mp5"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_af6sk"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_tvpfx"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5afv0"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_f6ul5"]
 viewport_path = NodePath("SubViewport")
 
 [node name="Blissey" type="CharacterBody3D" unique_id=1211328272 node_paths=PackedStringArray("barraDeVida", "InfoAccion", "InfoCuracion", "aura")]
@@ -39,14 +33,8 @@ aura = NodePath("Aura")
 [node name="Cuerpo" type="Node3D" parent="." unique_id=1325642181]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cuerpo" unique_id=229622091]
-mesh = SubResource("CapsuleMesh_gp3nf")
-surface_material_override/0 = SubResource("StandardMaterial3D_coud3")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cuerpo" unique_id=78463881]
-transform = Transform3D(0.7594137, 0, 0, 0, -8.742276e-09, -0.3, 0, 0.19999997, -1.3113417e-08, 0, 0.37840366, -0.37547374)
-mesh = SubResource("CylinderMesh_0n4sw")
-surface_material_override/0 = SubResource("StandardMaterial3D_coud3")
+[node name="Sketchfab_Scene" parent="Cuerpo" unique_id=2068526897 instance=ExtResource("3_8cmgp")]
+transform = Transform3D(-1.4, 0, -2.1139412e-07, 0, 1.4, 0, 2.1139412e-07, 0, -1.4, 0, -1.1546578, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1664697275]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -57,15 +45,15 @@ debug_path_custom_color = Color(0.072904505, 0.5695131, 0.7074614, 1)
 
 [node name="BarraDeVida" parent="." unique_id=1814894225 instance=ExtResource("2_k31es")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 2.2, 0)
-texture = SubResource("ViewportTexture_31v0a")
+texture = SubResource("ViewportTexture_68mp5")
 
 [node name="InfoAccion" parent="." unique_id=2008531708 instance=ExtResource("4_p2vuw")]
 transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 0, 2.830572, 0)
-texture = SubResource("ViewportTexture_af6sk")
+texture = SubResource("ViewportTexture_tvpfx")
 
 [node name="IconCuracion" parent="." unique_id=810924509 instance=ExtResource("5_ac5se")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 2.484954, 0)
-texture = SubResource("ViewportTexture_5afv0")
+texture = SubResource("ViewportTexture_f6ul5")
 
 [node name="IconTipo" parent="." unique_id=1551409649 instance=ExtResource("5_ac5se")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.84419304, 2.2151992, 0)

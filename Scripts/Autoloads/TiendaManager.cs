@@ -40,20 +40,25 @@ public partial class TiendaManager : Node
 			return _ofertasActuales;
 		}
 
-		for (
-			int i = 0;
-			i < cantidad;
-			i++
-		)
-		{
-			int indice =
-				GD.RandRange(
-					0,
-					_BDDEntidades.Entidades.Count - 1
-				);
+		var disponibles = new List<PackedScene>(
+			_BDDEntidades.Entidades
+		);
 
+		for (int i = disponibles.Count - 1; i > 0; i--)
+		{
+			int j = GD.RandRange(0, i);
+			(disponibles[i], disponibles[j]) =
+				(disponibles[j], disponibles[i]);
+		}
+
+		int tomar = Mathf.Min(
+			cantidad, disponibles.Count
+		);
+
+		for (int i = 0; i < tomar; i++)
+		{
 			_ofertasActuales.Add(
-				_BDDEntidades.Entidades[indice]
+				disponibles[i]
 			);
 		}
 

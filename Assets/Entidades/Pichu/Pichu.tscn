@@ -15,13 +15,13 @@
 radius = 0.48291016
 height = 1.550293
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_4ygau"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_aajp0"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_qpncm"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_38uy4"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1prle"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_pt0ah"]
 viewport_path = NodePath("SubViewport")
 
 [node name="Pichu" type="CharacterBody3D" unique_id=757023705 node_paths=PackedStringArray("barraDeVida", "InfoAccion", "InfoCuracion", "aura")]
@@ -33,7 +33,7 @@ InfoCuracion = NodePath("IconCuracion")
 aura = NodePath("Aura")
 
 [node name="Sketchfab_Scene" parent="." unique_id=450673620 instance=ExtResource("3_aajp0")]
-transform = Transform3D(-0.041604564, 0, 3.6371866e-09, 0, 0.041604564, 0, -3.6371866e-09, 0, -0.041604564, 0, 0, 0)
+transform = Transform3D(-0.025, 0, 3.774895e-09, 0, 0.025, 0, -3.774895e-09, 0, -0.025, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=873240518]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7751465, 0)
@@ -44,15 +44,15 @@ debug_path_custom_color = Color(0.93706715, 0.82880133, 0.30713832, 1)
 
 [node name="BarraDeVida" parent="." unique_id=1814894225 instance=ExtResource("5_pt0ah")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 1.6581779, 0)
-texture = SubResource("ViewportTexture_4ygau")
+texture = SubResource("ViewportTexture_aajp0")
 
 [node name="InfoAccion" parent="." unique_id=2008531708 instance=ExtResource("6_wrxgm")]
 transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 0, 2.2887497, 0)
-texture = SubResource("ViewportTexture_qpncm")
+texture = SubResource("ViewportTexture_38uy4")
 
 [node name="IconCuracion" parent="." unique_id=810924509 instance=ExtResource("7_4t4mm")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 1.9431319, 0)
-texture = SubResource("ViewportTexture_1prle")
+texture = SubResource("ViewportTexture_pt0ah")
 
 [node name="IconTipo" parent="." unique_id=172600238 instance=ExtResource("7_4t4mm")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.81573844, 1.67, 0)
