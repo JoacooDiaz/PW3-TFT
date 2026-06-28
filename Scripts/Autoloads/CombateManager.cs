@@ -2,151 +2,151 @@ using Godot;
 
 public partial class CombateManager : Node
 {
-    private SpawnNode _aliados;
+	private SpawnNode _aliados;
 
-    private SpawnNode _enemigos;
+	private SpawnNode _enemigos;
 
-    [Signal]
-    public delegate void VictoriaEventHandler();
+	[Signal]
+	public delegate void VictoriaEventHandler();
 
-    [Signal]
-    public delegate void DerrotaEventHandler();
+	[Signal]
+	public delegate void DerrotaEventHandler();
 
-    private PlayerManager _playerManager;
+	private PlayerManager _playerManager;
 
-    public void SetupPelea(
-        Node3D aliados,
-        Node3D enemigos
-    )
-    {
-        _playerManager = GetNode<PlayerManager>("/root/PlayerManager"); 
+	public void SetupPelea(
+		Node3D aliados,
+		Node3D enemigos
+	)
+	{
+		_playerManager = GetNode<PlayerManager>("/root/PlayerManager"); 
 
-        _aliados = aliados as SpawnNode;
+		_aliados = aliados as SpawnNode;
 
-        _enemigos = enemigos as SpawnNode;
+		_enemigos = enemigos as SpawnNode;
 
-        ConfigurarRelaciones();
+		ConfigurarRelaciones();
 
-        foreach (Entidad aliado in _aliados.Entidades)
-        {
-            aliado.EntidadMurio += OnEntidadMurio;
-        }
+		foreach (Entidad aliado in _aliados.Entidades)
+		{
+			aliado.EntidadMurio += OnEntidadMurio;
+		}
 
-        foreach (Entidad enemigo in _enemigos.Entidades)
-        {
-            enemigo.EntidadMurio += OnEntidadMurio;
-        }
+		foreach (Entidad enemigo in _enemigos.Entidades)
+		{
+			enemigo.EntidadMurio += OnEntidadMurio;
+		}
 
-        GD.Print("Pelea configurada.");
-    }
+		GD.Print("Pelea configurada.");
+	}
 
-    private void ConfigurarRelaciones()
-    {
-        foreach (Entidad aliado in _aliados.Entidades)
-        {
-            aliado.Equipo = _aliados;
+	private void ConfigurarRelaciones()
+	{
+		foreach (Entidad aliado in _aliados.Entidades)
+		{
+			aliado.Equipo = _aliados;
 
-            aliado.EquipoEnemigo = _enemigos;
-        }
+			aliado.EquipoEnemigo = _enemigos;
+		}
 
-        foreach (Entidad enemigo in _enemigos.Entidades)
-        {
-            enemigo.Equipo = _enemigos;
+		foreach (Entidad enemigo in _enemigos.Entidades)
+		{
+			enemigo.Equipo = _enemigos;
 
-            enemigo.EquipoEnemigo = _aliados;
-        }
-    }
+			enemigo.EquipoEnemigo = _aliados;
+		}
+	}
 
-    public void ComenzarPelea()
-    {
-        _aliados.CambiarEstadoEntidades(
-            EstadoEntidad.Pelea
-        );
+	public void ComenzarPelea()
+	{
+		_aliados.CambiarEstadoEntidades(
+			EstadoEntidad.Pelea
+		);
 
-        _enemigos.CambiarEstadoEntidades(
-            EstadoEntidad.Pelea
-        );
-    }
+		_enemigos.CambiarEstadoEntidades(
+			EstadoEntidad.Pelea
+		);
+	}
 
-    public void TerminarPelea(
-        bool victoriaJugador
-    )
-    {
-        if (victoriaJugador)
-        {
-            _aliados.CambiarEstadoEntidades(
-                EstadoEntidad.Festejo
-            );
+	public void TerminarPelea(
+		bool victoriaJugador
+	)
+	{
+		if (victoriaJugador)
+		{
+			_aliados.CambiarEstadoEntidades(
+				EstadoEntidad.Festejo
+			);
 
-            EmitSignal(
-                SignalName.Victoria
-            );
-        }
-        else
-        {
+			EmitSignal(
+				SignalName.Victoria
+			);
+		}
+		else
+		{
 
-            _enemigos.CambiarEstadoEntidades(
-                EstadoEntidad.Festejo
-            ); 
+			_enemigos.CambiarEstadoEntidades(
+				EstadoEntidad.Festejo
+			); 
 
-            EmitSignal(
-                SignalName.Derrota
-            );
-        }
-    }
+			EmitSignal(
+				SignalName.Derrota
+			);
+		}
+	}
 
-    private void OnEntidadMurio(
-        Entidad entidad
-    )
-    {
-        if (entidad.Equipo == _enemigos)
-        {
-            _playerManager.SumarDinero(entidad.Data.Recompensa); 
-        }
+	private void OnEntidadMurio(
+		Entidad entidad
+	)
+	{
+		if (entidad.Equipo == _enemigos)
+		{
+			_playerManager.SumarDinero(entidad.Data.Recompensa); 
+		}
 
-        VerificarFinPelea();
-    }
+		VerificarFinPelea();
+	}
 
-    private void VerificarFinPelea()
-    {
-        bool aliadosVivos = false;
+	private void VerificarFinPelea()
+	{
+		bool aliadosVivos = false;
 
-        bool enemigosVivos = false;
+		bool enemigosVivos = false;
 
-        foreach (Entidad aliado in _aliados.Entidades)
-        {
-            if (
-                IsInstanceValid(aliado) &&
-                aliado.EstadoActual != EstadoEntidad.Muerto
-            )
-            {
-                aliadosVivos = true;
+		foreach (Entidad aliado in _aliados.Entidades)
+		{
+			if (
+				IsInstanceValid(aliado) &&
+				aliado.EstadoActual != EstadoEntidad.Muerto
+			)
+			{
+				aliadosVivos = true;
 
-                break;
-            }
-        }
+				break;
+			}
+		}
 
-        foreach (Entidad enemigo in _enemigos.Entidades)
-        {
-            if (
-                IsInstanceValid(enemigo) &&
-                enemigo.EstadoActual != EstadoEntidad.Muerto
-            )
-            {
-                enemigosVivos = true;
+		foreach (Entidad enemigo in _enemigos.Entidades)
+		{
+			if (
+				IsInstanceValid(enemigo) &&
+				enemigo.EstadoActual != EstadoEntidad.Muerto
+			)
+			{
+				enemigosVivos = true;
 
-                break;
-            }
-        }
+				break;
+			}
+		}
 
-        if (!aliadosVivos)
-        {
-            TerminarPelea(false);
-        }
+		if (!aliadosVivos)
+		{
+			TerminarPelea(false);
+		}
 
-        if (!enemigosVivos)
-        {
-            TerminarPelea(true);
-        }
-    }
+		if (!enemigosVivos)
+		{
+			TerminarPelea(true);
+		}
+	}
 }

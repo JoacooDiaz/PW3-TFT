@@ -1,11 +1,6 @@
-[gd_scene format=3 uid="uid://dge7ywsocqm81"]
-
-[ext_resource type="Script" path="res://Scripts/PantallaPrincipal3d.cs" id="1_kld81"]
-[ext_resource type="AudioStream" path="res://Assets/Audio/Musica/intro.mp3" id="2_8ys4s"]
+[gd_scene format=3 uid="uid://cahqpit6o088k"]
 
 [node name="PantallaInicio3d" type="Node3D" unique_id=1479346082]
-script = ExtResource("1_kld81")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=967164505]
-stream = ExtResource("2_8ys4s")
 autoplay = true

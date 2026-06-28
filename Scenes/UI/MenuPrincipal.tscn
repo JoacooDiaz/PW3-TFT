@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://b4yusytnvuaj2"]
+[gd_scene format=3 uid="uid://g3q34obgq1ts"]
 
-[ext_resource type="Script" path="res://Scripts/UI/MenuPrincipal.cs" id="1_vymcu"]
-[ext_resource type="Texture2D" path="res://Assets/Img/Fondo_menu/Fondo_menu.jpg" id="2_glsjb"]
-[ext_resource type="Texture2D" path="res://Assets/Img/Logo/PokeTFT.png" id="3_glsjb"]
+[ext_resource type="Script" uid="uid://qvwp5d4e7lsq" path="res://Scripts/UI/MenuPrincipal.cs" id="1_vymcu"]
+[ext_resource type="Texture2D" uid="uid://dto7240b231hj" path="res://Assets/Img/Fondo_menu/Fondo_menu.jpg" id="2_glsjb"]
+[ext_resource type="Texture2D" uid="uid://bpitdtxb68vf7" path="res://Assets/Img/Logo/PokeTFT.png" id="3_glsjb"]
+[ext_resource type="AudioStream" uid="uid://chu6mrgusuq0c" path="res://Scenes/UI/1-03. Title Screen.mp3" id="4_vymcu"]
 
 [node name="MenuPrincipal" type="Control" unique_id=478054471]
 layout_mode = 3
@@ -55,9 +56,9 @@ layout_mode = 2
 
 [node name="BtnJugar" type="Button" parent="VBoxContainer/Label" unique_id=711545617]
 layout_mode = 0
-offset_left = 253.0
+offset_left = 133.0
 offset_top = 319.0
-offset_right = 533.0
+offset_right = 413.0
 offset_bottom = 418.0
 
 [node name="Comenzar" type="Label" parent="VBoxContainer/Label/BtnJugar" unique_id=356661231]
@@ -79,9 +80,9 @@ text = "Comenzar juego"
 
 [node name="BtnSalir" type="Button" parent="VBoxContainer/Label" unique_id=1093743178]
 layout_mode = 0
-offset_left = 727.0
+offset_left = 612.0
 offset_top = 321.0
-offset_right = 1007.0
+offset_right = 892.0
 offset_bottom = 420.0
 
 [node name="Salir" type="Label" parent="VBoxContainer/Label/BtnSalir" unique_id=1772500679]
@@ -100,3 +101,8 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.18039216, 0.7254902, 0.972549, 1)
 theme_override_font_sizes/font_size = 26
 text = "Salir"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1768336932]
+stream = ExtResource("4_vymcu")
+volume_db = -22.79
+autoplay = true

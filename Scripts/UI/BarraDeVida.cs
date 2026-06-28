@@ -7,23 +7,22 @@ public partial class BarraDeVida : Sprite3D
 
     private ElementosManager _elementosManager;
 
+    private TextureRect _iconoElemento; 
+
     public override void _Ready()
     {
-        _progressBar = GetNode<ProgressBar>(
-            "SubViewport/Panel/ProgressBar"
-        );
+        _progressBar = GetNode<ProgressBar>("SubViewport/PanelBarra/ProgressBar");
 
         _elementosManager = GetNode<ElementosManager>("/root/ElementosManager");
 
-        GD.Print("[BarraDeVida] _Ready OK");
+        _iconoElemento = GetNode<TextureRect>("SubViewport/PanelElemento/IconElemento");
     }
 
     public void setUpBarra(float maxVida, TipoElemento elemento)
     {
         _progressBar.MaxValue = maxVida;
         ActualizarBarra(maxVida);
-
-        GD.Print("[BarraDeVida] Tipo seteado: " + elemento);
+        _iconoElemento.Texture = _elementosManager.ObtenerTexturaElemento(elemento); 
     }
 
     public void ActualizarBarra(float value)

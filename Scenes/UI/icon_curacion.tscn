@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ufy8i5ljn2c5"]
 
 [ext_resource type="Script" uid="uid://dn7o0xb3bnwpc" path="res://Scripts/UI/IconCuracion.cs" id="1_lv667"]
-[ext_resource type="Texture2D" uid="uid://bhjubbtp12ppr" path="res://Assets/Img/Curacion.jpg" id="2_lv667"]
+[ext_resource type="Texture2D" uid="uid://32ffej1ujtck" path="res://Assets/Img/curacion.png" id="2_lv667"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_lv667"]
 viewport_path = NodePath("SubViewport")

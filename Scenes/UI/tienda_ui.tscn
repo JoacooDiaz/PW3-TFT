@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bqihnpmilrm7y" path="res://Scripts/UI/Themes/UI_Theme.tres" id="1_2wma7"]
 [ext_resource type="Script" uid="uid://5htdpn4tn8b8" path="res://Scripts/UI/TiendaUi.cs" id="1_22dhi"]
+[ext_resource type="Theme" uid="uid://bi8dwe1x2mpnj" path="res://Scripts/UI/Themes/Button_Theme.tres" id="2_xofbx"]
 
 [node name="TiendaUi" type="Control" unique_id=364080961]
 layout_mode = 3
@@ -17,10 +18,12 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -8.0
-offset_right = 8.0
+offset_left = 100.0
+offset_top = -118.0
+offset_right = 322.0
+offset_bottom = -58.0
 grow_vertical = 0
-theme = ExtResource("1_2wma7")
+theme = ExtResource("2_xofbx")
 text = "CONTINUAR"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=674466331]
@@ -30,13 +33,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -135.5
-offset_top = -119.5
-offset_right = 135.5
-offset_bottom = 119.5
+offset_left = -374.0
+offset_top = -123.0
+offset_right = 374.0
+offset_bottom = 123.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 65
 
 [node name="Tarjeta1" type="VBoxContainer" parent="HBoxContainer" unique_id=1662624884]
 layout_mode = 2
@@ -50,12 +53,15 @@ stretch_mode = 5
 
 [node name="Nombre" type="Label" parent="HBoxContainer/Tarjeta1" unique_id=182449530]
 layout_mode = 2
+theme = ExtResource("1_2wma7")
 
 [node name="Precio" type="Label" parent="HBoxContainer/Tarjeta1" unique_id=115664420]
 layout_mode = 2
+theme = ExtResource("1_2wma7")
 
 [node name="Comprar" type="Button" parent="HBoxContainer/Tarjeta1" unique_id=1139265234]
 layout_mode = 2
+theme = ExtResource("2_xofbx")
 text = "Comprar"
 
 [node name="Tarjeta2" type="VBoxContainer" parent="HBoxContainer" unique_id=1904560457]
@@ -70,12 +76,15 @@ stretch_mode = 5
 
 [node name="Nombre" type="Label" parent="HBoxContainer/Tarjeta2" unique_id=1514168061]
 layout_mode = 2
+theme = ExtResource("1_2wma7")
 
 [node name="Precio" type="Label" parent="HBoxContainer/Tarjeta2" unique_id=1596365013]
 layout_mode = 2
+theme = ExtResource("1_2wma7")
 
 [node name="Comprar" type="Button" parent="HBoxContainer/Tarjeta2" unique_id=1211425603]
 layout_mode = 2
+theme = ExtResource("2_xofbx")
 text = "Comprar"
 
 [node name="Tarjeta3" type="VBoxContainer" parent="HBoxContainer" unique_id=140528780]
@@ -90,12 +99,15 @@ stretch_mode = 5
 
 [node name="Nombre" type="Label" parent="HBoxContainer/Tarjeta3" unique_id=431881360]
 layout_mode = 2
+theme = ExtResource("1_2wma7")
 
 [node name="Precio" type="Label" parent="HBoxContainer/Tarjeta3" unique_id=1337188075]
 layout_mode = 2
+theme = ExtResource("1_2wma7")
 
 [node name="Comprar" type="Button" parent="HBoxContainer/Tarjeta3" unique_id=188857912]
 layout_mode = 2
+theme = ExtResource("2_xofbx")
 text = "Comprar"
 
 [node name="BotonRefrescar" type="Button" parent="." unique_id=1784073112]
@@ -105,8 +117,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -110.0
-offset_top = -31.0
+offset_left = -252.0
+offset_top = -98.0
+offset_right = -114.0
+offset_bottom = -60.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Refrescar (-2)"
+theme = ExtResource("2_xofbx")
+text = "Refrescar $2
+"

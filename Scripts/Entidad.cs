@@ -16,8 +16,6 @@ public partial class Entidad : CharacterBody3D
 	[Export]
 	private IconCuracion InfoCuracion;
 
-	private IconTipo _iconTipo;
-
 	[Export]
 	private Aura aura; 
 
@@ -55,22 +53,16 @@ public partial class Entidad : CharacterBody3D
 	);
 public override void _Ready()
 {
-	_iconTipo = GetNodeOrNull<IconTipo>("IconTipo");
 	_navigation = GetNode<NavigationAgent3D>("NavigationAgent3D");
 	_elementosManager = GetNode<ElementosManager>("/root/ElementosManager");
 
 	if (Data == null)
 	{
-		GD.Print(Name + " no tiene EntidadData.");
 		return;
 	}
 
 	VidaActual = Data.Vida;
 	barraDeVida.setUpBarra(VidaActual, Data.Elemento);
-	if (_iconTipo != null)
-	{
-		_iconTipo.Texture = _elementosManager.ObtenerTexturaElemento(Data.Elemento);
-	}
 	InfoAccion.Limpiar();
 }
 
