@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EntidadData" format=3 uid="uid://bulbasaur1dt1"]
+
+[ext_resource type="Script" uid="uid://cprb44o6jey2a" path="res://Resources/EntidadData.cs" id="1_bul"]
+
+[resource]
+script = ExtResource("1_bul")
+Nombre = "Bulbasaur"
+Vida = 70
+Curacion = 0
+MultiplicadorAsistencia = 1.3
+TiempoEntreAtaques = 1.2
+VelocidadMovimiento = 2.0
+DistanciaAtaque = 3.0
+Rol = 2
+Elemento = 3
+metadata/_custom_type_script = "uid://cprb44o6jey2a"
