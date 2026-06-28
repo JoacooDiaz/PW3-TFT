@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cr62jk86tvijm" path="res://Scripts/UI/Ui.cs" id="1_vmxoy"]
 [ext_resource type="Theme" uid="uid://bqihnpmilrm7y" path="res://Scripts/UI/Themes/UI_Theme.tres" id="2_rjm2b"]
+[ext_resource type="Texture2D" uid="uid://bt4q7rpeclv3o" path="res://Assets/Img/Victoria/button_rectangle_gradient.png" id="3_tykam"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80hui"]
+texture = ExtResource("3_tykam")
 
 [node name="UI" type="Control" unique_id=434444583]
 texture_filter = 1
@@ -9,6 +13,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 6.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vmxoy")
@@ -16,18 +24,20 @@ script = ExtResource("1_vmxoy")
 [node name="TestLabel" type="Label" parent="." unique_id=1831588181]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.37300003
-anchor_top = 0.42900002
-anchor_right = 0.62700003
+anchor_left = 0.358
+anchor_top = 0.42600003
+anchor_right = 0.65000004
 anchor_bottom = 0.57100004
-offset_left = 0.30395508
-offset_top = 0.0079956055
-offset_right = -0.3040161
-offset_bottom = -0.008026123
+offset_left = -0.41601563
+offset_top = -0.04800415
+offset_right = 0.19995117
+offset_bottom = 6.991974
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_rjm2b")
 theme_type_variation = &"Texto_Fin_Partida"
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_80hui")
 text = "vicTORIa"
 horizontal_alignment = 1
 vertical_alignment = 1
