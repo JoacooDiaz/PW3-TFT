@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpkl6kfsu6gbc"
 path.s3tc="res://.godot/imported/axew_0.png-220c3bc336f54b72aa7c446bfb9ef992.s3tc.ctex"
+path.etc2="res://.godot/imported/axew_0.png-220c3bc336f54b72aa7c446bfb9ef992.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Entidades/Axew/axew_0.png"
-dest_files=["res://.godot/imported/axew_0.png-220c3bc336f54b72aa7c446bfb9ef992.s3tc.ctex"]
+dest_files=["res://.godot/imported/axew_0.png-220c3bc336f54b72aa7c446bfb9ef992.s3tc.ctex", "res://.godot/imported/axew_0.png-220c3bc336f54b72aa7c446bfb9ef992.etc2.ctex"]
 
 [params]
 

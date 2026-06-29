@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cse3iifxxf0bw"
 path.s3tc="res://.godot/imported/audino_2.png-ad106075e65da55f3610b2aca1a53c73.s3tc.ctex"
+path.etc2="res://.godot/imported/audino_2.png-ad106075e65da55f3610b2aca1a53c73.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Entidades/Audino/audino_2.png"
-dest_files=["res://.godot/imported/audino_2.png-ad106075e65da55f3610b2aca1a53c73.s3tc.ctex"]
+dest_files=["res://.godot/imported/audino_2.png-ad106075e65da55f3610b2aca1a53c73.s3tc.ctex", "res://.godot/imported/audino_2.png-ad106075e65da55f3610b2aca1a53c73.etc2.ctex"]
 
 [params]
 
