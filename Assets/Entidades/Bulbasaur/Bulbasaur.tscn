@@ -52,4 +52,4 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 2.484954, 0)
 texture = SubResource("ViewportTexture_qanan")
 
 [node name="Aura" parent="." unique_id=1566409700 instance=ExtResource("10_h3u6c")]
-transform = Transform3D(-0.25881895, 0, 0.96592546, 0, 1, 0, -0.96592546, 0, -0.25881895, 3.7252903e-09, 0.7759727, -0.12701616)
+transform = Transform3D(-0.25881895, 0, 0.96592546, 0, 0.43344164, 0, -0.96592546, 0, -0.25881895, 0.0046638064, 0.4192165, 0.084572785)

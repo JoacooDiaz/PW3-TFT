@@ -5,8 +5,10 @@
 [resource]
 script = ExtResource("1_7dv6c")
 Nombre = "Pikachu"
-"Daño" = 15
+"Daño" = 12
 VelocidadMovimiento = 3.0
 DistanciaAtaque = 3.0
 Elemento = 4
+Precio = 4
+Recompensa = 4
 metadata/_custom_type_script = "uid://cprb44o6jey2a"

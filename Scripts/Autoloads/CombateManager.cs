@@ -36,8 +36,6 @@ public partial class CombateManager : Node
 		{
 			enemigo.EntidadMurio += OnEntidadMurio;
 		}
-
-		GD.Print("Pelea configurada.");
 	}
 
 	private void ConfigurarRelaciones()
