@@ -62,7 +62,9 @@ public override void _Ready()
 	}
 
 	VidaActual = Data.Vida;
-	barraDeVida.setUpBarra(VidaActual, Data.Elemento);
+
+	string equipo = GetParent().Name;
+	barraDeVida.setUpBarra(VidaActual, Data.Elemento, equipo);
 	InfoAccion.Limpiar();
 }
 
@@ -129,7 +131,6 @@ public override void _Ready()
 				break;
 
 			case EstadoEntidad.Pelea:
-				GD.Print(Data.Nombre + " Entra a la pelea");
 				BuscarObjetivo();
 				break;
 		}
@@ -139,7 +140,6 @@ public override void _Ready()
 	{
 		if (EquipoEnemigo == null)
 		{
-			GD.Print(Data.Nombre + " No encontro un enemigo");
 			return;
 		}
 
@@ -226,14 +226,6 @@ public override void _Ready()
 		);
 
 		ObjetivoActual.RecibirDaño(dañoFinal, Data.Elemento);
-
-		GD.Print(
-			Data.Nombre +
-			" ataca a " +
-			ObjetivoActual.Data.Nombre +
-			" por " +
-			dañoFinal
-		);
 	}
 
 	private void EjecutarCuracion()
@@ -250,12 +242,6 @@ public override void _Ready()
 		MirarObjetivo(0.1);
 
 		aliado.Curar(Data.Curacion);
-
-		GD.Print(
-			Data.Nombre +
-			" cura a " +
-			aliado.Data.Nombre
-		);
 	}
 
 	private async Task EjecutarAsistencia()
@@ -277,15 +263,8 @@ public override void _Ready()
 		);
 
 		await aliado.aura.MostrarAura(ColoresAura.Buff); 
-
-		GD.Print(
-			Data.Nombre +
-			" fortalece a " +
-			aliado.Data.Nombre
-		);
 	}
 
-	//???
 	public void RecibirDaño(int daño, TipoElemento elemento)
 	{
 		VidaActual -= daño;
@@ -293,13 +272,6 @@ public override void _Ready()
 		barraDeVida.ActualizarBarra(VidaActual);
 
 		InfoAccion.MostrarInfo(daño, elemento);
-
-		GD.Print(
-			Data.Nombre +
-			" recibe " +
-			daño +
-            " daño."
-		);
 
 		if (VidaActual <= 0)
 		{
@@ -424,11 +396,6 @@ public override void _Ready()
 		_multiplicadorDaño = multiplicador;
 
 		_tiempoBuffActual = duracion;
-
-		GD.Print(
-			Data.Nombre +
-            " recibe buff de daño."
-		);
 	}
 
 	private void ActualizarBuffs(double delta)
@@ -441,11 +408,6 @@ public override void _Ready()
 		if (_tiempoBuffActual <= 0)
 		{
 			_multiplicadorDaño = 1.0f;
-
-			GD.Print(
-				Data.Nombre +
-                " perdió su buff."
-			);
 		}
 	}
 

@@ -6,10 +6,10 @@ public partial class SpawnNode : Node3D
     public List<Entidad> Entidades = new();
 
     [Export]
-    private float _distanciaEntreEntidades = 2.0f;
+    private float _distanciaEntreEntidades = 1.8f;
 
     [Export]
-    private int _entidadesPorFila = 3;
+    private int _entidadesPorFila = 5;
 
     public void SpawnearEntidades(
         List<PackedScene> entidadesASpawnear

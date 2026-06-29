@@ -69,23 +69,15 @@ public partial class TiendaManager : Node
 		PackedScene escena
 	)
 	{
-		Entidad entidad =
-			escena.Instantiate<Entidad>();
+		Entidad entidad = escena.Instantiate<Entidad>();
 
 		if (
 			entidad.Data.Precio >
 			_playerManager.Dinero
 		)
 		{
-			GD.Print(
-                "No hay dinero suficiente."
-			);
-
 			return false;
 		}
-
-		/*_playerManager.Dinero -=
-			entidad.Data.Precio;*/
 			
 			_playerManager.RestarDinero(
 			entidad.Data.Precio
@@ -95,31 +87,15 @@ public partial class TiendaManager : Node
 			escena
 		);
 
-		GD.Print(
-			"Comprado: " +
-			entidad.Data.Nombre
-		);
-
 		return true;
 	}
 
-	public void VenderPokemon(
-		PackedScene escena
-	)
+	public bool PuedeComprarPokemon(PackedScene escena)
 	{
-		Entidad entidad =
-			escena.Instantiate<Entidad>();
-
-		_playerManager.Dinero +=
-			entidad.Data.Recompensa;
-
-		_playerManager.Aliados.Remove(
-			escena
-		);
-
-		GD.Print(
-			"Vendido: " +
-			entidad.Data.Nombre
-		);
+		Entidad entidad = escena.Instantiate<Entidad>();
+		if (entidad.Data.Precio > _playerManager.Dinero)
+		{
+			return false;
+		} else return true; 
 	}
 }

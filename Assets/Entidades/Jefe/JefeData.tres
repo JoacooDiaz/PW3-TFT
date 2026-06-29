@@ -6,10 +6,12 @@
 script = ExtResource("1_2n2nf")
 Nombre = "Jefe"
 Vida = 400
-"Daño" = 55
+"Daño" = 40
 Curacion = 0
-TiempoEntreAtaques = 3.0
-VelocidadMovimiento = 2.0
+MultiplicadorAsistencia = 0.0
+DuracionAsistencia = 0.0
+TiempoEntreAtaques = 0.7
+VelocidadMovimiento = 0.1
 DistanciaAtaque = 5.0
 Elemento = 2
 Precio = 50

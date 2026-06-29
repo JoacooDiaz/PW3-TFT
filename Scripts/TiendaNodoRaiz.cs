@@ -115,10 +115,6 @@ public partial class TiendaNodoRaiz : Node
 
 	if (player.Dinero < 2)
 	{
-		GD.Print(
-            "No alcanza el dinero"
-		);
-
 		return;
 	}
 
@@ -126,9 +122,6 @@ public partial class TiendaNodoRaiz : Node
 	_uiTienda.ResetearBotones();
 	CargarTienda();
 
-	GD.Print(
-        "Tienda refrescada"
-	);
 }
 	
 	
