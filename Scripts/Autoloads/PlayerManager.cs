@@ -1,29 +1,19 @@
 using Godot;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class PlayerManager : Node
 {
 
 	public List<PackedScene> Aliados = new();
 
-	public int Dinero = 50;
+	public int Dinero;
 
 	private Ui _ui; 
 
 	public override void _Ready()
 	{
-
-		/*
-		
-			Detalle a tener en cuenta:
-				Los enemigos eligen a quien atacar segun distancia.
-				SpawnNode se encarga de poner a las entidades y quienes esten primeros en la lista
-				mas cerca estaran del equipo enemigo.
-
-			Tenemos que ver si hacemos que esto sea una funcionalidad o si vamos a "Corregirlo"
-			para controlarlo nosotros mismos...
-		*/
-		
+		Dinero = 0; 
 		CargarEquipoInicial();
 	}
 
@@ -37,7 +27,7 @@ public partial class PlayerManager : Node
 
 	public void ResetearProgreso()
 	{
-		Dinero = 50;
+		Dinero = 0;
 		CargarEquipoInicial();
 		if (IsInstanceValid(_ui))
 			_ui.ActualizarDinero();
@@ -60,11 +50,25 @@ public partial class PlayerManager : Node
 	}
 	
 	public void RestarDinero(int cantidad)
-{
-	Dinero -= cantidad;
+	{
+		Dinero -= cantidad;
 
-	if (IsInstanceValid(_ui))
-		_ui.ActualizarDinero();
-}
+		if (IsInstanceValid(_ui))
+			_ui.ActualizarDinero();
+	}
+		
+	public void EliminarDeEquipo(string nombre)
+	{
+		for (int i = Aliados.Count - 1; i >= 0; i--)
+		{
+			Entidad entidad = Aliados[i].Instantiate<Entidad>();
+
+			if (entidad.Data.Nombre == nombre)
+			{
+				Aliados.RemoveAt(i);
+				break; 
+			}
+		}
+	}
 
 }

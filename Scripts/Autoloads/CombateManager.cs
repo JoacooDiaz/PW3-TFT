@@ -102,6 +102,8 @@ public partial class CombateManager : Node
 		if (entidad.Equipo == _enemigos)
 		{
 			_playerManager.SumarDinero(entidad.Data.Recompensa); 
+		} else if (entidad.Equipo == _aliados) {
+			_playerManager.EliminarDeEquipo(entidad.Data.Nombre);
 		}
 
 		VerificarFinPelea();
