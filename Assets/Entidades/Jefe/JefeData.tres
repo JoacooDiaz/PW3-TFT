@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource("1_2n2nf")
 Nombre = "Jefe"
-Vida = 400
-"Daño" = 40
+Vida = 450
+"Daño" = 50
 Curacion = 0
 MultiplicadorAsistencia = 0.0
 DuracionAsistencia = 0.0
