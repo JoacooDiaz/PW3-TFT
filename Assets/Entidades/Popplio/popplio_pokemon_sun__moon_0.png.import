@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bafrjs3qcefnc"
 path.s3tc="res://.godot/imported/popplio_pokemon_sun__moon_0.png-cc7d33a0b47c82d41b8eebe1a2d57bf0.s3tc.ctex"
+path.etc2="res://.godot/imported/popplio_pokemon_sun__moon_0.png-cc7d33a0b47c82d41b8eebe1a2d57bf0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Entidades/Popplio/popplio_pokemon_sun__moon_0.png"
-dest_files=["res://.godot/imported/popplio_pokemon_sun__moon_0.png-cc7d33a0b47c82d41b8eebe1a2d57bf0.s3tc.ctex"]
+dest_files=["res://.godot/imported/popplio_pokemon_sun__moon_0.png-cc7d33a0b47c82d41b8eebe1a2d57bf0.s3tc.ctex", "res://.godot/imported/popplio_pokemon_sun__moon_0.png-cc7d33a0b47c82d41b8eebe1a2d57bf0.etc2.ctex"]
 
 [params]
 
