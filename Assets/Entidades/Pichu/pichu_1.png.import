@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dr4864272bwbe"
 path.s3tc="res://.godot/imported/pichu_1.png-407c5c4cd3fb57f1e1565be6fb501e87.s3tc.ctex"
-path.etc2="res://.godot/imported/pichu_1.png-407c5c4cd3fb57f1e1565be6fb501e87.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Entidades/Pichu/pichu_1.png"
-dest_files=["res://.godot/imported/pichu_1.png-407c5c4cd3fb57f1e1565be6fb501e87.s3tc.ctex", "res://.godot/imported/pichu_1.png-407c5c4cd3fb57f1e1565be6fb501e87.etc2.ctex"]
+dest_files=["res://.godot/imported/pichu_1.png-407c5c4cd3fb57f1e1565be6fb501e87.s3tc.ctex"]
 
 [params]
 

@@ -12,6 +12,6 @@ MultiplicadorAsistencia = 0.0
 DuracionAsistencia = 0.0
 TiempoEntreAtaques = 0.5
 VelocidadMovimiento = 6.0
-DistanciaAtaque = 1.5
+DistanciaAtaque = 3.5
 Elemento = 4
 metadata/_custom_type_script = "uid://cprb44o6jey2a"

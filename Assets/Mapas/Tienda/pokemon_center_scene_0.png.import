@@ -2,21 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7age6k5e74ew"
+uid="uid://bxfe0lb5csfn7"
 path.s3tc="res://.godot/imported/pokemon_center_scene_0.png-1acfeac4fa33296c38cbe29baadc50fa.s3tc.ctex"
-path.etc2="res://.godot/imported/pokemon_center_scene_0.png-1acfeac4fa33296c38cbe29baadc50fa.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "9e6a04524c7a2e4ad57ba8b9ea3b5ec5"
 }
 
 [deps]
 
 source_file="res://Assets/Mapas/Tienda/pokemon_center_scene_0.png"
-dest_files=["res://.godot/imported/pokemon_center_scene_0.png-1acfeac4fa33296c38cbe29baadc50fa.s3tc.ctex", "res://.godot/imported/pokemon_center_scene_0.png-1acfeac4fa33296c38cbe29baadc50fa.etc2.ctex"]
+dest_files=["res://.godot/imported/pokemon_center_scene_0.png-1acfeac4fa33296c38cbe29baadc50fa.s3tc.ctex"]
 
 [params]
 

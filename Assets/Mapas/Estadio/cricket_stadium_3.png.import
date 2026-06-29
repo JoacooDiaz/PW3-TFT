@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwm6h3l0kjibb"
 path.s3tc="res://.godot/imported/cricket_stadium_3.png-f5c09f9e7f5c3dcb5b781d8f9ee690bf.s3tc.ctex"
-path.etc2="res://.godot/imported/cricket_stadium_3.png-f5c09f9e7f5c3dcb5b781d8f9ee690bf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Mapas/Estadio/cricket_stadium_3.png"
-dest_files=["res://.godot/imported/cricket_stadium_3.png-f5c09f9e7f5c3dcb5b781d8f9ee690bf.s3tc.ctex", "res://.godot/imported/cricket_stadium_3.png-f5c09f9e7f5c3dcb5b781d8f9ee690bf.etc2.ctex"]
+dest_files=["res://.godot/imported/cricket_stadium_3.png-f5c09f9e7f5c3dcb5b781d8f9ee690bf.s3tc.ctex"]
 
 [params]
 

@@ -9,5 +9,6 @@ Vida = 70
 "Daño" = 14
 TiempoEntreAtaques = 0.6
 VelocidadMovimiento = 4.5
+DistanciaAtaque = 5.0
 Elemento = 1
 metadata/_custom_type_script = "uid://cprb44o6jey2a"

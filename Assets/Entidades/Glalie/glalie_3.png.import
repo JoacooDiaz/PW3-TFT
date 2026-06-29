@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://outudsng7qn8"
 path.s3tc="res://.godot/imported/glalie_3.png-63f4b467687d7e4a03758b9c1260f391.s3tc.ctex"
-path.etc2="res://.godot/imported/glalie_3.png-63f4b467687d7e4a03758b9c1260f391.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Entidades/Glalie/glalie_3.png"
-dest_files=["res://.godot/imported/glalie_3.png-63f4b467687d7e4a03758b9c1260f391.s3tc.ctex", "res://.godot/imported/glalie_3.png-63f4b467687d7e4a03758b9c1260f391.etc2.ctex"]
+dest_files=["res://.godot/imported/glalie_3.png-63f4b467687d7e4a03758b9c1260f391.s3tc.ctex"]
 
 [params]
 

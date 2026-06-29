@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://e1eit8s4r7q0"]
 
-[ext_resource type="Texture2D" uid="uid://c7age6k5e74ew" path="res://Assets/Mapas/Tienda/pokemon_center_scene_0.png" id="1_ats23"]
+[ext_resource type="Texture2D" uid="uid://bxfe0lb5csfn7" path="res://Assets/Mapas/Tienda/pokemon_center_scene_0.png" id="1_ats23"]
 
 [resource]
 resource_name = "PC_Material"
