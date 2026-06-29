@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dw4lf5mtcgtuv"
+path="res://.godot/imported/1-43. Last Battle (VS Rival).mp3-8f600fde175d6e82f79ba29d8a198fbd.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Niveles/1-43. Last Battle (VS Rival).mp3"
+dest_files=["res://.godot/imported/1-43. Last Battle (VS Rival).mp3-8f600fde175d6e82f79ba29d8a198fbd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
