@@ -1,0 +1,12 @@
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://cfesdd1g4lw7y"]
+
+[resource]
+bg_color = Color(0.15155819, 0.1382119, 0.25990587, 1)
+skew = Vector2(0.1, 0.05)
+border_width_left = 5
+border_width_top = 15
+border_width_right = 5
+border_width_bottom = 15
+border_color = Color(0.031910602, 0.046481423, 0.061483294, 1)
+corner_detail = 1
+anti_aliasing = false

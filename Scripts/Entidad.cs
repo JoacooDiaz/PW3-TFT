@@ -62,7 +62,9 @@ public override void _Ready()
 	}
 
 	VidaActual = Data.Vida;
-	barraDeVida.setUpBarra(VidaActual, Data.Elemento);
+
+	string equipo = GetParent().Name;
+	barraDeVida.setUpBarra(VidaActual, Data.Elemento, equipo);
 	InfoAccion.Limpiar();
 }
 
